@@ -1,0 +1,1172 @@
+{
+  "users": [
+    {
+      "id": "usr_alex_vance",
+      "email": "alex.vance@atelier-nordic.com",
+      "fullName": "Alex Vance",
+      "passwordHash": "scrypt:16384:8:1:591c01d05a6fcadf48ea002146bddedb:bb2b3e410326ddcf544856bef0f0c4052978b35d37beddb611fc6ba3123772e9ff0ffb922f0ec6f748f767146ff6dfa7d7f958f83c0c7844ee79d98568096a52",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "role": "owner",
+      "mfaEnabled": true,
+      "recoveryKeys": [
+        "MN-9482-3819-A847-X019"
+      ],
+      "createdAt": "2026-07-27T22:04:53.932Z",
+      "lastLoginAt": "2026-08-26T22:04:53.932Z"
+    }
+  ],
+  "organizations": [
+    {
+      "id": "org_atelier_nordic",
+      "name": "Atelier Nordic",
+      "slug": "atelier-nordic",
+      "plan": "pro",
+      "billingStatus": "active",
+      "billingPeriod": "monthly",
+      "maxDomains": 5,
+      "maxMailboxes": 20,
+      "maxStorageGb": 50,
+      "currentStorageMb": 3420,
+      "createdAt": "2026-07-27T22:04:53.932Z"
+    }
+  ],
+  "memberships": [
+    {
+      "id": "mem_alex",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "userName": "Alex Vance",
+      "role": "owner",
+      "mailboxGrants": [
+        "mbx_alex",
+        "mbx_concierge"
+      ],
+      "status": "active"
+    }
+  ],
+  "domains": [
+    {
+      "id": "dom_atelier_nordic",
+      "organizationId": "org_atelier_nordic",
+      "domainName": "atelier-nordic.com",
+      "status": "active",
+      "mxVerified": true,
+      "spfVerified": true,
+      "dkimVerified": true,
+      "dmarcVerified": true,
+      "dkimSelector": "mailoo",
+      "dkimPublicKey": "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAZTTZI4FvIdO2iot4lCsyiNqBALrfB2P0V9UQ9fkY+0cTFUGc7TgH4U6Um0xDMIJd5NbS5Vm4adhX1bJxcaC0rcDC3EthOGhKdzkspb1BALNPhzzve7+5bEpUdOAQEzvT+EfFyKtOnKypKbFJjMNfe2R6E/oFPtHa8TlGN2P/AA6KyltHhjsE0Skg9oi42wMrnLX8hRCKYdBEako1OL1h7A==IDAQAB",
+      "verificationToken": "mailoo-verification-x89f2a",
+      "createdAt": "2026-07-29T22:04:53.932Z",
+      "lastCheckedAt": "2026-08-26T22:04:53.932Z",
+      "catchAllMailboxId": "mbx_alex"
+    },
+    {
+      "id": "dom_hyperion_dev",
+      "organizationId": "org_atelier_nordic",
+      "domainName": "hyperion.design",
+      "status": "pending_dns",
+      "mxVerified": false,
+      "spfVerified": false,
+      "dkimVerified": false,
+      "dmarcVerified": false,
+      "dkimSelector": "mailoo",
+      "dkimPublicKey": "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4AF3VWml3upTjPIYEmJOZuAbZzX/jlOaXUxFF1Hcp9V8CnqJGNwzbzaYYH1ifPIy9MdK8H8Y61yWlG7+1TtMO9zWg9P2Ltjt8QrHSKxHUbQKDs1lTyQ7NlQCehqsqAkXM9RU+fmhoJErNc/69Pv3ORPtYUPdwnTI8KqaWtIfiPbu9O8LHTfthzWPzUIFi3WcO417r/mHgY/mFq2JXkNWdw==IDAQAB",
+      "verificationToken": "mailoo-verification-k93m7q",
+      "createdAt": "2026-08-24T22:04:53.932Z",
+      "lastCheckedAt": "2026-08-26T22:04:53.932Z"
+    }
+  ],
+  "mailboxes": [
+    {
+      "id": "mbx_alex",
+      "organizationId": "org_atelier_nordic",
+      "domainId": "dom_atelier_nordic",
+      "domainName": "atelier-nordic.com",
+      "emailAddress": "alex@atelier-nordic.com",
+      "name": "Alex Vance (Personal)",
+      "type": "individual",
+      "quotaMb": 25000,
+      "usedMb": 2450,
+      "signature": "—\nAlex Vance\nLead Architect & Principal\nAtelier Nordic • Oslo / Copenhagen\nhttps://atelier-nordic.com",
+      "autoReplyEnabled": false,
+      "isCatchAll": true,
+      "createdAt": "2026-07-29T22:04:53.932Z"
+    },
+    {
+      "id": "mbx_concierge",
+      "organizationId": "org_atelier_nordic",
+      "domainId": "dom_atelier_nordic",
+      "domainName": "atelier-nordic.com",
+      "emailAddress": "concierge@atelier-nordic.com",
+      "name": "Client Concierge & Inquiries",
+      "type": "shared",
+      "quotaMb": 15000,
+      "usedMb": 970,
+      "signature": "—\nAtelier Nordic Concierge Team\nOslo Architecture Studio",
+      "autoReplyEnabled": true,
+      "autoReplySubject": "We have received your architectural inquiry",
+      "autoReplyBody": "Thank you for reaching out to Atelier Nordic. Our lead partners review every client proposal within 24 business hours.",
+      "isCatchAll": false,
+      "createdAt": "2026-08-06T22:04:53.932Z"
+    }
+  ],
+  "aliases": [
+    {
+      "id": "als_press",
+      "organizationId": "org_atelier_nordic",
+      "domainId": "dom_atelier_nordic",
+      "domainName": "atelier-nordic.com",
+      "aliasAddress": "press@atelier-nordic.com",
+      "targetMailboxId": "mbx_alex",
+      "targetEmail": "alex@atelier-nordic.com",
+      "description": "Editorial & Architectural Digest press inquiries",
+      "isEnabled": true,
+      "createdAt": "2026-08-11T22:04:53.932Z"
+    }
+  ],
+  "messages": [
+    {
+      "id": "msg_001_1",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "threadId": "th_001_nordic_monograph",
+      "mailboxEmail": "alex@atelier-nordic.com",
+      "from": {
+        "name": "Elena Rostova",
+        "address": "elena@archpress-munich.de"
+      },
+      "to": [
+        {
+          "name": "Alex Vance",
+          "address": "alex@atelier-nordic.com"
+        }
+      ],
+      "subject": "Architectural Monograph Vol. IV — Final Proofing & Material Selection",
+      "snippet": "The linen-bound foil stamp samples arrived from Munich...",
+      "bodyText": "Alex,\n\nThe linen-bound foil stamp samples arrived from Munich. The tactile weight at 340gsm feels exceptional, and the blind debossing on the spine captures the bespoke typographic monogram with striking clarity.\n\nCould you review the attached high-res proofs for Chapter 3 (The Fjord Pavilion) before we begin the main lithographic print run on Friday?\n\nWarm regards,\nElena Rostova\nSenior Editor, ArchPress Munich",
+      "bodyHtml": "<p>Alex,</p><p>The linen-bound foil stamp samples arrived from Munich. The tactile weight at 340gsm feels exceptional, and the blind debossing on the spine captures the bespoke typographic monogram with striking clarity.</p><p>Could you review the attached high-res proofs for <strong>Chapter 3 (The Fjord Pavilion)</strong> before we begin the main lithographic print run on Friday?</p><p>Warm regards,<br><strong>Elena Rostova</strong><br>Senior Editor, ArchPress Munich</p>",
+      "folder": "inbox",
+      "isRead": false,
+      "isStarred": true,
+      "isDraft": false,
+      "labels": [
+        "Projects",
+        "Priority"
+      ],
+      "attachments": [
+        {
+          "id": "att_001",
+          "filename": "Fjord_Pavilion_Chapter3_ColorProof_v4.pdf",
+          "contentType": "application/pdf",
+          "size": 14200000
+        },
+        {
+          "id": "att_002",
+          "filename": "Material_Swatch_340gsm_Linen.jpg",
+          "contentType": "image/jpeg",
+          "size": 3200000,
+          "dataUrl": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          "id": "att_002b",
+          "filename": "Nordic_Pavilion_Facade_Render_4K.jpg",
+          "contentType": "image/jpeg",
+          "size": 5800000,
+          "dataUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          "id": "att_002c",
+          "filename": "Atelier_Brand_Logomark_Vector.svg",
+          "contentType": "image/svg+xml",
+          "size": 420000,
+          "dataUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80"
+        }
+      ],
+      "headers": {
+        "messageId": "<20260824.981723@archpress-munich.de>",
+        "spfPass": true,
+        "dkimPass": true,
+        "dmarcPass": true,
+        "receivedFromIp": "194.109.12.84"
+      },
+      "createdAt": "2026-08-26T21:19:53.932Z"
+    },
+    {
+      "id": "msg_002_1",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "threadId": "th_002_dns_health",
+      "mailboxEmail": "alex@atelier-nordic.com",
+      "from": {
+        "name": "Mailoo Security Bot",
+        "address": "security@mailoo.email"
+      },
+      "to": [
+        {
+          "name": "Alex Vance",
+          "address": "alex@atelier-nordic.com"
+        }
+      ],
+      "subject": "Security & DNS Health Report: 100% Cryptographic Alignment Verified",
+      "snippet": "All outbound traffic from @atelier-nordic.com is strictly signed...",
+      "bodyText": "Hello Alex,\n\nYour domain atelier-nordic.com is operating in optimal security status on the Mailoo Network.\n\n• MX Records: 10 mail.mailoo.email (Active)\n• SPF Policy: v=spf1 include:_spf.mailoo.email ~all (Verified PASS)\n• DKIM Key: 2048-bit RSA selector 'mailoo' (Aligned)\n• DMARC Alignment: v=DMARC1; p=quarantine; rua=mailto:dmarc@mailoo.email (Enforced)\n• Zero telemetry tracking, end-to-end TLS 1.3 encryption enabled.\n\nNo administrative action is required.",
+      "bodyHtml": "<h3>Domain Health: 100% Pass</h3><p>Your domain <strong>atelier-nordic.com</strong> is operating in optimal security status on the Mailoo Network.</p><ul><li><strong>MX Records:</strong> <code>10 mail.mailoo.email</code> (Active)</li><li><strong>SPF Policy:</strong> <code>v=spf1 include:_spf.mailoo.email ~all</code> (Verified PASS)</li><li><strong>DKIM Key:</strong> 2048-bit RSA selector <code>mailoo</code> (Aligned)</li><li><strong>DMARC Alignment:</strong> <code>v=DMARC1; p=quarantine</code> (Enforced)</li><li><strong>Security:</strong> Zero telemetry tracking, end-to-end TLS 1.3 encryption enabled.</li></ul><p style=\"color:#666;font-size:13px\">Generated automatically by Mailoo Infrastructure.</p>",
+      "folder": "inbox",
+      "isRead": true,
+      "isStarred": false,
+      "isDraft": false,
+      "labels": [
+        "System",
+        "Security"
+      ],
+      "attachments": [],
+      "headers": {
+        "messageId": "<sec.report.9812@mailoo.email>",
+        "spfPass": true,
+        "dkimPass": true,
+        "dmarcPass": true,
+        "receivedFromIp": "35.198.42.11"
+      },
+      "createdAt": "2026-08-26T19:04:53.932Z"
+    },
+    {
+      "id": "msg_003_1",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "threadId": "th_003_vance_residence",
+      "mailboxEmail": "alex@atelier-nordic.com",
+      "from": {
+        "name": "Kasper Lindqvist",
+        "address": "kasper@lindqvist-structural.no"
+      },
+      "to": [
+        {
+          "name": "Alex Vance",
+          "address": "alex@atelier-nordic.com"
+        }
+      ],
+      "subject": "Preliminary Site Evaluation & Cantilever Cantilevers — Holmenkollen Project",
+      "snippet": "I reviewed the geological survey for the Holmenkollen slope...",
+      "bodyText": "Alex,\n\nI reviewed the geological survey for the Holmenkollen slope. The granite bedrock depth allows us to anchor the 18-meter cantilever structure with post-tensioned steel tendons without requiring auxiliary retaining columns in the tree line.\n\nLet's schedule a 30-minute review call on Monday morning to finalize the CAD model.\n\nBest,\nKasper",
+      "bodyHtml": "<p>Alex,</p><p>I reviewed the geological survey for the Holmenkollen slope. The granite bedrock depth allows us to anchor the <strong>18-meter cantilever structure</strong> with post-tensioned steel tendons without requiring auxiliary retaining columns in the tree line.</p><p>Let's schedule a 30-minute review call on Monday morning to finalize the CAD model.</p><p>Best,<br><strong>Kasper Lindqvist</strong><br>Lindqvist Structural Engineering AS</p>",
+      "folder": "inbox",
+      "isRead": true,
+      "isStarred": false,
+      "isDraft": false,
+      "labels": [
+        "Projects"
+      ],
+      "attachments": [
+        {
+          "id": "att_003",
+          "filename": "Holmenkollen_RockAnchor_Analysis.dwg",
+          "contentType": "application/octet-stream",
+          "size": 8900000
+        }
+      ],
+      "headers": {
+        "messageId": "<str-9421.lindqvist.no@mail>",
+        "spfPass": true,
+        "dkimPass": true,
+        "dmarcPass": true,
+        "receivedFromIp": "81.167.33.109"
+      },
+      "createdAt": "2026-08-26T14:04:53.932Z",
+      "calendarInvite": {
+        "id": "cal_holmenkollen_review",
+        "title": "Holmenkollen Cantilever Structural & BIM Review",
+        "start": "2026-08-28T22:04:53.933Z",
+        "end": "2026-08-28T23:04:53.933Z",
+        "timezone": "Europe/Oslo (CET)",
+        "location": "Studio Boardroom 2 & Video: meet.mailoo.email/atelier-nordic-review",
+        "conferenceUrl": "https://meet.mailoo.email/atelier-nordic-review",
+        "organizer": {
+          "name": "Kasper Lindqvist",
+          "email": "kasper@lindqvist-structural.no"
+        },
+        "attendees": [
+          {
+            "name": "Alex Vance",
+            "email": "alex@atelier-nordic.com",
+            "status": "needs-action"
+          },
+          {
+            "name": "Elena Rostova",
+            "email": "elena@archpress-munich.de",
+            "status": "accepted"
+          },
+          {
+            "name": "Kasper Lindqvist",
+            "email": "kasper@lindqvist-structural.no",
+            "status": "accepted"
+          }
+        ],
+        "myStatus": "needs-action",
+        "description": "Joint engineering and architectural review of 18m cantilever rock anchors and CAD model."
+      }
+    },
+    {
+      "id": "msg_004_1",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "threadId": "th_004_mailoo_welcome",
+      "mailboxEmail": "alex@atelier-nordic.com",
+      "from": {
+        "name": "Mailoo Team",
+        "address": "concierge@mailoo.email"
+      },
+      "to": [
+        {
+          "name": "Alex Vance",
+          "address": "alex@atelier-nordic.com"
+        }
+      ],
+      "subject": "Welcome to Mailoo — Your Dedicated Custom Domain Suite is Active",
+      "snippet": "Welcome to Mailoo. You now have full sovereign ownership...",
+      "bodyText": "Welcome to Mailoo.\n\nWe engineered Mailoo for creators, architects, studios, and businesses who refuse to compromise on privacy, typography, and uncompromised deliverability.\n\nKey features in your Pro tier:\n• Unlimited Aliases & Catch-All Routing\n• Zero Tracking Pixels & Strict Telemetry-Free Privacy\n• 2048-Bit RSA Automated DKIM & DMARC Enforcement\n• Instant IMAP/SMTP Gateway for Apple Mail, Thunderbird, and iOS\n\nIf you ever need assistance, simply reply directly to this email.",
+      "bodyHtml": "<p>Welcome to <strong>Mailoo</strong>.</p><p>We engineered Mailoo for creators, architects, studios, and businesses who refuse to compromise on privacy, typography, and uncompromised deliverability.</p><p><strong>Key features in your Pro tier:</strong></p><ul><li>Unlimited Aliases & Catch-All Routing</li><li>Zero Tracking Pixels & Strict Telemetry-Free Privacy</li><li>2048-Bit RSA Automated DKIM & DMARC Enforcement</li><li>Instant IMAP/SMTP Gateway for Apple Mail, Thunderbird, and iOS</li></ul><p>If you ever need assistance, simply reply directly to this email.</p>",
+      "folder": "archive",
+      "isRead": true,
+      "isStarred": false,
+      "isDraft": false,
+      "labels": [
+        "Mailoo"
+      ],
+      "attachments": [],
+      "headers": {
+        "messageId": "<welcome.001@mailoo.email>",
+        "spfPass": true,
+        "dkimPass": true,
+        "dmarcPass": true,
+        "receivedFromIp": "35.198.42.10"
+      },
+      "createdAt": "2026-07-29T22:04:53.932Z"
+    },
+    {
+      "id": "msg_draft_001",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "threadId": "th_draft_nordic_inv",
+      "mailboxEmail": "alex@atelier-nordic.com",
+      "from": {
+        "name": "Alex Vance",
+        "address": "alex@atelier-nordic.com"
+      },
+      "to": [
+        {
+          "name": "Henrik Vang",
+          "address": "henrik@nordiclighting.dk"
+        }
+      ],
+      "subject": "Proposal for Fjord Villa Pavilion Lighting Schema",
+      "snippet": "Here is the preliminary Lux distribution schedule...",
+      "bodyText": "Henrik,\n\nHere is the preliminary Lux distribution schedule prepared by our Nordic studio team for the fjord pavilion roof trusses. We are seeking a warm 2700K indirect perimeter glow with recessed brass trim.\n\nLet me know if your team can supply the custom linear LED extrusions by next month.",
+      "bodyHtml": "<p>Henrik,</p><p>Here is the preliminary Lux distribution schedule prepared by our Nordic studio team for the fjord pavilion roof trusses. We are seeking a warm 2700K indirect perimeter glow with recessed brass trim.</p><p>Let me know if your team can supply the custom linear LED extrusions by next month.</p>",
+      "folder": "drafts",
+      "isRead": true,
+      "isStarred": false,
+      "isDraft": true,
+      "labels": [
+        "Drafts"
+      ],
+      "attachments": [],
+      "headers": {
+        "messageId": "<draft.99120@atelier-nordic.com>",
+        "spfPass": true,
+        "dkimPass": true,
+        "dmarcPass": true
+      },
+      "createdAt": "2026-08-26T20:04:53.933Z"
+    },
+    {
+      "id": "msg_sent_001",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "threadId": "th_sent_001",
+      "mailboxEmail": "alex@atelier-nordic.com",
+      "from": {
+        "name": "Alex Vance",
+        "address": "alex@atelier-nordic.com"
+      },
+      "to": [
+        {
+          "name": "Elena Rostova",
+          "address": "elena@archpress-munich.de"
+        }
+      ],
+      "subject": "Re: Architectural Monograph Vol. IV — Chapter 3 Proof Approved",
+      "snippet": "Elena, I have thoroughly reviewed Chapter 3 proofs. The foil stamping specifications on page 42 look immaculate...",
+      "bodyText": "Elena,\n\nI have thoroughly reviewed Chapter 3 proofs. The foil stamping specifications on page 42 look immaculate, and the tonal fidelity across the fjord photography retains exceptional contrast.\n\nYou have our full studio sign-off to proceed with the main lithographic print run on Friday.\n\nWarm regards,\nAlex Vance\nLead Architect & Principal\nAtelier Nordic",
+      "bodyHtml": "<p>Elena,</p><p>I have thoroughly reviewed Chapter 3 proofs. The foil stamping specifications on page 42 look immaculate, and the tonal fidelity across the fjord photography retains exceptional contrast.</p><p>You have our full studio sign-off to proceed with the main lithographic print run on Friday.</p><p>Warm regards,<br/><strong>Alex Vance</strong><br/>Lead Architect & Principal<br/>Atelier Nordic</p><img src=\"/api/track/pixel/msg_sent_001.png\" width=\"1\" height=\"1\" alt=\"\" style=\"display:none;width:1px;height:1px;\" />",
+      "folder": "sent",
+      "isRead": true,
+      "isStarred": false,
+      "isDraft": false,
+      "labels": [
+        "Sent",
+        "Projects"
+      ],
+      "attachments": [],
+      "headers": {
+        "messageId": "<20260825.109283@atelier-nordic.com>",
+        "inReplyTo": "<20260824.981723@archpress-munich.de>",
+        "spfPass": true,
+        "dkimPass": true,
+        "dmarcPass": true,
+        "receivedFromIp": "84.212.19.42"
+      },
+      "readReceiptRequested": true,
+      "readReceiptStatus": "opened",
+      "readReceiptOpenedAt": "2026-08-26T22:05:12.967Z",
+      "readReceiptOpenCount": 3,
+      "readReceiptOpenedFromIp": "127.0.0.1",
+      "readReceiptUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36",
+      "createdAt": "2026-08-26T21:39:53.933Z"
+    },
+    {
+      "id": "msg_sent_002",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "threadId": "th_sent_002",
+      "mailboxEmail": "alex@atelier-nordic.com",
+      "from": {
+        "name": "Alex Vance",
+        "address": "alex@atelier-nordic.com"
+      },
+      "to": [
+        {
+          "name": "Henrik Mortensen",
+          "address": "henrik@nordic-ventures.co"
+        }
+      ],
+      "subject": "Retainer Terms & Milestone Schedule Q4 — Oslo Fjord Residence",
+      "snippet": "Henrik, please find our finalized retainer schedule for the Oslo Fjord residence project starting in October...",
+      "bodyText": "Henrik,\n\nPlease find our finalized retainer schedule for the Oslo Fjord residence project starting in October.\n\nLet me know if you would like to schedule a review call this Thursday.\n\nBest,\nAlex",
+      "bodyHtml": "<p>Henrik,</p><p>Please find our finalized retainer schedule for the Oslo Fjord residence project starting in October.</p><p>Let me know if you would like to schedule a review call this Thursday.</p><p>Best,<br/>Alex</p><img src=\"/api/track/pixel/msg_sent_002.png\" width=\"1\" height=\"1\" alt=\"\" style=\"display:none;width:1px;height:1px;\" />",
+      "folder": "sent",
+      "isRead": true,
+      "isStarred": true,
+      "isDraft": false,
+      "labels": [
+        "Sent",
+        "Contracts"
+      ],
+      "attachments": [],
+      "headers": {
+        "messageId": "<20260825.293841@atelier-nordic.com>",
+        "spfPass": true,
+        "dkimPass": true,
+        "dmarcPass": true,
+        "receivedFromIp": "84.212.19.42"
+      },
+      "readReceiptRequested": true,
+      "readReceiptStatus": "pending",
+      "readReceiptOpenCount": 0,
+      "createdAt": "2026-08-26T20:04:53.933Z"
+    }
+  ],
+  "threads": [
+    {
+      "id": "th_001_nordic_monograph",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "subject": "Architectural Monograph Vol. IV — Final Proofing & Material Selection",
+      "snippet": "The linen-bound foil stamp samples arrived from Munich. The tactile weight at 340gsm feels exceptional...",
+      "lastMessageAt": "2026-08-26T21:19:53.932Z",
+      "unreadCount": 1,
+      "messageCount": 2,
+      "isStarred": true,
+      "isArchived": false,
+      "isSpam": false,
+      "isTrash": false,
+      "labels": [
+        "Projects",
+        "Priority"
+      ],
+      "participants": [
+        {
+          "name": "Elena Rostova",
+          "address": "elena@archpress-munich.de"
+        },
+        {
+          "name": "Alex Vance",
+          "address": "alex@atelier-nordic.com"
+        }
+      ],
+      "aiIntelligence": {
+        "urgency": "High",
+        "sentiment": "Positive",
+        "summary": "Elena provided the revised Fjord Waterfront structural calculations and requesting review of Section 4.",
+        "actionItems": [
+          "Review revised timber beam sizing in Appendix B",
+          "Confirm Thursday 14:00 CET workshop attendance"
+        ],
+        "suggestedQuickReplies": [
+          "Reviewed and confirmed for Thursday at 14:00 CET.",
+          "Thank you Elena, reviewing Appendix B now."
+        ]
+      },
+      "isVip": true
+    },
+    {
+      "id": "th_002_dns_health",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "subject": "Security & DNS Health Report: 100% Cryptographic Alignment Verified",
+      "snippet": "All outbound traffic from @atelier-nordic.com is strictly signed with 2048-bit RSA DKIM and enforced via strict DMARC quarantine...",
+      "lastMessageAt": "2026-08-26T19:04:53.932Z",
+      "unreadCount": 0,
+      "messageCount": 1,
+      "isStarred": false,
+      "isArchived": false,
+      "isSpam": false,
+      "isTrash": false,
+      "labels": [
+        "System",
+        "Security"
+      ],
+      "participants": [
+        {
+          "name": "Mailoo Security Bot",
+          "address": "security@mailoo.email"
+        }
+      ]
+    },
+    {
+      "id": "th_003_vance_residence",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "subject": "Preliminary Site Evaluation & Cantilever Cantilevers — Holmenkollen Project",
+      "snippet": "I reviewed the geological survey for the Holmenkollen slope. The granite bedrock depth allows us to anchor the cantilever structure...",
+      "lastMessageAt": "2026-08-26T14:04:53.932Z",
+      "unreadCount": 0,
+      "messageCount": 1,
+      "isStarred": false,
+      "isArchived": false,
+      "isSpam": false,
+      "isTrash": false,
+      "labels": [
+        "Projects"
+      ],
+      "participants": [
+        {
+          "name": "Kasper Lindqvist",
+          "address": "kasper@lindqvist-structural.no"
+        },
+        {
+          "name": "Alex Vance",
+          "address": "alex@atelier-nordic.com"
+        }
+      ]
+    },
+    {
+      "id": "th_004_mailoo_welcome",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "subject": "Welcome to Mailoo — Your Dedicated Custom Domain Suite is Active",
+      "snippet": "Welcome to Mailoo. You now have full sovereign ownership over your domain email infrastructure...",
+      "lastMessageAt": "2026-07-29T22:04:53.932Z",
+      "unreadCount": 0,
+      "messageCount": 1,
+      "isStarred": false,
+      "isArchived": true,
+      "isSpam": false,
+      "isTrash": false,
+      "labels": [
+        "Mailoo"
+      ],
+      "participants": [
+        {
+          "name": "Mailoo Team",
+          "address": "concierge@mailoo.email"
+        }
+      ]
+    },
+    {
+      "id": "th_draft_nordic_inv",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "subject": "Draft: Proposal for Fjord Villa Pavilion Lighting Schema",
+      "snippet": "Here is the preliminary Lux distribution schedule prepared by our Nordic studio team...",
+      "lastMessageAt": "2026-08-26T20:04:53.932Z",
+      "unreadCount": 0,
+      "messageCount": 1,
+      "isStarred": false,
+      "isArchived": false,
+      "isSpam": false,
+      "isTrash": false,
+      "labels": [
+        "Drafts"
+      ],
+      "participants": [
+        {
+          "name": "Henrik Vang",
+          "address": "henrik@nordiclighting.dk"
+        }
+      ]
+    },
+    {
+      "id": "th_sent_001",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "subject": "Re: Architectural Monograph Vol. IV — Chapter 3 Proof Approved",
+      "snippet": "Elena, I have thoroughly reviewed Chapter 3 proofs. The foil stamping specifications on page 42 look immaculate...",
+      "lastMessageAt": "2026-08-26T21:39:53.933Z",
+      "unreadCount": 0,
+      "messageCount": 1,
+      "isStarred": false,
+      "isArchived": false,
+      "isSpam": false,
+      "isTrash": false,
+      "labels": [
+        "Sent",
+        "Projects"
+      ],
+      "participants": [
+        {
+          "name": "Alex Vance",
+          "address": "alex@atelier-nordic.com"
+        },
+        {
+          "name": "Elena Rostova",
+          "address": "elena@archpress-munich.de"
+        }
+      ]
+    },
+    {
+      "id": "th_sent_002",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "subject": "Retainer Terms & Milestone Schedule Q4 — Oslo Fjord Residence",
+      "snippet": "Henrik, please find our finalized retainer schedule for the Oslo Fjord residence project starting in October...",
+      "lastMessageAt": "2026-08-26T20:04:53.933Z",
+      "unreadCount": 0,
+      "messageCount": 1,
+      "isStarred": true,
+      "isArchived": false,
+      "isSpam": false,
+      "isTrash": false,
+      "labels": [
+        "Sent",
+        "Contracts"
+      ],
+      "participants": [
+        {
+          "name": "Alex Vance",
+          "address": "alex@atelier-nordic.com"
+        },
+        {
+          "name": "Henrik Mortensen",
+          "address": "henrik@nordic-ventures.co"
+        }
+      ]
+    }
+  ],
+  "customFolders": [
+    {
+      "id": "cf_client_projects",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Client Projects",
+      "color": "#3b82f6",
+      "icon": "folder",
+      "createdAt": "2026-08-01T22:04:53.933Z"
+    },
+    {
+      "id": "cf_press_media",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Press & Media",
+      "color": "#a855f7",
+      "icon": "folder",
+      "createdAt": "2026-08-06T22:04:53.933Z"
+    },
+    {
+      "id": "cf_contracts",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Contracts & Retainers",
+      "color": "#10b981",
+      "icon": "folder",
+      "createdAt": "2026-08-11T22:04:53.933Z"
+    }
+  ],
+  "signatures": [
+    {
+      "id": "sig_default_exec",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Executive Studio (Default)",
+      "content": "—\nAlex Vance | Principal Architect\nAtelier Nordic Architecture & Design AS\nOslo • Copenhagen • Stockholm\nhttps://atelier-nordic.com",
+      "isDefault": true,
+      "createdAt": "2026-07-27T22:04:53.933Z"
+    },
+    {
+      "id": "sig_minimal",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Minimal / Mobile",
+      "content": "Sent from Mailoo Sovereign Mailbox\nAlex Vance — atelier-nordic.com",
+      "isDefault": false,
+      "createdAt": "2026-08-06T22:04:53.933Z"
+    },
+    {
+      "id": "sig_confidential",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Confidentiality & Legal Notice",
+      "content": "—\nAlex Vance | Atelier Nordic\nCONFIDENTIALITY NOTICE: This transmission is intended solely for the designated recipient. It contains proprietary architectural specifications and privileged data. Any unauthorized dissemination or reproduction is strictly prohibited.",
+      "isDefault": false,
+      "createdAt": "2026-08-11T22:04:53.933Z"
+    }
+  ],
+  "spamRules": [
+    {
+      "id": "sr_seed_01",
+      "organizationId": "org_atelier_nordic",
+      "senderPattern": "promotions@bulk-lead-generation.xyz",
+      "reason": "Unsolicited cold marketing spam list",
+      "createdAt": "2026-08-14T22:04:53.933Z"
+    }
+  ],
+  "templates": [
+    {
+      "id": "tmpl_project_proposal",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Architectural Retainer Proposal",
+      "category": "Sales",
+      "subject": "Architecture Retainer & Scope of Work — {{project_name}}",
+      "bodyText": "Dear {{recipient_name}},\n\nThank you for considering Atelier Nordic for the {{project_name}} project. Attached is our comprehensive studio brief detailing the preliminary schematic timelines, zoning compliance documentation, and fee structure.\n\nPlease let us know if you would like to arrange an exploratory design workshop next week.\n\nWarm regards,\nAlex Vance\nPrincipal Architect, Atelier Nordic",
+      "variables": [
+        "recipient_name",
+        "project_name"
+      ],
+      "createdAt": "2026-08-06T22:04:53.933Z"
+    },
+    {
+      "id": "tmpl_nda_legal",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Confidential Mutual NDA",
+      "category": "Legal",
+      "subject": "Mutual Non-Disclosure Agreement — {{company_name}} & Atelier Nordic",
+      "bodyText": "Hi {{recipient_name}},\n\nBefore we share our CAD schematics and high-resolution BIM models, please review and execute the attached mutual non-disclosure agreement.\n\nOnce signed, our client repository access keys will be transmitted via encrypted channel.\n\nBest,\nAlex Vance",
+      "variables": [
+        "recipient_name",
+        "company_name"
+      ],
+      "createdAt": "2026-08-08T22:04:53.933Z"
+    },
+    {
+      "id": "tmpl_meeting_recap",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Executive Design Review Recap",
+      "category": "Meeting",
+      "subject": "Recap: Design Review & Action Items ({{meeting_date}})",
+      "bodyText": "Team,\n\nHere is a quick summary of our design alignment session today:\n- Key Decision: Approved timber-concrete composite framing.\n- Next Milestone: Structural engineering calculation sign-off by {{milestone_date}}.\n\nAction items are attached.\n\nThanks,\nAlex",
+      "variables": [
+        "meeting_date",
+        "milestone_date"
+      ],
+      "createdAt": "2026-08-16T22:04:53.933Z"
+    }
+  ],
+  "filterRules": [
+    {
+      "id": "fr_auto_invoices",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Auto-label Invoices & Receipts",
+      "conditionField": "subject",
+      "matchType": "contains",
+      "matchValue": "Invoice",
+      "actions": {
+        "applyLabel": "Finance",
+        "markStar": true
+      },
+      "isEnabled": true,
+      "createdAt": "2026-08-01T22:04:53.933Z"
+    },
+    {
+      "id": "fr_contracts_folder",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Route Retainer Agreements to Contracts Folder",
+      "conditionField": "subject",
+      "matchType": "contains",
+      "matchValue": "Contract",
+      "actions": {
+        "moveToFolder": "cf_contracts",
+        "applyLabel": "Contracts"
+      },
+      "isEnabled": true,
+      "createdAt": "2026-08-11T22:04:53.933Z"
+    }
+  ],
+  "contacts": [
+    {
+      "id": "ct_elena_rostova",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Elena Rostova",
+      "email": "elena.rostova@arkitektur-oslo.no",
+      "company": "Arkitektur Oslo AS",
+      "role": "Senior Project Director",
+      "phone": "+47 22 83 91 00",
+      "notes": "Lead collaborator on the Fjord Waterfront Masterplan",
+      "isVip": true,
+      "avatarColor": "#3b82f6",
+      "lastContactedAt": "2026-08-26T18:04:53.933Z",
+      "createdAt": "2026-07-27T22:04:53.933Z"
+    },
+    {
+      "id": "ct_marcus_vance",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Marcus Vance",
+      "email": "marcus.vance@nordic-timber.se",
+      "company": "Nordic Timber Technologies",
+      "role": "VP Materials Engineering",
+      "phone": "+46 8 555 123 45",
+      "notes": "Key supplier for sustainable glulam and CLT structural beams",
+      "isVip": true,
+      "avatarColor": "#10b981",
+      "lastContactedAt": "2026-08-26T08:04:53.933Z",
+      "createdAt": "2026-07-29T22:04:53.933Z"
+    },
+    {
+      "id": "ct_henrik_mortensen",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Henrik Mortensen",
+      "email": "henrik@nordic-ventures.co",
+      "company": "Nordic Ventures Capital",
+      "role": "Managing Partner",
+      "phone": "+45 33 12 88 90",
+      "notes": "Client principal for luxury residential developments",
+      "isVip": false,
+      "avatarColor": "#a855f7",
+      "lastContactedAt": "2026-08-26T20:04:53.933Z",
+      "createdAt": "2026-08-01T22:04:53.933Z"
+    },
+    {
+      "id": "ct_sarah_lindqvist",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Sarah Lindqvist",
+      "email": "sarah.lindqvist@cph-design.dk",
+      "company": "CPH Design Quarterly",
+      "role": "Chief Editor",
+      "phone": "+45 40 19 28 37",
+      "notes": "Press contact covering sustainable Nordic architecture",
+      "isVip": false,
+      "avatarColor": "#f59e0b",
+      "lastContactedAt": "2026-08-25T20:04:53.933Z",
+      "createdAt": "2026-08-06T22:04:53.933Z"
+    }
+  ],
+  "internalNotes": [
+    {
+      "id": "in_note_01",
+      "organizationId": "org_atelier_nordic",
+      "threadId": "th_001_nordic_monograph",
+      "userId": "usr_alex_vance",
+      "userName": "Alex Vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "content": "Verified the load calculations with the structural team. We are clear to proceed with timber beam approvals.",
+      "createdAt": "2026-08-26T20:04:53.933Z"
+    }
+  ],
+  "pgpKeys": [
+    {
+      "id": "pgp_key_01",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Alex Vance (Master Signing Key)",
+      "email": "alex@atelier-nordic.com",
+      "fingerprint": "94A2 881B 4C09 F17E D412 8301 556B 99A2 CC14 380F",
+      "publicKey": "-----BEGIN PGP PUBLIC KEY BLOCK-----\nVersion: Mailoo Sovereign PGP v2.4\n\nmQGNBF8z+...[2048-bit RSA Public Key for alex@atelier-nordic.com]...\n-----END PGP PUBLIC KEY BLOCK-----",
+      "isDefault": true,
+      "algorithm": "RSA 4096-bit",
+      "createdAt": "2026-07-29T22:04:53.933Z"
+    }
+  ],
+  "retentionPolicies": [
+    {
+      "organizationId": "org_atelier_nordic",
+      "autoPurgeTrashDays": 30,
+      "autoPurgeSpamDays": 14,
+      "autoArchiveDays": 180,
+      "isEnabled": true,
+      "lastPurgedAt": "2026-08-24T22:04:53.933Z",
+      "lastPurgedCount": 14
+    }
+  ],
+  "blockedSenders": [
+    {
+      "id": "bs_01",
+      "organizationId": "org_atelier_nordic",
+      "pattern": "promotions@bulk-lead-generation.xyz",
+      "type": "block",
+      "reason": "Aggressive marketing cold scraper bot",
+      "createdAt": "2026-08-16T22:04:53.933Z"
+    },
+    {
+      "id": "bs_02",
+      "organizationId": "org_atelier_nordic",
+      "pattern": "@arkitektur-oslo.no",
+      "type": "allow",
+      "reason": "Trusted municipal architectural partner domain",
+      "createdAt": "2026-08-01T22:04:53.933Z"
+    }
+  ],
+  "bimiConfigs": [
+    {
+      "id": "bimi_01",
+      "organizationId": "org_atelier_nordic",
+      "domainId": "dom_atelier_nordic",
+      "domainName": "atelier-nordic.com",
+      "svgLogoUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=120&auto=format&fit=crop&q=80",
+      "vmcCertUrl": "https://pki.entrust.com/bimi/certificates/atelier-nordic.pem",
+      "selector": "default",
+      "isConfigured": true,
+      "verifiedMarkStatus": "verified",
+      "dnsRecordValue": "v=BIMI1; l=https://atelier-nordic.com/bimi-logo.svg; a=https://atelier-nordic.com/bimi-vmc.pem",
+      "updatedAt": "2026-08-21T22:04:53.933Z"
+    }
+  ],
+  "appPasswords": [
+    {
+      "id": "app_pwd_01",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "mailboxId": "mbx_alex",
+      "mailboxEmail": "alex@atelier-nordic.com",
+      "name": "Apple Mail (MacBook Pro 16\")",
+      "passwordPrefix": "mn_app_9a4f...",
+      "scopes": [
+        "imap",
+        "smtp"
+      ],
+      "createdAt": "2026-08-12T22:04:53.933Z",
+      "lastUsedAt": "2026-08-26T21:44:53.933Z"
+    },
+    {
+      "id": "app_pwd_02",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "mailboxId": "mbx_alex",
+      "mailboxEmail": "alex@atelier-nordic.com",
+      "name": "Thunderbird Studio Workstation",
+      "passwordPrefix": "mn_app_2c8b...",
+      "scopes": [
+        "imap",
+        "smtp",
+        "caldav",
+        "carddav"
+      ],
+      "createdAt": "2026-08-18T22:04:53.933Z",
+      "lastUsedAt": "2026-08-26T20:04:53.933Z"
+    }
+  ],
+  "loginAttempts": [
+    {
+      "id": "la_01",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "timestamp": "2026-08-26T21:46:53.933Z",
+      "ipAddress": "84.212.19.42",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36",
+      "device": "MacBook Pro 16\" (macOS 15.1)",
+      "browser": "Chrome 129.0",
+      "os": "macOS Sequoia",
+      "location": "Oslo, Norway",
+      "status": "success",
+      "authMethod": "hardware_key",
+      "details": "Hardware FIDO2 WebAuthn authentication verified. Session encrypted with TLS 1.3."
+    },
+    {
+      "id": "la_02",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "timestamp": "2026-08-26T19:04:53.933Z",
+      "ipAddress": "84.212.19.42",
+      "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
+      "device": "iPhone 16 Pro (iOS 18.1)",
+      "browser": "Mobile Safari 18.0",
+      "os": "iOS 18.1",
+      "location": "Oslo, Norway",
+      "status": "success",
+      "authMethod": "password_mfa",
+      "details": "Mobile Webmail sign-in with 6-digit TOTP code verification."
+    },
+    {
+      "id": "la_03",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "timestamp": "2026-08-26T08:04:53.933Z",
+      "ipAddress": "193.162.143.12",
+      "userAgent": "AppleMail/3774.200.24 CFNetwork/1498.700.2 Darwin/24.1.0",
+      "device": "MacBook Pro (Apple Mail Client)",
+      "browser": "Apple Mail Gateway",
+      "os": "macOS Sequoia",
+      "location": "Copenhagen, Denmark",
+      "status": "success",
+      "authMethod": "imap_token",
+      "details": "Authenticated IMAP/SMTP client sync session via application token."
+    },
+    {
+      "id": "la_04",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "timestamp": "2026-08-25T10:04:53.933Z",
+      "ipAddress": "84.212.19.42",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:130.0) Gecko/20100101 Firefox/130.0",
+      "device": "MacBook Pro (Firefox)",
+      "browser": "Firefox Developer 130.0",
+      "os": "macOS Sequoia",
+      "location": "Oslo, Norway",
+      "status": "mfa_challenge",
+      "authMethod": "password_mfa",
+      "details": "MFA challenge prompted for unrecognized browser fingerprint. Challenge solved."
+    },
+    {
+      "id": "la_05",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "timestamp": "2026-08-24T18:04:53.933Z",
+      "ipAddress": "185.220.101.5",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0",
+      "device": "Linux Host (Tor Exit Node)",
+      "browser": "Firefox ESR (Tor)",
+      "os": "Linux x86_64",
+      "location": "Frankfurt, Germany",
+      "status": "blocked",
+      "authMethod": "password_mfa",
+      "details": "Blocked by Sovereign Armor: Geo-velocity anomaly detected (1,240 km/h travel mismatch from Oslo active session)."
+    },
+    {
+      "id": "la_06",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "timestamp": "2026-08-23T10:04:53.933Z",
+      "ipAddress": "103.251.167.22",
+      "userAgent": "python-requests/2.31.0",
+      "device": "Automated Script / Bot",
+      "browser": "Python Requests API",
+      "os": "Unknown",
+      "location": "Singapore",
+      "status": "failed",
+      "authMethod": "password_mfa",
+      "details": "Failed password verification (Invalid credentials supplied)."
+    }
+  ],
+  "auditLogs": [
+    {
+      "organizationId": "org_atelier_nordic",
+      "userId": "system_tracking",
+      "userEmail": "alex@atelier-nordic.com",
+      "action": "mail.read_receipt_opened",
+      "category": "mail",
+      "ipAddress": "127.0.0.1",
+      "details": "Read receipt triggered for message \"Re: Architectural Monograph Vol. IV — Chapter 3 Proof Approved\" (Recipient opened, count: 3)",
+      "id": "log_1787781912967_00a091cf",
+      "timestamp": "2026-08-26T22:05:12.967Z"
+    },
+    {
+      "id": "log_01",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "action": "domain.dns_verified",
+      "category": "domain",
+      "ipAddress": "84.212.19.42",
+      "details": "All DNS records (MX, SPF, DKIM, DMARC) verified successfully for atelier-nordic.com",
+      "timestamp": "2026-07-29T22:04:53.933Z"
+    },
+    {
+      "id": "log_02",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "action": "mailbox.created",
+      "category": "mailbox",
+      "ipAddress": "84.212.19.42",
+      "details": "Created primary mailbox alex@atelier-nordic.com with 25GB quota",
+      "timestamp": "2026-07-29T22:04:53.933Z"
+    },
+    {
+      "id": "log_03",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "action": "alias.created",
+      "category": "mailbox",
+      "ipAddress": "84.212.19.42",
+      "details": "Created routing alias press@atelier-nordic.com -> alex@atelier-nordic.com",
+      "timestamp": "2026-08-11T22:04:53.933Z"
+    },
+    {
+      "id": "log_04",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "action": "auth.login_success",
+      "category": "auth",
+      "ipAddress": "84.212.19.42",
+      "details": "Signed in successfully via Webmail session (MFA 2FA Authenticated)",
+      "timestamp": "2026-08-26T21:44:53.933Z"
+    }
+  ],
+  "apiKeys": [
+    {
+      "id": "key_prod_imap",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "name": "Apple Mail / IMAP Sync Token",
+      "keyPrefix": "mn_live_8f3a...",
+      "scopes": [
+        "mail:read",
+        "mail:send",
+        "mail:sync"
+      ],
+      "lastUsedAt": "2026-08-26T21:49:53.933Z",
+      "createdAt": "2026-08-01T22:04:53.933Z"
+    }
+  ],
+  "invoices": [
+    {
+      "id": "inv_2026_08",
+      "organizationId": "org_atelier_nordic",
+      "invoiceNumber": "ML-2026-0814",
+      "amount": 29,
+      "currency": "USD",
+      "status": "paid",
+      "planName": "Mailoo Pro (5 Domains, 20 Mailboxes)",
+      "date": "2026-08-16T22:04:53.933Z",
+      "pdfUrl": "#"
+    },
+    {
+      "id": "inv_2026_07",
+      "organizationId": "org_atelier_nordic",
+      "invoiceNumber": "ML-2026-0714",
+      "amount": 29,
+      "currency": "USD",
+      "status": "paid",
+      "planName": "Mailoo Pro (5 Domains, 20 Mailboxes)",
+      "date": "2026-07-17T22:04:53.933Z",
+      "pdfUrl": "#"
+    }
+  ],
+  "sessions": []
+}

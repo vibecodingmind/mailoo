@@ -1,0 +1,4310 @@
+{
+  "users": [
+    {
+      "id": "usr_alex_vance",
+      "email": "alex.vance@atelier-nordic.com",
+      "fullName": "Alex Vance",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "role": "owner",
+      "mfaEnabled": true,
+      "recoveryKeys": [
+        "MN-9482-3819-A847-X019"
+      ],
+      "createdAt": "2026-07-27T21:33:12.097Z",
+      "lastLoginAt": "2026-08-26T21:33:12.098Z"
+    },
+    {
+      "id": "usr_1787780781184_0298f6",
+      "email": "not-an-email",
+      "fullName": "Sarah Connor",
+      "role": "owner",
+      "mfaEnabled": true,
+      "recoveryKeys": [
+        "MN-D2A3EAB2-23E7EFA5"
+      ],
+      "createdAt": "2026-08-26T21:46:21.184Z",
+      "lastLoginAt": "2026-08-26T21:46:21.184Z"
+    },
+    {
+      "id": "usr_1787780781188_0db077",
+      "email": "sarah@skynet-defense.com",
+      "fullName": "Sarah Connor",
+      "role": "owner",
+      "mfaEnabled": true,
+      "recoveryKeys": [
+        "MN-454B599D-1B36CE8C"
+      ],
+      "createdAt": "2026-08-26T21:46:21.188Z",
+      "lastLoginAt": "2026-08-26T21:46:21.188Z"
+    },
+    {
+      "id": "usr_1787780781190_324111",
+      "email": "founder_1787780781189@klim-foundry.com",
+      "fullName": "Freja Lindqvist",
+      "role": "owner",
+      "mfaEnabled": true,
+      "recoveryKeys": [
+        "MN-A1387ECB-AD4D0B53"
+      ],
+      "createdAt": "2026-08-26T21:46:21.190Z",
+      "lastLoginAt": "2026-08-26T21:46:21.190Z"
+    },
+    {
+      "id": "usr_1787780797760_0ec5f1",
+      "email": "founder_1787780797759@klim-foundry.com",
+      "fullName": "Freja Lindqvist",
+      "role": "owner",
+      "mfaEnabled": true,
+      "passwordHash": "d6b8bdab415d4dab20eebfb357d057de0323438bb4100276a7cbacb99b9c76a9",
+      "isEmailVerified": true,
+      "recoveryKeys": [
+        "MN-8439BBA0-38F30BAB"
+      ],
+      "createdAt": "2026-08-26T21:46:37.760Z",
+      "lastLoginAt": "2026-08-26T21:46:37.796Z"
+    },
+    {
+      "id": "usr_1787780815354_2eabb6",
+      "email": "founder_1787780815352@klim-foundry.com",
+      "fullName": "Freja Lindqvist",
+      "role": "owner",
+      "mfaEnabled": true,
+      "passwordHash": "d6b8bdab415d4dab20eebfb357d057de0323438bb4100276a7cbacb99b9c76a9",
+      "isEmailVerified": true,
+      "recoveryKeys": [
+        "MN-76117610-1FF7013D"
+      ],
+      "createdAt": "2026-08-26T21:46:55.354Z",
+      "lastLoginAt": "2026-08-26T21:46:55.388Z"
+    },
+    {
+      "id": "usr_1787780864258_0aa0f3",
+      "email": "founder_1787780864256@klim-foundry.com",
+      "fullName": "Freja Lindqvist",
+      "role": "owner",
+      "mfaEnabled": true,
+      "passwordHash": "d6b8bdab415d4dab20eebfb357d057de0323438bb4100276a7cbacb99b9c76a9",
+      "isEmailVerified": true,
+      "recoveryKeys": [
+        "MN-D3124740-3D8C5820"
+      ],
+      "createdAt": "2026-08-26T21:47:44.258Z",
+      "lastLoginAt": "2026-08-26T21:47:44.305Z"
+    },
+    {
+      "id": "usr_1787780887180_38482a",
+      "email": "founder_1787780887179@klim-foundry.com",
+      "fullName": "Freja Lindqvist",
+      "role": "owner",
+      "mfaEnabled": true,
+      "passwordHash": "d6b8bdab415d4dab20eebfb357d057de0323438bb4100276a7cbacb99b9c76a9",
+      "isEmailVerified": true,
+      "recoveryKeys": [
+        "MN-B8D10A3C-C7BD4B9F"
+      ],
+      "createdAt": "2026-08-26T21:48:07.181Z",
+      "lastLoginAt": "2026-08-26T21:48:07.226Z"
+    },
+    {
+      "id": "usr_1787780896198_21a0d2",
+      "email": "founder_1787780896197@klim-foundry.com",
+      "fullName": "Freja Lindqvist",
+      "role": "owner",
+      "mfaEnabled": true,
+      "passwordHash": "d6b8bdab415d4dab20eebfb357d057de0323438bb4100276a7cbacb99b9c76a9",
+      "isEmailVerified": true,
+      "recoveryKeys": [
+        "MN-FAE099DF-5E0FC373"
+      ],
+      "createdAt": "2026-08-26T21:48:16.199Z",
+      "lastLoginAt": "2026-08-26T21:48:16.249Z"
+    },
+    {
+      "id": "usr_1787781232456_4ff63a",
+      "email": "founder_mtamsbfy@nordic-design.com",
+      "fullName": "Astrid Lind",
+      "role": "owner",
+      "mfaEnabled": true,
+      "passwordHash": "scrypt:16384:8:1:dfe9037c14182f91472e97a3975a9bb5:d1f001d7ad7802fa7905d8159e7887b40fe1bcc20a55679a991b0d1c1c24e8d11f75da51bfd8641becf3050ead89fae131a396d6e5dd7ce1323df539c635845c",
+      "isEmailVerified": true,
+      "recoveryKeys": [
+        "MN-94B44926-EA27EA0B"
+      ],
+      "createdAt": "2026-08-26T21:53:52.508Z",
+      "lastLoginAt": "2026-08-26T21:53:52.583Z"
+    },
+    {
+      "id": "usr_1787781232589_25c1c4",
+      "email": "director_mtamsbfy@helsinki-crafts.com",
+      "fullName": "Eero Saarinen",
+      "role": "owner",
+      "mfaEnabled": true,
+      "passwordHash": "scrypt:16384:8:1:afc663caa3f5e99b00e150f8e0c35f27:739a120007f40f3b6efde07b5691059e89fa8e4e0a70a2eabb73a749939181ccd32d50650993fb67ac70765b036435b6bf2aa8841054de9a8ad1e93c2b7b2b2d",
+      "isEmailVerified": true,
+      "recoveryKeys": [
+        "MN-4996B5EC-628BEB95"
+      ],
+      "createdAt": "2026-08-26T21:53:52.650Z",
+      "lastLoginAt": "2026-08-26T21:53:52.701Z"
+    },
+    {
+      "id": "usr_1787781246857_ac464e",
+      "email": "founder_mtamsmk2@nordic-design.com",
+      "fullName": "Astrid Lind",
+      "role": "owner",
+      "mfaEnabled": true,
+      "passwordHash": "scrypt:16384:8:1:a9590615a6db22a03b814488766b97ff:e44f0776adecbe46ca9c83ca788d36771da8148b10b5e9306010e53f3b526e81b605f7b997d1c377eb6eda4d8b10cec95935772f8a6e5a7a68bfc5b22d0b2a2a",
+      "isEmailVerified": true,
+      "recoveryKeys": [
+        "MN-527091FB-2747AE36"
+      ],
+      "createdAt": "2026-08-26T21:54:06.917Z",
+      "lastLoginAt": "2026-08-26T21:54:06.987Z"
+    },
+    {
+      "id": "usr_1787781246993_c7c5de",
+      "email": "director_mtamsmk2@helsinki-crafts.com",
+      "fullName": "Eero Saarinen",
+      "role": "owner",
+      "mfaEnabled": true,
+      "passwordHash": "scrypt:16384:8:1:84e57423b98036ca67229f6f52bfeab3:b70c5b97248e81e215adafec74620d2cf0b25ee0d1dee9363dfc702d7f3a1cfbfb21bb40f5684f076553c5f4725f8cbe39b67ceaf21d2499b1fb02f4eacd6490",
+      "isEmailVerified": true,
+      "recoveryKeys": [
+        "MN-E1ACFA8C-71BE3A0A"
+      ],
+      "createdAt": "2026-08-26T21:54:07.059Z",
+      "lastLoginAt": "2026-08-26T21:54:07.118Z"
+    },
+    {
+      "id": "usr_1787781260583_6e78a5",
+      "email": "founder_mtamsx52@nordic-design.com",
+      "fullName": "Astrid Lind",
+      "role": "owner",
+      "mfaEnabled": true,
+      "passwordHash": "scrypt:16384:8:1:da92c212ce2d50e1de11c608e7648b0e:b12d3220d71d54a6eecefbe12d4ca8e06d9aeeef492c40244d871a2ecae80e3620291134f79d94bbb14f4c7c006614d730164e85e72f69f9e87ee92ba5cabe1d",
+      "isEmailVerified": true,
+      "recoveryKeys": [
+        "MN-C3E275BE-414DE289"
+      ],
+      "createdAt": "2026-08-26T21:54:20.639Z",
+      "lastLoginAt": "2026-08-26T21:54:20.715Z"
+    },
+    {
+      "id": "usr_1787781260729_9d3f46",
+      "email": "director_mtamsx52@helsinki-crafts.com",
+      "fullName": "Eero Saarinen",
+      "role": "owner",
+      "mfaEnabled": true,
+      "passwordHash": "scrypt:16384:8:1:ae2058e0c449eb5091fd6bef88ccb7eb:a1ec49b2a240e47463c9a974b752821722c1f92ae7772420276135aea63516de369e3534bb5dbd7b92b5cffaa89f5b5376aa2ad50532d82f8cf4859412788ce4",
+      "isEmailVerified": true,
+      "recoveryKeys": [
+        "MN-56B08A19-0789FE23"
+      ],
+      "createdAt": "2026-08-26T21:54:20.775Z",
+      "lastLoginAt": "2026-08-26T21:54:20.822Z"
+    },
+    {
+      "id": "usr_1787781288167_e00403",
+      "email": "founder_mtamtifq@nordic-design.com",
+      "fullName": "Astrid Lind",
+      "role": "owner",
+      "mfaEnabled": true,
+      "passwordHash": "scrypt:16384:8:1:a335c370a68fb9bf70d9c6ce038e4189:38d72f49b15f452c1887147895b79f7184f6d97aa8cc5d04c2aee1ad81e55f536e9c2828371194a5a71c0d17129e05ad6d284063f71f6ee94407171a4800199e",
+      "isEmailVerified": true,
+      "recoveryKeys": [
+        "MN-B12710C6-768A2D56"
+      ],
+      "createdAt": "2026-08-26T21:54:48.217Z",
+      "lastLoginAt": "2026-08-26T21:54:48.592Z"
+    },
+    {
+      "id": "usr_1787781288284_f2d19b",
+      "email": "director_mtamtifq@helsinki-crafts.com",
+      "fullName": "Eero Saarinen",
+      "role": "owner",
+      "mfaEnabled": true,
+      "passwordHash": "scrypt:16384:8:1:6c877d699d4308371754dfd34ad30515:c7379cee38bc064079d35a18322688fe075cd1900bb2fd4f829284ca6f40eda791cdb6546140bae62f8aefdf1292e6880940c4c3bfdf73c86b2b940a2a055c15",
+      "isEmailVerified": true,
+      "recoveryKeys": [
+        "MN-AD8228C5-771D7BE4"
+      ],
+      "createdAt": "2026-08-26T21:54:48.355Z",
+      "lastLoginAt": "2026-08-26T21:54:48.408Z"
+    }
+  ],
+  "organizations": [
+    {
+      "id": "org_atelier_nordic",
+      "name": "Atelier Nordic",
+      "slug": "atelier-nordic",
+      "plan": "pro",
+      "billingStatus": "active",
+      "billingPeriod": "monthly",
+      "maxDomains": 5,
+      "maxMailboxes": 20,
+      "maxStorageGb": 50,
+      "currentStorageMb": 3420,
+      "createdAt": "2026-07-27T21:33:12.098Z"
+    },
+    {
+      "id": "org_1787780781184_c049fe",
+      "name": "Sarah Connor's Studio",
+      "slug": "sarah-connor",
+      "plan": "pro",
+      "billingStatus": "active",
+      "billingPeriod": "monthly",
+      "maxDomains": 5,
+      "maxMailboxes": 20,
+      "maxStorageGb": 50,
+      "currentStorageMb": 120,
+      "createdAt": "2026-08-26T21:46:21.184Z"
+    },
+    {
+      "id": "org_1787780781188_6d4afd",
+      "name": "Sarah Connor's Studio",
+      "slug": "sarah-connor",
+      "plan": "pro",
+      "billingStatus": "active",
+      "billingPeriod": "monthly",
+      "maxDomains": 5,
+      "maxMailboxes": 20,
+      "maxStorageGb": 50,
+      "currentStorageMb": 120,
+      "createdAt": "2026-08-26T21:46:21.188Z"
+    },
+    {
+      "id": "org_1787780781190_7220a8",
+      "name": "Klim Type Foundry",
+      "slug": "klim-type-foundry",
+      "plan": "pro",
+      "billingStatus": "active",
+      "billingPeriod": "monthly",
+      "maxDomains": 5,
+      "maxMailboxes": 20,
+      "maxStorageGb": 50,
+      "currentStorageMb": 120,
+      "createdAt": "2026-08-26T21:46:21.190Z"
+    },
+    {
+      "id": "org_1787780797760_04812a",
+      "name": "Klim Type Foundry",
+      "slug": "klim-type-foundry",
+      "plan": "pro",
+      "billingStatus": "active",
+      "billingPeriod": "monthly",
+      "maxDomains": 5,
+      "maxMailboxes": 20,
+      "maxStorageGb": 50,
+      "currentStorageMb": 120,
+      "createdAt": "2026-08-26T21:46:37.761Z"
+    },
+    {
+      "id": "org_1787780815354_1644ea",
+      "name": "Klim Type Foundry",
+      "slug": "klim-type-foundry",
+      "plan": "pro",
+      "billingStatus": "active",
+      "billingPeriod": "monthly",
+      "maxDomains": 5,
+      "maxMailboxes": 20,
+      "maxStorageGb": 50,
+      "currentStorageMb": 120,
+      "createdAt": "2026-08-26T21:46:55.354Z"
+    },
+    {
+      "id": "org_1787780864258_46e595",
+      "name": "Klim Type Foundry",
+      "slug": "klim-type-foundry",
+      "plan": "pro",
+      "billingStatus": "active",
+      "billingPeriod": "monthly",
+      "maxDomains": 5,
+      "maxMailboxes": 20,
+      "maxStorageGb": 50,
+      "currentStorageMb": 120,
+      "createdAt": "2026-08-26T21:47:44.258Z"
+    },
+    {
+      "id": "org_1787780887180_02be78",
+      "name": "Klim Type Foundry",
+      "slug": "klim-type-foundry",
+      "plan": "pro",
+      "billingStatus": "active",
+      "billingPeriod": "monthly",
+      "maxDomains": 5,
+      "maxMailboxes": 20,
+      "maxStorageGb": 50,
+      "currentStorageMb": 120,
+      "createdAt": "2026-08-26T21:48:07.181Z"
+    },
+    {
+      "id": "org_1787780896198_7a0244",
+      "name": "Klim Type Foundry",
+      "slug": "klim-type-foundry",
+      "plan": "pro",
+      "billingStatus": "active",
+      "billingPeriod": "monthly",
+      "maxDomains": 5,
+      "maxMailboxes": 20,
+      "maxStorageGb": 50,
+      "currentStorageMb": 120,
+      "createdAt": "2026-08-26T21:48:16.199Z"
+    },
+    {
+      "id": "org_1787781232456_8c136c",
+      "name": "Astrid Lind's Studio",
+      "slug": "astrid-lind",
+      "plan": "pro",
+      "billingStatus": "active",
+      "billingPeriod": "monthly",
+      "maxDomains": 5,
+      "maxMailboxes": 20,
+      "maxStorageGb": 50,
+      "currentStorageMb": 120,
+      "createdAt": "2026-08-26T21:53:52.509Z"
+    },
+    {
+      "id": "org_1787781232590_70b69b",
+      "name": "Eero Saarinen's Studio",
+      "slug": "eero-saarinen",
+      "plan": "pro",
+      "billingStatus": "active",
+      "billingPeriod": "monthly",
+      "maxDomains": 5,
+      "maxMailboxes": 20,
+      "maxStorageGb": 50,
+      "currentStorageMb": 120,
+      "createdAt": "2026-08-26T21:53:52.650Z"
+    },
+    {
+      "id": "org_1787781246857_987bfe",
+      "name": "Astrid Lind's Studio",
+      "slug": "astrid-lind",
+      "plan": "pro",
+      "billingStatus": "active",
+      "billingPeriod": "monthly",
+      "maxDomains": 5,
+      "maxMailboxes": 20,
+      "maxStorageGb": 50,
+      "currentStorageMb": 120,
+      "createdAt": "2026-08-26T21:54:06.918Z"
+    },
+    {
+      "id": "org_1787781246993_632526",
+      "name": "Eero Saarinen's Studio",
+      "slug": "eero-saarinen",
+      "plan": "pro",
+      "billingStatus": "active",
+      "billingPeriod": "monthly",
+      "maxDomains": 5,
+      "maxMailboxes": 20,
+      "maxStorageGb": 50,
+      "currentStorageMb": 120,
+      "createdAt": "2026-08-26T21:54:07.059Z"
+    },
+    {
+      "id": "org_1787781260583_9422dd",
+      "name": "Astrid Lind's Studio",
+      "slug": "astrid-lind",
+      "plan": "pro",
+      "billingStatus": "active",
+      "billingPeriod": "monthly",
+      "maxDomains": 5,
+      "maxMailboxes": 20,
+      "maxStorageGb": 50,
+      "currentStorageMb": 120,
+      "createdAt": "2026-08-26T21:54:20.639Z"
+    },
+    {
+      "id": "org_1787781260729_d99fb2",
+      "name": "Eero Saarinen's Studio",
+      "slug": "eero-saarinen",
+      "plan": "pro",
+      "billingStatus": "active",
+      "billingPeriod": "monthly",
+      "maxDomains": 5,
+      "maxMailboxes": 20,
+      "maxStorageGb": 50,
+      "currentStorageMb": 120,
+      "createdAt": "2026-08-26T21:54:20.775Z"
+    },
+    {
+      "id": "org_1787781288167_fc4d68",
+      "name": "Astrid Lind's Studio",
+      "slug": "astrid-lind",
+      "plan": "enterprise",
+      "billingStatus": "active",
+      "billingPeriod": "monthly",
+      "maxDomains": 25,
+      "maxMailboxes": 100,
+      "maxStorageGb": 250,
+      "currentStorageMb": 120,
+      "createdAt": "2026-08-26T21:54:48.217Z"
+    },
+    {
+      "id": "org_1787781288284_f893ba",
+      "name": "Eero Saarinen's Studio",
+      "slug": "eero-saarinen",
+      "plan": "pro",
+      "billingStatus": "active",
+      "billingPeriod": "monthly",
+      "maxDomains": 5,
+      "maxMailboxes": 20,
+      "maxStorageGb": 50,
+      "currentStorageMb": 120,
+      "createdAt": "2026-08-26T21:54:48.355Z"
+    }
+  ],
+  "memberships": [
+    {
+      "id": "mem_alex",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "userName": "Alex Vance",
+      "role": "owner",
+      "mailboxGrants": [
+        "mbx_alex",
+        "mbx_concierge"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "mem_1787780781184",
+      "organizationId": "org_1787780781184_c049fe",
+      "userId": "usr_1787780781184_0298f6",
+      "userEmail": "not-an-email",
+      "userName": "Sarah Connor",
+      "role": "owner",
+      "mailboxGrants": [],
+      "status": "active"
+    },
+    {
+      "id": "mem_1787780781188",
+      "organizationId": "org_1787780781188_6d4afd",
+      "userId": "usr_1787780781188_0db077",
+      "userEmail": "sarah@skynet-defense.com",
+      "userName": "Sarah Connor",
+      "role": "owner",
+      "mailboxGrants": [],
+      "status": "active"
+    },
+    {
+      "id": "mem_1787780781190",
+      "organizationId": "org_1787780781190_7220a8",
+      "userId": "usr_1787780781190_324111",
+      "userEmail": "founder_1787780781189@klim-foundry.com",
+      "userName": "Freja Lindqvist",
+      "role": "owner",
+      "mailboxGrants": [],
+      "status": "active"
+    },
+    {
+      "id": "mem_1787780797761",
+      "organizationId": "org_1787780797760_04812a",
+      "userId": "usr_1787780797760_0ec5f1",
+      "userEmail": "founder_1787780797759@klim-foundry.com",
+      "userName": "Freja Lindqvist",
+      "role": "owner",
+      "mailboxGrants": [],
+      "status": "active"
+    },
+    {
+      "id": "mem_1787780815354",
+      "organizationId": "org_1787780815354_1644ea",
+      "userId": "usr_1787780815354_2eabb6",
+      "userEmail": "founder_1787780815352@klim-foundry.com",
+      "userName": "Freja Lindqvist",
+      "role": "owner",
+      "mailboxGrants": [],
+      "status": "active"
+    },
+    {
+      "id": "mem_1787780864258",
+      "organizationId": "org_1787780864258_46e595",
+      "userId": "usr_1787780864258_0aa0f3",
+      "userEmail": "founder_1787780864256@klim-foundry.com",
+      "userName": "Freja Lindqvist",
+      "role": "owner",
+      "mailboxGrants": [],
+      "status": "active"
+    },
+    {
+      "id": "mem_1787780887181",
+      "organizationId": "org_1787780887180_02be78",
+      "userId": "usr_1787780887180_38482a",
+      "userEmail": "founder_1787780887179@klim-foundry.com",
+      "userName": "Freja Lindqvist",
+      "role": "owner",
+      "mailboxGrants": [],
+      "status": "active"
+    },
+    {
+      "id": "mem_1787780896199",
+      "organizationId": "org_1787780896198_7a0244",
+      "userId": "usr_1787780896198_21a0d2",
+      "userEmail": "founder_1787780896197@klim-foundry.com",
+      "userName": "Freja Lindqvist",
+      "role": "owner",
+      "mailboxGrants": [],
+      "status": "active"
+    },
+    {
+      "id": "mem_1787781232509",
+      "organizationId": "org_1787781232456_8c136c",
+      "userId": "usr_1787781232456_4ff63a",
+      "userEmail": "founder_mtamsbfy@nordic-design.com",
+      "userName": "Astrid Lind",
+      "role": "owner",
+      "mailboxGrants": [],
+      "status": "active"
+    },
+    {
+      "id": "mem_1787781232650",
+      "organizationId": "org_1787781232590_70b69b",
+      "userId": "usr_1787781232589_25c1c4",
+      "userEmail": "director_mtamsbfy@helsinki-crafts.com",
+      "userName": "Eero Saarinen",
+      "role": "owner",
+      "mailboxGrants": [],
+      "status": "active"
+    },
+    {
+      "id": "mem_1787781246918",
+      "organizationId": "org_1787781246857_987bfe",
+      "userId": "usr_1787781246857_ac464e",
+      "userEmail": "founder_mtamsmk2@nordic-design.com",
+      "userName": "Astrid Lind",
+      "role": "owner",
+      "mailboxGrants": [],
+      "status": "active"
+    },
+    {
+      "id": "mem_1787781247059",
+      "organizationId": "org_1787781246993_632526",
+      "userId": "usr_1787781246993_c7c5de",
+      "userEmail": "director_mtamsmk2@helsinki-crafts.com",
+      "userName": "Eero Saarinen",
+      "role": "owner",
+      "mailboxGrants": [],
+      "status": "active"
+    },
+    {
+      "id": "mem_1787781260639",
+      "organizationId": "org_1787781260583_9422dd",
+      "userId": "usr_1787781260583_6e78a5",
+      "userEmail": "founder_mtamsx52@nordic-design.com",
+      "userName": "Astrid Lind",
+      "role": "owner",
+      "mailboxGrants": [],
+      "status": "active"
+    },
+    {
+      "id": "mem_1787781260775",
+      "organizationId": "org_1787781260729_d99fb2",
+      "userId": "usr_1787781260729_9d3f46",
+      "userEmail": "director_mtamsx52@helsinki-crafts.com",
+      "userName": "Eero Saarinen",
+      "role": "owner",
+      "mailboxGrants": [],
+      "status": "active"
+    },
+    {
+      "id": "mem_1787781288217",
+      "organizationId": "org_1787781288167_fc4d68",
+      "userId": "usr_1787781288167_e00403",
+      "userEmail": "founder_mtamtifq@nordic-design.com",
+      "userName": "Astrid Lind",
+      "role": "owner",
+      "mailboxGrants": [],
+      "status": "active"
+    },
+    {
+      "id": "mem_1787781288355",
+      "organizationId": "org_1787781288284_f893ba",
+      "userId": "usr_1787781288284_f2d19b",
+      "userEmail": "director_mtamtifq@helsinki-crafts.com",
+      "userName": "Eero Saarinen",
+      "role": "owner",
+      "mailboxGrants": [],
+      "status": "active"
+    }
+  ],
+  "domains": [
+    {
+      "id": "dom_atelier_nordic",
+      "organizationId": "org_atelier_nordic",
+      "domainName": "atelier-nordic.com",
+      "status": "active",
+      "mxVerified": true,
+      "spfVerified": true,
+      "dkimVerified": true,
+      "dmarcVerified": true,
+      "dkimSelector": "monogram",
+      "dkimPublicKey": "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAYBUrhn8pHGtxGjEPN5S2SjOTBYp3QCVcBTq7edPodvo71vjbAJNx1/27BFqC/M1ysqiHTAtJyT1wDqws2LxT4JeJxn83OBgK8nbA5EV7q272PicqSnpPZzI11b6n/ZfkOHCqbOzuDz/T515jQlR8ShbejWbyREQi01kIQWVSmCeaaNVriC2DubqT2Ja6YRy9fOsGiJ2bCoZVh0B+NoDOrQ==IDAQAB",
+      "verificationToken": "monogram-verification-x89f2a",
+      "createdAt": "2026-07-29T21:33:12.098Z",
+      "lastCheckedAt": "2026-08-26T21:33:12.098Z",
+      "catchAllMailboxId": "mbx_alex"
+    },
+    {
+      "id": "dom_hyperion_dev",
+      "organizationId": "org_atelier_nordic",
+      "domainName": "hyperion.design",
+      "status": "pending_dns",
+      "mxVerified": false,
+      "spfVerified": false,
+      "dkimVerified": false,
+      "dmarcVerified": false,
+      "dkimSelector": "monogram",
+      "dkimPublicKey": "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAPj06EtCARChlXDteLGMXWvdIZfBMvwUmLuGmwhG8aTVYMjRui0wprzt9RGgk/ap9rDRDlUx1hHNryLTgMzKbsYHQaR9Oj6uYUllGDkrivYNmYAl1gUWuAlN6kD4nKGm8TUJY9vZi1es9glTk3Jk1+6RzlPa41q8GrXE9LRxkC7EAjEXhCWLiwJiWXlZkw/F+pnLm3MWWufCcH2JTV0u33A==IDAQAB",
+      "verificationToken": "monogram-verification-k93m7q",
+      "createdAt": "2026-08-24T21:33:12.098Z",
+      "lastCheckedAt": "2026-08-26T21:33:12.098Z"
+    },
+    {
+      "id": "dom_1787780815394_6eaf84",
+      "organizationId": "org_1787780815354_1644ea",
+      "domainName": "klim-foundry.com",
+      "status": "active",
+      "mxVerified": true,
+      "spfVerified": true,
+      "dkimVerified": true,
+      "dmarcVerified": true,
+      "dkimSelector": "monogram",
+      "dkimPublicKey": "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAaMraxZVl2DhZpV7DHFvpZOX29ZWY9dVv01hB1sKxF7MUz3qZAgHy3T1Tcnw7N/WzBf7pfwXWedlI2DkFGmnN4vXxTU6lvUIy0Ca1PsaZIToaiCkwysI7/r0obMRWPzTR3hJ5gwYJd+Y4vcIxc6zsujrZMtZfOoj+jTUq4qR1tKEuxBH/sH9LO1mMJV8owwM/Bc9JVuB6Q0trLD9Ttf9odQ==IDAQAB",
+      "verificationToken": "monogram-verification-bb85a10e",
+      "createdAt": "2026-08-26T21:46:55.394Z",
+      "lastCheckedAt": "2026-08-26T21:46:55.397Z"
+    },
+    {
+      "id": "dom_1787780864310_83a9aa",
+      "organizationId": "org_1787780864258_46e595",
+      "domainName": "klim-foundry.com",
+      "status": "active",
+      "mxVerified": true,
+      "spfVerified": true,
+      "dkimVerified": true,
+      "dmarcVerified": true,
+      "dkimSelector": "monogram",
+      "dkimPublicKey": "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEACr8Rl9zJNuwy7AxZlZCkrA0QOWgtTlTo1FAvZqxFgfU5JcRioDxr58MP9CEJQ3GsU0rUz7ZPx/TOxYeT83b8KdWUITpKi7GpxE6aMmL2q9QZ8K1PFtc1oj8PR/uT0Dfw9vEsmcKndudhD5jO8Xl8LUtYnwZMdqj2y0DYz7kAoqJjJPrDsANbIU72TT4VleSfGrrATZihHw7ohyr084Uu9g==IDAQAB",
+      "verificationToken": "monogram-verification-aa4c91e6",
+      "createdAt": "2026-08-26T21:47:44.310Z",
+      "lastCheckedAt": "2026-08-26T21:47:44.313Z"
+    },
+    {
+      "id": "dom_1787780887232_b5830a",
+      "organizationId": "org_1787780887180_02be78",
+      "domainName": "klim-foundry.com",
+      "status": "active",
+      "mxVerified": true,
+      "spfVerified": true,
+      "dkimVerified": true,
+      "dmarcVerified": true,
+      "dkimSelector": "monogram",
+      "dkimPublicKey": "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3Kz3cP7cOHgDeA+sQ0QX0BEyCPFmt9Ce8PyXRWytEIpc8UMlYWkMSQCCmEJN2HgVt6qWRaXrT4tHEmjkeihhJeqjUxdCN/wV9kmKwdkK0KRfyxFguujQnRx8w/E6yHZq5lo2wjqZOXoZRIX7eWNbB8SYiNhsehZN2BB6V1Qnw8CdmdERlpzH4MO+PKus3wf9rEOpIwWWKkvlKqbq4j/BgQ==IDAQAB",
+      "verificationToken": "monogram-verification-986accc5",
+      "createdAt": "2026-08-26T21:48:07.232Z",
+      "lastCheckedAt": "2026-08-26T21:48:07.236Z"
+    },
+    {
+      "id": "dom_1787780896253_e01213",
+      "organizationId": "org_1787780896198_7a0244",
+      "domainName": "klim-foundry.com",
+      "status": "active",
+      "mxVerified": true,
+      "spfVerified": true,
+      "dkimVerified": true,
+      "dmarcVerified": true,
+      "dkimSelector": "monogram",
+      "dkimPublicKey": "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA6A9t436oIawst9gTmfcD29cbkDFCIoLb2tBsm3sxrViNuwXBT97/kzk5UOqSaD8VTQVSHfRPhdzg4x9/Yw0okTtMuBSE7tTolPylSGQyGkxTT0bqQRJ1zqTWyi9/OV4Nf160N0CPK03tEMbgsWgI6ohK5TjULGRsSeSgWHyjT12INlOfRCJ2SQ5szMWPm8j/O79LEkyAuKFufIZOaWwJNw==IDAQAB",
+      "verificationToken": "monogram-verification-a5f47b33",
+      "createdAt": "2026-08-26T21:48:16.253Z",
+      "lastCheckedAt": "2026-08-26T21:48:16.256Z"
+    },
+    {
+      "id": "dom_1787781232709_c760c5",
+      "organizationId": "org_1787781232456_8c136c",
+      "domainName": "nordic-design-mtamsbfy.com",
+      "status": "pending_dns",
+      "mxVerified": false,
+      "spfVerified": false,
+      "dkimVerified": false,
+      "dmarcVerified": false,
+      "dkimSelector": "monogram",
+      "dkimPublicKey": "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEARZlzok1V+E+8TQiJZ12j1pO9skPKMK2cV6GW2LHmdfJlSdeqbf3DGWzjW2hp4X9WYgGJnBLWazMLWQdr3UYT6paK1Cmao0XNVeum1y2iMJ876qfsdGYMaRqZuIqp+AE/HF3LYNKO4wD0lizpzUPhA434DvKw7jKvpP1cttUSChBvLz4yrWJLbZri/wj2GqScw7MUccOnNxPsTl2mmGkX0A==IDAQAB",
+      "verificationToken": "monogram-verification-42c14d80",
+      "createdAt": "2026-08-26T21:53:52.709Z",
+      "lastCheckedAt": "2026-08-26T21:53:52.709Z"
+    },
+    {
+      "id": "dom_1787781247123_4ce07c",
+      "organizationId": "org_1787781246857_987bfe",
+      "domainName": "nordic-design-mtamsmk2.com",
+      "status": "pending_dns",
+      "mxVerified": false,
+      "spfVerified": false,
+      "dkimVerified": false,
+      "dmarcVerified": false,
+      "dkimSelector": "monogram",
+      "dkimPublicKey": "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAcfv/QWMSLPGgMaMzqfHG6Byhzk5y8FZli/tua1od01IvsvUsjeGDU9Llkdz4k74r0iZ3mstXr+SrOMYeR4mcxWCIeQgtATib/F58vXKexulPThzW5sTP2d7XZ2iY/YxiJPvW7RHAyZc5xzoYLcfppaaKT6hqsdiqZa55wxjRk5fFeseWjt/ZbFsUN2sajg9ASBBKTKQ690UDtutatYTHxw==IDAQAB",
+      "verificationToken": "monogram-verification-9bc586ec",
+      "createdAt": "2026-08-26T21:54:07.124Z",
+      "lastCheckedAt": "2026-08-26T21:54:07.124Z"
+    },
+    {
+      "id": "dom_1787781260828_bf4f43",
+      "organizationId": "org_1787781260583_9422dd",
+      "domainName": "nordic-design-mtamsx52.com",
+      "status": "pending_dns",
+      "mxVerified": false,
+      "spfVerified": false,
+      "dkimVerified": false,
+      "dmarcVerified": false,
+      "dkimSelector": "monogram",
+      "dkimPublicKey": "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAixfRcg2eZtVUnzIdC0B0U10QpSqrW03inHOEXXeaajxIgbO6A4uSV0nTISVTUHtJIqjResgDK1mgYK/wa3ckelyOCc2oSpIKHoaY8lNpfpuuGpfzzt4yFGreNYr25FJe+vz8T3d/E64Ay3Ro6xYt5Aqyw64X9WPGFq+924b7QJM5w2VpPr+Z/ZzGAF/EHVaBweGClGgux2IJ3zO7FgsLvQ==IDAQAB",
+      "verificationToken": "monogram-verification-0826a4fd",
+      "createdAt": "2026-08-26T21:54:20.828Z",
+      "lastCheckedAt": "2026-08-26T21:54:20.828Z"
+    },
+    {
+      "id": "dom_1787781288414_ba5f38",
+      "organizationId": "org_1787781288167_fc4d68",
+      "domainName": "nordic-design-mtamtifq.com",
+      "status": "pending_dns",
+      "mxVerified": false,
+      "spfVerified": false,
+      "dkimVerified": false,
+      "dmarcVerified": false,
+      "dkimSelector": "monogram",
+      "dkimPublicKey": "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0wbhAxXrSWeIxaJ0nZngZTWHDCk2AwVuNRdd+Xfzpy2dnAtykDrYXd/25xhg6Fh72G7U24CIhekOv+8jwkmrPuEl/REZMCPPtU4g+pXk53Ji//wvg9wk69t7xlhNbygldDCVRF5IQP5m0DCb1pRE/vQX+gTAN6YtxOJzFr/AmflLjNH0bCWUamEp1+5LhaAthteVrYbdUCSWQyh46ftYKw==IDAQAB",
+      "verificationToken": "monogram-verification-bdce7a9d",
+      "createdAt": "2026-08-26T21:54:48.414Z",
+      "lastCheckedAt": "2026-08-26T21:54:48.414Z"
+    }
+  ],
+  "mailboxes": [
+    {
+      "id": "mbx_alex",
+      "organizationId": "org_atelier_nordic",
+      "domainId": "dom_atelier_nordic",
+      "domainName": "atelier-nordic.com",
+      "emailAddress": "alex@atelier-nordic.com",
+      "name": "Alex Vance (Personal)",
+      "type": "individual",
+      "quotaMb": 25000,
+      "usedMb": 2450,
+      "signature": "—\nAlex Vance\nLead Architect & Principal\nAtelier Nordic • Oslo / Copenhagen\nhttps://atelier-nordic.com",
+      "autoReplyEnabled": false,
+      "isCatchAll": true,
+      "createdAt": "2026-07-29T21:33:12.098Z"
+    },
+    {
+      "id": "mbx_concierge",
+      "organizationId": "org_atelier_nordic",
+      "domainId": "dom_atelier_nordic",
+      "domainName": "atelier-nordic.com",
+      "emailAddress": "concierge@atelier-nordic.com",
+      "name": "Client Concierge & Inquiries",
+      "type": "shared",
+      "quotaMb": 15000,
+      "usedMb": 970,
+      "signature": "—\nAtelier Nordic Concierge Team\nOslo Architecture Studio",
+      "autoReplyEnabled": true,
+      "autoReplySubject": "We have received your architectural inquiry",
+      "autoReplyBody": "Thank you for reaching out to Atelier Nordic. Our lead partners review every client proposal within 24 business hours.",
+      "isCatchAll": false,
+      "createdAt": "2026-08-06T21:33:12.098Z"
+    },
+    {
+      "id": "mbx_1787780815399_21edcb",
+      "organizationId": "org_1787780815354_1644ea",
+      "domainId": "dom_1787780815394_6eaf84",
+      "domainName": "klim-foundry.com",
+      "emailAddress": "freja@klim-foundry.com",
+      "name": "Freja Lindqvist",
+      "type": "individual",
+      "quotaMb": 25000,
+      "usedMb": 5,
+      "signature": "—\nFreja Lindqvist\nklim-foundry.com",
+      "autoReplyEnabled": false,
+      "isCatchAll": false,
+      "createdAt": "2026-08-26T21:46:55.399Z"
+    },
+    {
+      "id": "mbx_1787780864315_a96c97",
+      "organizationId": "org_1787780864258_46e595",
+      "domainId": "dom_1787780864310_83a9aa",
+      "domainName": "klim-foundry.com",
+      "emailAddress": "freja@klim-foundry.com",
+      "name": "Freja Lindqvist",
+      "type": "individual",
+      "quotaMb": 25000,
+      "usedMb": 5,
+      "signature": "—\nFreja Lindqvist\nklim-foundry.com",
+      "autoReplyEnabled": false,
+      "isCatchAll": false,
+      "createdAt": "2026-08-26T21:47:44.315Z"
+    },
+    {
+      "id": "mbx_1787780887238_c51338",
+      "organizationId": "org_1787780887180_02be78",
+      "domainId": "dom_1787780887232_b5830a",
+      "domainName": "klim-foundry.com",
+      "emailAddress": "freja@klim-foundry.com",
+      "name": "Freja Lindqvist",
+      "type": "individual",
+      "quotaMb": 25000,
+      "usedMb": 5,
+      "signature": "—\nFreja Lindqvist\nklim-foundry.com",
+      "autoReplyEnabled": false,
+      "isCatchAll": false,
+      "createdAt": "2026-08-26T21:48:07.238Z"
+    },
+    {
+      "id": "mbx_1787780896258_0508af",
+      "organizationId": "org_1787780896198_7a0244",
+      "domainId": "dom_1787780896253_e01213",
+      "domainName": "klim-foundry.com",
+      "emailAddress": "freja@klim-foundry.com",
+      "name": "Freja Lindqvist",
+      "type": "individual",
+      "quotaMb": 25000,
+      "usedMb": 5,
+      "signature": "—\nFreja Lindqvist\nklim-foundry.com",
+      "autoReplyEnabled": false,
+      "isCatchAll": false,
+      "createdAt": "2026-08-26T21:48:16.258Z"
+    },
+    {
+      "id": "mbx_1787781247130_63ad20",
+      "organizationId": "org_1787781246857_987bfe",
+      "domainId": "dom_1787781247123_4ce07c",
+      "domainName": "nordic-design-mtamsmk2.com",
+      "emailAddress": "astrid@nordic-design-mtamsmk2.com",
+      "name": "astrid",
+      "type": "individual",
+      "quotaMb": 10000,
+      "usedMb": 5,
+      "signature": "—\nastrid\nnordic-design-mtamsmk2.com",
+      "autoReplyEnabled": false,
+      "isCatchAll": false,
+      "createdAt": "2026-08-26T21:54:07.130Z"
+    },
+    {
+      "id": "mbx_1787781260835_08a09e",
+      "organizationId": "org_1787781260583_9422dd",
+      "domainId": "dom_1787781260828_bf4f43",
+      "domainName": "nordic-design-mtamsx52.com",
+      "emailAddress": "astrid@nordic-design-mtamsx52.com",
+      "name": "astrid",
+      "type": "individual",
+      "quotaMb": 10000,
+      "usedMb": 5,
+      "signature": "—\nastrid\nnordic-design-mtamsx52.com",
+      "autoReplyEnabled": false,
+      "isCatchAll": false,
+      "createdAt": "2026-08-26T21:54:20.835Z"
+    },
+    {
+      "id": "mbx_1787781288419_ed459a",
+      "organizationId": "org_1787781288167_fc4d68",
+      "domainId": "dom_1787781288414_ba5f38",
+      "domainName": "nordic-design-mtamtifq.com",
+      "emailAddress": "astrid@nordic-design-mtamtifq.com",
+      "name": "astrid",
+      "type": "individual",
+      "quotaMb": 10000,
+      "usedMb": 5,
+      "signature": "—\nastrid\nnordic-design-mtamtifq.com",
+      "autoReplyEnabled": false,
+      "isCatchAll": false,
+      "createdAt": "2026-08-26T21:54:48.419Z"
+    }
+  ],
+  "aliases": [
+    {
+      "id": "als_press",
+      "organizationId": "org_atelier_nordic",
+      "domainId": "dom_atelier_nordic",
+      "domainName": "atelier-nordic.com",
+      "aliasAddress": "press@atelier-nordic.com",
+      "targetMailboxId": "mbx_alex",
+      "targetEmail": "alex@atelier-nordic.com",
+      "description": "Editorial & Architectural Digest press inquiries",
+      "isEnabled": true,
+      "createdAt": "2026-08-11T21:33:12.098Z"
+    }
+  ],
+  "messages": [
+    {
+      "id": "msg_001_1",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "threadId": "th_001_nordic_monograph",
+      "mailboxEmail": "alex@atelier-nordic.com",
+      "from": {
+        "name": "Elena Rostova",
+        "address": "elena@archpress-munich.de"
+      },
+      "to": [
+        {
+          "name": "Alex Vance",
+          "address": "alex@atelier-nordic.com"
+        }
+      ],
+      "subject": "Architectural Monograph Vol. IV — Final Proofing & Material Selection",
+      "snippet": "The linen-bound foil stamp samples arrived from Munich...",
+      "bodyText": "Alex,\n\nThe linen-bound foil stamp samples arrived from Munich. The tactile weight at 340gsm feels exceptional, and the blind debossing on the spine captures the bespoke typographic monogram with striking clarity.\n\nCould you review the attached high-res proofs for Chapter 3 (The Fjord Pavilion) before we begin the main lithographic print run on Friday?\n\nWarm regards,\nElena Rostova\nSenior Editor, ArchPress Munich",
+      "bodyHtml": "<p>Alex,</p><p>The linen-bound foil stamp samples arrived from Munich. The tactile weight at 340gsm feels exceptional, and the blind debossing on the spine captures the bespoke typographic monogram with striking clarity.</p><p>Could you review the attached high-res proofs for <strong>Chapter 3 (The Fjord Pavilion)</strong> before we begin the main lithographic print run on Friday?</p><p>Warm regards,<br><strong>Elena Rostova</strong><br>Senior Editor, ArchPress Munich</p>",
+      "folder": "inbox",
+      "isRead": true,
+      "isStarred": true,
+      "isDraft": false,
+      "labels": [
+        "Projects",
+        "Priority"
+      ],
+      "attachments": [
+        {
+          "id": "att_001",
+          "filename": "Fjord_Pavilion_Chapter3_ColorProof_v4.pdf",
+          "contentType": "application/pdf",
+          "size": 14200000
+        },
+        {
+          "id": "att_002",
+          "filename": "Material_Swatch_340gsm_Linen.jpg",
+          "contentType": "image/jpeg",
+          "size": 3200000,
+          "dataUrl": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          "id": "att_002b",
+          "filename": "Nordic_Pavilion_Facade_Render_4K.jpg",
+          "contentType": "image/jpeg",
+          "size": 5800000,
+          "dataUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          "id": "att_002c",
+          "filename": "Atelier_Brand_Logomark_Vector.svg",
+          "contentType": "image/svg+xml",
+          "size": 420000,
+          "dataUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80"
+        }
+      ],
+      "headers": {
+        "messageId": "<20260824.981723@archpress-munich.de>",
+        "spfPass": true,
+        "dkimPass": true,
+        "dmarcPass": true,
+        "receivedFromIp": "194.109.12.84"
+      },
+      "createdAt": "2026-08-26T20:48:12.098Z"
+    },
+    {
+      "id": "msg_002_1",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "threadId": "th_002_dns_health",
+      "mailboxEmail": "alex@atelier-nordic.com",
+      "from": {
+        "name": "Monogram Security Bot",
+        "address": "security@monogram.email"
+      },
+      "to": [
+        {
+          "name": "Alex Vance",
+          "address": "alex@atelier-nordic.com"
+        }
+      ],
+      "subject": "Security & DNS Health Report: 100% Cryptographic Alignment Verified",
+      "snippet": "All outbound traffic from @atelier-nordic.com is strictly signed...",
+      "bodyText": "Hello Alex,\n\nYour domain atelier-nordic.com is operating in optimal security status on the Monogram Network.\n\n• MX Records: 10 mail.monogram.email (Active)\n• SPF Policy: v=spf1 include:_spf.monogram.email ~all (Verified PASS)\n• DKIM Key: 2048-bit RSA selector 'monogram' (Aligned)\n• DMARC Alignment: v=DMARC1; p=quarantine; rua=mailto:dmarc@monogram.email (Enforced)\n• Zero telemetry tracking, end-to-end TLS 1.3 encryption enabled.\n\nNo administrative action is required.",
+      "bodyHtml": "<h3>Domain Health: 100% Pass</h3><p>Your domain <strong>atelier-nordic.com</strong> is operating in optimal security status on the Monogram Network.</p><ul><li><strong>MX Records:</strong> <code>10 mail.monogram.email</code> (Active)</li><li><strong>SPF Policy:</strong> <code>v=spf1 include:_spf.monogram.email ~all</code> (Verified PASS)</li><li><strong>DKIM Key:</strong> 2048-bit RSA selector <code>monogram</code> (Aligned)</li><li><strong>DMARC Alignment:</strong> <code>v=DMARC1; p=quarantine</code> (Enforced)</li><li><strong>Security:</strong> Zero telemetry tracking, end-to-end TLS 1.3 encryption enabled.</li></ul><p style=\"color:#666;font-size:13px\">Generated automatically by Monogram Infrastructure.</p>",
+      "folder": "inbox",
+      "isRead": true,
+      "isStarred": false,
+      "isDraft": false,
+      "labels": [
+        "System",
+        "Security"
+      ],
+      "attachments": [],
+      "headers": {
+        "messageId": "<sec.report.9812@monogram.email>",
+        "spfPass": true,
+        "dkimPass": true,
+        "dmarcPass": true,
+        "receivedFromIp": "35.198.42.11"
+      },
+      "createdAt": "2026-08-26T18:33:12.098Z"
+    },
+    {
+      "id": "msg_003_1",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "threadId": "th_003_vance_residence",
+      "mailboxEmail": "alex@atelier-nordic.com",
+      "from": {
+        "name": "Kasper Lindqvist",
+        "address": "kasper@lindqvist-structural.no"
+      },
+      "to": [
+        {
+          "name": "Alex Vance",
+          "address": "alex@atelier-nordic.com"
+        }
+      ],
+      "subject": "Preliminary Site Evaluation & Cantilever Cantilevers — Holmenkollen Project",
+      "snippet": "I reviewed the geological survey for the Holmenkollen slope...",
+      "bodyText": "Alex,\n\nI reviewed the geological survey for the Holmenkollen slope. The granite bedrock depth allows us to anchor the 18-meter cantilever structure with post-tensioned steel tendons without requiring auxiliary retaining columns in the tree line.\n\nLet's schedule a 30-minute review call on Monday morning to finalize the CAD model.\n\nBest,\nKasper",
+      "bodyHtml": "<p>Alex,</p><p>I reviewed the geological survey for the Holmenkollen slope. The granite bedrock depth allows us to anchor the <strong>18-meter cantilever structure</strong> with post-tensioned steel tendons without requiring auxiliary retaining columns in the tree line.</p><p>Let's schedule a 30-minute review call on Monday morning to finalize the CAD model.</p><p>Best,<br><strong>Kasper Lindqvist</strong><br>Lindqvist Structural Engineering AS</p>",
+      "folder": "inbox",
+      "isRead": true,
+      "isStarred": false,
+      "isDraft": false,
+      "labels": [
+        "Projects"
+      ],
+      "attachments": [
+        {
+          "id": "att_003",
+          "filename": "Holmenkollen_RockAnchor_Analysis.dwg",
+          "contentType": "application/octet-stream",
+          "size": 8900000
+        }
+      ],
+      "headers": {
+        "messageId": "<str-9421.lindqvist.no@mail>",
+        "spfPass": true,
+        "dkimPass": true,
+        "dmarcPass": true,
+        "receivedFromIp": "81.167.33.109"
+      },
+      "createdAt": "2026-08-26T13:33:12.098Z",
+      "calendarInvite": {
+        "id": "cal_holmenkollen_review",
+        "title": "Holmenkollen Cantilever Structural & BIM Review",
+        "start": "2026-08-28T21:33:12.098Z",
+        "end": "2026-08-28T22:33:12.098Z",
+        "timezone": "Europe/Oslo (CET)",
+        "location": "Studio Boardroom 2 & Video: meet.monogram.email/atelier-nordic-review",
+        "conferenceUrl": "https://meet.monogram.email/atelier-nordic-review",
+        "organizer": {
+          "name": "Kasper Lindqvist",
+          "email": "kasper@lindqvist-structural.no"
+        },
+        "attendees": [
+          {
+            "name": "Alex Vance",
+            "email": "alex@atelier-nordic.com",
+            "status": "needs-action"
+          },
+          {
+            "name": "Elena Rostova",
+            "email": "elena@archpress-munich.de",
+            "status": "accepted"
+          },
+          {
+            "name": "Kasper Lindqvist",
+            "email": "kasper@lindqvist-structural.no",
+            "status": "accepted"
+          }
+        ],
+        "myStatus": "needs-action",
+        "description": "Joint engineering and architectural review of 18m cantilever rock anchors and CAD model."
+      }
+    },
+    {
+      "id": "msg_004_1",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "threadId": "th_004_monogram_welcome",
+      "mailboxEmail": "alex@atelier-nordic.com",
+      "from": {
+        "name": "Monogram Team",
+        "address": "concierge@monogram.email"
+      },
+      "to": [
+        {
+          "name": "Alex Vance",
+          "address": "alex@atelier-nordic.com"
+        }
+      ],
+      "subject": "Welcome to Monogram — Your Dedicated Custom Domain Suite is Active",
+      "snippet": "Welcome to Monogram. You now have full sovereign ownership...",
+      "bodyText": "Welcome to Monogram.\n\nWe engineered Monogram for creators, architects, studios, and businesses who refuse to compromise on privacy, typography, and uncompromised deliverability.\n\nKey features in your Pro tier:\n• Unlimited Aliases & Catch-All Routing\n• Zero Tracking Pixels & Strict Telemetry-Free Privacy\n• 2048-Bit RSA Automated DKIM & DMARC Enforcement\n• Instant IMAP/SMTP Gateway for Apple Mail, Thunderbird, and iOS\n\nIf you ever need assistance, simply reply directly to this email.",
+      "bodyHtml": "<p>Welcome to <strong>Monogram</strong>.</p><p>We engineered Monogram for creators, architects, studios, and businesses who refuse to compromise on privacy, typography, and uncompromised deliverability.</p><p><strong>Key features in your Pro tier:</strong></p><ul><li>Unlimited Aliases & Catch-All Routing</li><li>Zero Tracking Pixels & Strict Telemetry-Free Privacy</li><li>2048-Bit RSA Automated DKIM & DMARC Enforcement</li><li>Instant IMAP/SMTP Gateway for Apple Mail, Thunderbird, and iOS</li></ul><p>If you ever need assistance, simply reply directly to this email.</p>",
+      "folder": "archive",
+      "isRead": true,
+      "isStarred": false,
+      "isDraft": false,
+      "labels": [
+        "Monogram"
+      ],
+      "attachments": [],
+      "headers": {
+        "messageId": "<welcome.001@monogram.email>",
+        "spfPass": true,
+        "dkimPass": true,
+        "dmarcPass": true,
+        "receivedFromIp": "35.198.42.10"
+      },
+      "createdAt": "2026-07-29T21:33:12.098Z"
+    },
+    {
+      "id": "msg_draft_001",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "threadId": "th_draft_nordic_inv",
+      "mailboxEmail": "alex@atelier-nordic.com",
+      "from": {
+        "name": "Alex Vance",
+        "address": "alex@atelier-nordic.com"
+      },
+      "to": [
+        {
+          "name": "Henrik Vang",
+          "address": "henrik@nordiclighting.dk"
+        }
+      ],
+      "subject": "Proposal for Fjord Villa Pavilion Lighting Schema",
+      "snippet": "Here is the preliminary Lux distribution schedule...",
+      "bodyText": "Henrik,\n\nHere is the preliminary Lux distribution schedule prepared by our Nordic studio team for the fjord pavilion roof trusses. We are seeking a warm 2700K indirect perimeter glow with recessed brass trim.\n\nLet me know if your team can supply the custom linear LED extrusions by next month.",
+      "bodyHtml": "<p>Henrik,</p><p>Here is the preliminary Lux distribution schedule prepared by our Nordic studio team for the fjord pavilion roof trusses. We are seeking a warm 2700K indirect perimeter glow with recessed brass trim.</p><p>Let me know if your team can supply the custom linear LED extrusions by next month.</p>",
+      "folder": "drafts",
+      "isRead": true,
+      "isStarred": false,
+      "isDraft": true,
+      "labels": [
+        "Drafts"
+      ],
+      "attachments": [],
+      "headers": {
+        "messageId": "<draft.99120@atelier-nordic.com>",
+        "spfPass": true,
+        "dkimPass": true,
+        "dmarcPass": true
+      },
+      "createdAt": "2026-08-26T19:33:12.098Z"
+    },
+    {
+      "id": "msg_sent_001",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "threadId": "th_sent_001",
+      "mailboxEmail": "alex@atelier-nordic.com",
+      "from": {
+        "name": "Alex Vance",
+        "address": "alex@atelier-nordic.com"
+      },
+      "to": [
+        {
+          "name": "Elena Rostova",
+          "address": "elena@archpress-munich.de"
+        }
+      ],
+      "subject": "Re: Architectural Monograph Vol. IV — Chapter 3 Proof Approved",
+      "snippet": "Elena, I have thoroughly reviewed Chapter 3 proofs. The foil stamping specifications on page 42 look immaculate...",
+      "bodyText": "Elena,\n\nI have thoroughly reviewed Chapter 3 proofs. The foil stamping specifications on page 42 look immaculate, and the tonal fidelity across the fjord photography retains exceptional contrast.\n\nYou have our full studio sign-off to proceed with the main lithographic print run on Friday.\n\nWarm regards,\nAlex Vance\nLead Architect & Principal\nAtelier Nordic",
+      "bodyHtml": "<p>Elena,</p><p>I have thoroughly reviewed Chapter 3 proofs. The foil stamping specifications on page 42 look immaculate, and the tonal fidelity across the fjord photography retains exceptional contrast.</p><p>You have our full studio sign-off to proceed with the main lithographic print run on Friday.</p><p>Warm regards,<br/><strong>Alex Vance</strong><br/>Lead Architect & Principal<br/>Atelier Nordic</p><img src=\"/api/track/pixel/msg_sent_001.png\" width=\"1\" height=\"1\" alt=\"\" style=\"display:none;width:1px;height:1px;\" />",
+      "folder": "sent",
+      "isRead": true,
+      "isStarred": false,
+      "isDraft": false,
+      "labels": [
+        "Sent",
+        "Projects"
+      ],
+      "attachments": [],
+      "headers": {
+        "messageId": "<20260825.109283@atelier-nordic.com>",
+        "inReplyTo": "<20260824.981723@archpress-munich.de>",
+        "spfPass": true,
+        "dkimPass": true,
+        "dmarcPass": true,
+        "receivedFromIp": "84.212.19.42"
+      },
+      "readReceiptRequested": true,
+      "readReceiptStatus": "opened",
+      "readReceiptOpenedAt": "2026-08-26T21:55:41.320Z",
+      "readReceiptOpenCount": 8,
+      "readReceiptOpenedFromIp": "127.0.0.1",
+      "readReceiptUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36",
+      "createdAt": "2026-08-26T21:08:12.098Z"
+    },
+    {
+      "id": "msg_sent_002",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "threadId": "th_sent_002",
+      "mailboxEmail": "alex@atelier-nordic.com",
+      "from": {
+        "name": "Alex Vance",
+        "address": "alex@atelier-nordic.com"
+      },
+      "to": [
+        {
+          "name": "Henrik Mortensen",
+          "address": "henrik@nordic-ventures.co"
+        }
+      ],
+      "subject": "Retainer Terms & Milestone Schedule Q4 — Oslo Fjord Residence",
+      "snippet": "Henrik, please find our finalized retainer schedule for the Oslo Fjord residence project starting in October...",
+      "bodyText": "Henrik,\n\nPlease find our finalized retainer schedule for the Oslo Fjord residence project starting in October.\n\nLet me know if you would like to schedule a review call this Thursday.\n\nBest,\nAlex",
+      "bodyHtml": "<p>Henrik,</p><p>Please find our finalized retainer schedule for the Oslo Fjord residence project starting in October.</p><p>Let me know if you would like to schedule a review call this Thursday.</p><p>Best,<br/>Alex</p><img src=\"/api/track/pixel/msg_sent_002.png\" width=\"1\" height=\"1\" alt=\"\" style=\"display:none;width:1px;height:1px;\" />",
+      "folder": "sent",
+      "isRead": true,
+      "isStarred": true,
+      "isDraft": false,
+      "labels": [
+        "Sent",
+        "Contracts"
+      ],
+      "attachments": [],
+      "headers": {
+        "messageId": "<20260825.293841@atelier-nordic.com>",
+        "spfPass": true,
+        "dkimPass": true,
+        "dmarcPass": true,
+        "receivedFromIp": "84.212.19.42"
+      },
+      "readReceiptRequested": true,
+      "readReceiptStatus": "pending",
+      "readReceiptOpenCount": 0,
+      "createdAt": "2026-08-26T19:33:12.098Z"
+    },
+    {
+      "id": "msg_1787780864318_353601f4",
+      "organizationId": "org_1787780864258_46e595",
+      "mailboxId": "mbx_1787780864315_a96c97",
+      "mailboxEmail": "freja@klim-foundry.com",
+      "threadId": "th_1787780864318_123e1c91",
+      "from": {
+        "name": "Freja Lindqvist",
+        "address": "freja@klim-foundry.com"
+      },
+      "to": [
+        {
+          "address": "press@archdigest.com"
+        }
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "Klim Foundry 2026 Specimen Book Release",
+      "snippet": "We are thrilled to present our newest sans-serif typeface specimen.",
+      "bodyHtml": "<p>We are thrilled to present our newest sans-serif typeface specimen.</p>",
+      "bodyText": "We are thrilled to present our newest sans-serif typeface specimen.",
+      "folder": "sent",
+      "isRead": true,
+      "isStarred": false,
+      "isDraft": false,
+      "labels": [
+        "Sent"
+      ],
+      "attachments": [],
+      "headers": {
+        "messageId": "<1787780864318.7cdf0059d668@klim-foundry.com>",
+        "spfPass": true,
+        "dkimPass": true,
+        "dmarcPass": true,
+        "receivedFromIp": "127.0.0.1"
+      },
+      "readReceiptRequested": false,
+      "readReceiptOpenCount": 0,
+      "createdAt": "2026-08-26T21:47:44.318Z"
+    },
+    {
+      "id": "msg_1787780887240_8c514def",
+      "organizationId": "org_1787780887180_02be78",
+      "mailboxId": "mbx_1787780887238_c51338",
+      "mailboxEmail": "freja@klim-foundry.com",
+      "threadId": "th_1787780887240_7ca1fef9",
+      "from": {
+        "name": "Freja Lindqvist",
+        "address": "freja@klim-foundry.com"
+      },
+      "to": [
+        {
+          "address": "press@archdigest.com"
+        }
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "Klim Foundry 2026 Specimen Book Release",
+      "snippet": "We are thrilled to present our newest sans-serif typeface specimen.",
+      "bodyHtml": "<p>We are thrilled to present our newest sans-serif typeface specimen.</p>",
+      "bodyText": "We are thrilled to present our newest sans-serif typeface specimen.",
+      "folder": "sent",
+      "isRead": true,
+      "isStarred": false,
+      "isDraft": false,
+      "labels": [
+        "Sent"
+      ],
+      "attachments": [],
+      "headers": {
+        "messageId": "<1787780887240.c9c9d0a7f7ba@klim-foundry.com>",
+        "spfPass": true,
+        "dkimPass": true,
+        "dmarcPass": true,
+        "receivedFromIp": "127.0.0.1"
+      },
+      "readReceiptRequested": false,
+      "readReceiptOpenCount": 0,
+      "createdAt": "2026-08-26T21:48:07.240Z"
+    },
+    {
+      "id": "msg_in_1787780887243_7a2228af",
+      "organizationId": "org_1787780887180_02be78",
+      "mailboxId": "mbx_1787780887238_c51338",
+      "mailboxEmail": "freja@klim-foundry.com",
+      "threadId": "th_1787780887243_56c55da1",
+      "from": {
+        "name": "Monocle Editorial",
+        "address": "editor@monocle.com"
+      },
+      "to": [
+        {
+          "name": "Freja Lindqvist",
+          "address": "freja@klim-foundry.com"
+        }
+      ],
+      "subject": "Feature Article: Scandinavian Foundry Design Excellence",
+      "snippet": "Freja, we would love to feature Klim Foundry in our November design issue.",
+      "bodyHtml": "<p>Freja, we would love to feature Klim Foundry in our November design issue.</p>",
+      "bodyText": "Freja, we would love to feature Klim Foundry in our November design issue.",
+      "folder": "inbox",
+      "isRead": true,
+      "isStarred": false,
+      "isDraft": false,
+      "labels": [
+        "Inbound"
+      ],
+      "attachments": [],
+      "securityScore": {
+        "isPhishingSuspect": false,
+        "suspicionScore": 5,
+        "reasons": [
+          "DKIM & SPF aligned with authoritative sender domain"
+        ],
+        "linksFound": [],
+        "senderAuthentic": true
+      },
+      "headers": {
+        "messageId": "<1787780887243.0ba278dad1b8@monocle.com>",
+        "spfPass": true,
+        "dkimPass": true,
+        "dmarcPass": true,
+        "receivedFromIp": "198.51.100.44"
+      },
+      "createdAt": "2026-08-26T21:48:07.243Z"
+    },
+    {
+      "id": "msg_1787780887251_16248f61",
+      "organizationId": "org_1787780887180_02be78",
+      "mailboxId": "mbx_1787780887238_c51338",
+      "mailboxEmail": "freja@klim-foundry.com",
+      "threadId": "th_1787780887243_56c55da1",
+      "from": {
+        "name": "Freja Lindqvist",
+        "address": "freja@klim-foundry.com"
+      },
+      "to": [
+        {
+          "address": "editor@monocle.com"
+        }
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "Re: Message",
+      "snippet": "Thank you! We are delighted to collaborate on the November issue.",
+      "bodyHtml": "<p>Thank you! We are delighted to collaborate on the November issue.</p>",
+      "bodyText": "Thank you! We are delighted to collaborate on the November issue.",
+      "folder": "sent",
+      "isRead": true,
+      "isStarred": false,
+      "isDraft": false,
+      "labels": [
+        "Sent"
+      ],
+      "attachments": [],
+      "headers": {
+        "messageId": "<1787780887251.198fa9275e69@klim-foundry.com>",
+        "inReplyTo": "<th_1787780887243_56c55da1@klim-foundry.com>",
+        "spfPass": true,
+        "dkimPass": true,
+        "dmarcPass": true,
+        "receivedFromIp": "127.0.0.1"
+      },
+      "readReceiptRequested": false,
+      "readReceiptOpenCount": 0,
+      "createdAt": "2026-08-26T21:48:07.251Z"
+    },
+    {
+      "id": "msg_1787780896259_0f62f0a3",
+      "organizationId": "org_1787780896198_7a0244",
+      "mailboxId": "mbx_1787780896258_0508af",
+      "mailboxEmail": "freja@klim-foundry.com",
+      "threadId": "th_1787780896259_6852cfcc",
+      "from": {
+        "name": "Freja Lindqvist",
+        "address": "freja@klim-foundry.com"
+      },
+      "to": [
+        {
+          "address": "press@archdigest.com"
+        }
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "Klim Foundry 2026 Specimen Book Release",
+      "snippet": "We are thrilled to present our newest sans-serif typeface specimen.",
+      "bodyHtml": "<p>We are thrilled to present our newest sans-serif typeface specimen.</p>",
+      "bodyText": "We are thrilled to present our newest sans-serif typeface specimen.",
+      "folder": "sent",
+      "isRead": true,
+      "isStarred": false,
+      "isDraft": false,
+      "labels": [
+        "Sent"
+      ],
+      "attachments": [],
+      "headers": {
+        "messageId": "<1787780896259.f5f247916e35@klim-foundry.com>",
+        "spfPass": true,
+        "dkimPass": true,
+        "dmarcPass": true,
+        "receivedFromIp": "127.0.0.1"
+      },
+      "readReceiptRequested": false,
+      "readReceiptOpenCount": 0,
+      "createdAt": "2026-08-26T21:48:16.259Z"
+    },
+    {
+      "id": "msg_in_1787780896261_7f95cfa5",
+      "organizationId": "org_1787780896198_7a0244",
+      "mailboxId": "mbx_1787780896258_0508af",
+      "mailboxEmail": "freja@klim-foundry.com",
+      "threadId": "th_1787780896261_1fb55bf5",
+      "from": {
+        "name": "Monocle Editorial",
+        "address": "editor@monocle.com"
+      },
+      "to": [
+        {
+          "name": "Freja Lindqvist",
+          "address": "freja@klim-foundry.com"
+        }
+      ],
+      "subject": "Feature Article: Scandinavian Foundry Design Excellence",
+      "snippet": "Freja, we would love to feature Klim Foundry in our November design issue.",
+      "bodyHtml": "<p>Freja, we would love to feature Klim Foundry in our November design issue.</p>",
+      "bodyText": "Freja, we would love to feature Klim Foundry in our November design issue.",
+      "folder": "inbox",
+      "isRead": true,
+      "isStarred": false,
+      "isDraft": false,
+      "labels": [
+        "Inbound"
+      ],
+      "attachments": [],
+      "securityScore": {
+        "isPhishingSuspect": false,
+        "suspicionScore": 5,
+        "reasons": [
+          "DKIM & SPF aligned with authoritative sender domain"
+        ],
+        "linksFound": [],
+        "senderAuthentic": true
+      },
+      "headers": {
+        "messageId": "<1787780896261.f1453411d426@monocle.com>",
+        "spfPass": true,
+        "dkimPass": true,
+        "dmarcPass": true,
+        "receivedFromIp": "198.51.100.44"
+      },
+      "createdAt": "2026-08-26T21:48:16.261Z"
+    },
+    {
+      "id": "msg_1787780896266_ba42ca6d",
+      "organizationId": "org_1787780896198_7a0244",
+      "mailboxId": "mbx_1787780896258_0508af",
+      "mailboxEmail": "freja@klim-foundry.com",
+      "threadId": "th_1787780896261_1fb55bf5",
+      "from": {
+        "name": "Freja Lindqvist",
+        "address": "freja@klim-foundry.com"
+      },
+      "to": [
+        {
+          "address": "editor@monocle.com"
+        }
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "Re: Message",
+      "snippet": "Thank you! We are delighted to collaborate on the November issue.",
+      "bodyHtml": "<p>Thank you! We are delighted to collaborate on the November issue.</p>",
+      "bodyText": "Thank you! We are delighted to collaborate on the November issue.",
+      "folder": "sent",
+      "isRead": true,
+      "isStarred": false,
+      "isDraft": false,
+      "labels": [
+        "Sent"
+      ],
+      "attachments": [],
+      "headers": {
+        "messageId": "<1787780896266.45bada91c7b5@klim-foundry.com>",
+        "inReplyTo": "<th_1787780896261_1fb55bf5@klim-foundry.com>",
+        "spfPass": true,
+        "dkimPass": true,
+        "dmarcPass": true,
+        "receivedFromIp": "127.0.0.1"
+      },
+      "readReceiptRequested": false,
+      "readReceiptOpenCount": 0,
+      "createdAt": "2026-08-26T21:48:16.266Z"
+    },
+    {
+      "id": "msg_1787781260841_610b5b31",
+      "organizationId": "org_1787781260583_9422dd",
+      "mailboxId": "mbx_1787781260835_08a09e",
+      "mailboxEmail": "astrid@nordic-design-mtamsx52.com",
+      "threadId": "th_1787781260841_036355bb",
+      "from": {
+        "name": "astrid",
+        "address": "astrid@nordic-design-mtamsx52.com"
+      },
+      "to": [
+        {
+          "address": "client@external.org"
+        }
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "Confidential Tenant A Contract",
+      "snippet": "This is private to Tenant A.",
+      "bodyHtml": "<p>This is private to Tenant A.</p>",
+      "bodyText": "This is private to Tenant A.",
+      "folder": "sent",
+      "isRead": true,
+      "isStarred": false,
+      "isDraft": false,
+      "labels": [
+        "Sent"
+      ],
+      "attachments": [],
+      "headers": {
+        "messageId": "<1787781260841.1dc8bbd0d6bb@nordic-design-mtamsx52.com>",
+        "spfPass": true,
+        "dkimPass": true,
+        "dmarcPass": true,
+        "receivedFromIp": "127.0.0.1"
+      },
+      "readReceiptRequested": false,
+      "readReceiptOpenCount": 0,
+      "createdAt": "2026-08-26T21:54:20.841Z"
+    },
+    {
+      "id": "msg_1787781288425_8252f788",
+      "organizationId": "org_1787781288167_fc4d68",
+      "mailboxId": "mbx_1787781288419_ed459a",
+      "mailboxEmail": "astrid@nordic-design-mtamtifq.com",
+      "threadId": "th_1787781288425_df92b642",
+      "from": {
+        "name": "astrid",
+        "address": "astrid@nordic-design-mtamtifq.com"
+      },
+      "to": [
+        {
+          "address": "client@external.org"
+        }
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "Confidential Tenant A Contract",
+      "snippet": "This is private to Tenant A.",
+      "bodyHtml": "<p>This is private to Tenant A.</p>",
+      "bodyText": "This is private to Tenant A.",
+      "folder": "sent",
+      "isRead": true,
+      "isStarred": false,
+      "isDraft": false,
+      "labels": [
+        "Sent"
+      ],
+      "attachments": [],
+      "headers": {
+        "messageId": "<1787781288425.dd6171224f1e@nordic-design-mtamtifq.com>",
+        "spfPass": true,
+        "dkimPass": true,
+        "dmarcPass": true,
+        "receivedFromIp": "127.0.0.1"
+      },
+      "readReceiptRequested": false,
+      "readReceiptOpenCount": 0,
+      "createdAt": "2026-08-26T21:54:48.425Z"
+    }
+  ],
+  "threads": [
+    {
+      "id": "th_001_nordic_monograph",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "subject": "Architectural Monograph Vol. IV — Final Proofing & Material Selection",
+      "snippet": "The linen-bound foil stamp samples arrived from Munich. The tactile weight at 340gsm feels exceptional...",
+      "lastMessageAt": "2026-08-26T20:48:12.098Z",
+      "unreadCount": 0,
+      "messageCount": 2,
+      "isStarred": true,
+      "isArchived": false,
+      "isSpam": false,
+      "isTrash": false,
+      "labels": [
+        "Projects",
+        "Priority"
+      ],
+      "participants": [
+        {
+          "name": "Elena Rostova",
+          "address": "elena@archpress-munich.de"
+        },
+        {
+          "name": "Alex Vance",
+          "address": "alex@atelier-nordic.com"
+        }
+      ],
+      "aiIntelligence": {
+        "urgency": "High",
+        "sentiment": "Positive",
+        "summary": "Elena provided the revised Fjord Waterfront structural calculations and requesting review of Section 4.",
+        "actionItems": [
+          "Review revised timber beam sizing in Appendix B",
+          "Confirm Thursday 14:00 CET workshop attendance"
+        ],
+        "suggestedQuickReplies": [
+          "Reviewed and confirmed for Thursday at 14:00 CET.",
+          "Thank you Elena, reviewing Appendix B now."
+        ]
+      },
+      "isVip": true
+    },
+    {
+      "id": "th_002_dns_health",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "subject": "Security & DNS Health Report: 100% Cryptographic Alignment Verified",
+      "snippet": "All outbound traffic from @atelier-nordic.com is strictly signed with 2048-bit RSA DKIM and enforced via strict DMARC quarantine...",
+      "lastMessageAt": "2026-08-26T18:33:12.098Z",
+      "unreadCount": 0,
+      "messageCount": 1,
+      "isStarred": false,
+      "isArchived": false,
+      "isSpam": false,
+      "isTrash": false,
+      "labels": [
+        "System",
+        "Security"
+      ],
+      "participants": [
+        {
+          "name": "Monogram Security Bot",
+          "address": "security@monogram.email"
+        }
+      ]
+    },
+    {
+      "id": "th_003_vance_residence",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "subject": "Preliminary Site Evaluation & Cantilever Cantilevers — Holmenkollen Project",
+      "snippet": "I reviewed the geological survey for the Holmenkollen slope. The granite bedrock depth allows us to anchor the cantilever structure...",
+      "lastMessageAt": "2026-08-26T13:33:12.098Z",
+      "unreadCount": 0,
+      "messageCount": 1,
+      "isStarred": false,
+      "isArchived": false,
+      "isSpam": false,
+      "isTrash": false,
+      "labels": [
+        "Projects"
+      ],
+      "participants": [
+        {
+          "name": "Kasper Lindqvist",
+          "address": "kasper@lindqvist-structural.no"
+        },
+        {
+          "name": "Alex Vance",
+          "address": "alex@atelier-nordic.com"
+        }
+      ]
+    },
+    {
+      "id": "th_004_monogram_welcome",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "subject": "Welcome to Monogram — Your Dedicated Custom Domain Suite is Active",
+      "snippet": "Welcome to Monogram. You now have full sovereign ownership over your domain email infrastructure...",
+      "lastMessageAt": "2026-07-29T21:33:12.098Z",
+      "unreadCount": 0,
+      "messageCount": 1,
+      "isStarred": false,
+      "isArchived": true,
+      "isSpam": false,
+      "isTrash": false,
+      "labels": [
+        "Monogram"
+      ],
+      "participants": [
+        {
+          "name": "Monogram Team",
+          "address": "concierge@monogram.email"
+        }
+      ]
+    },
+    {
+      "id": "th_draft_nordic_inv",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "subject": "Draft: Proposal for Fjord Villa Pavilion Lighting Schema",
+      "snippet": "Here is the preliminary Lux distribution schedule prepared by our Nordic studio team...",
+      "lastMessageAt": "2026-08-26T19:33:12.098Z",
+      "unreadCount": 0,
+      "messageCount": 1,
+      "isStarred": false,
+      "isArchived": false,
+      "isSpam": false,
+      "isTrash": false,
+      "labels": [
+        "Drafts"
+      ],
+      "participants": [
+        {
+          "name": "Henrik Vang",
+          "address": "henrik@nordiclighting.dk"
+        }
+      ]
+    },
+    {
+      "id": "th_sent_001",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "subject": "Re: Architectural Monograph Vol. IV — Chapter 3 Proof Approved",
+      "snippet": "Elena, I have thoroughly reviewed Chapter 3 proofs. The foil stamping specifications on page 42 look immaculate...",
+      "lastMessageAt": "2026-08-26T21:08:12.098Z",
+      "unreadCount": 0,
+      "messageCount": 1,
+      "isStarred": false,
+      "isArchived": false,
+      "isSpam": false,
+      "isTrash": false,
+      "labels": [
+        "Sent",
+        "Projects"
+      ],
+      "participants": [
+        {
+          "name": "Alex Vance",
+          "address": "alex@atelier-nordic.com"
+        },
+        {
+          "name": "Elena Rostova",
+          "address": "elena@archpress-munich.de"
+        }
+      ]
+    },
+    {
+      "id": "th_sent_002",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "subject": "Retainer Terms & Milestone Schedule Q4 — Oslo Fjord Residence",
+      "snippet": "Henrik, please find our finalized retainer schedule for the Oslo Fjord residence project starting in October...",
+      "lastMessageAt": "2026-08-26T19:33:12.098Z",
+      "unreadCount": 0,
+      "messageCount": 1,
+      "isStarred": true,
+      "isArchived": false,
+      "isSpam": false,
+      "isTrash": false,
+      "labels": [
+        "Sent",
+        "Contracts"
+      ],
+      "participants": [
+        {
+          "name": "Alex Vance",
+          "address": "alex@atelier-nordic.com"
+        },
+        {
+          "name": "Henrik Mortensen",
+          "address": "henrik@nordic-ventures.co"
+        }
+      ]
+    },
+    {
+      "id": "th_1787780864318_123e1c91",
+      "organizationId": "org_1787780864258_46e595",
+      "mailboxId": "mbx_1787780864315_a96c97",
+      "subject": "Klim Foundry 2026 Specimen Book Release",
+      "snippet": "We are thrilled to present our newest sans-serif typeface specimen.",
+      "lastMessageAt": "2026-08-26T21:47:44.318Z",
+      "unreadCount": 0,
+      "messageCount": 1,
+      "isStarred": false,
+      "isArchived": false,
+      "isSpam": false,
+      "isTrash": false,
+      "labels": [
+        "Sent"
+      ],
+      "participants": [
+        {
+          "name": "Freja Lindqvist",
+          "address": "freja@klim-foundry.com"
+        },
+        {
+          "address": "press@archdigest.com"
+        }
+      ]
+    },
+    {
+      "id": "th_1787780887240_7ca1fef9",
+      "organizationId": "org_1787780887180_02be78",
+      "mailboxId": "mbx_1787780887238_c51338",
+      "subject": "Klim Foundry 2026 Specimen Book Release",
+      "snippet": "We are thrilled to present our newest sans-serif typeface specimen.",
+      "lastMessageAt": "2026-08-26T21:48:07.240Z",
+      "unreadCount": 0,
+      "messageCount": 1,
+      "isStarred": false,
+      "isArchived": false,
+      "isSpam": false,
+      "isTrash": false,
+      "labels": [
+        "Sent"
+      ],
+      "participants": [
+        {
+          "name": "Freja Lindqvist",
+          "address": "freja@klim-foundry.com"
+        },
+        {
+          "address": "press@archdigest.com"
+        }
+      ]
+    },
+    {
+      "id": "th_1787780887243_56c55da1",
+      "organizationId": "org_1787780887180_02be78",
+      "mailboxId": "mbx_1787780887238_c51338",
+      "subject": "Feature Article: Scandinavian Foundry Design Excellence",
+      "snippet": "Thank you! We are delighted to collaborate on the November issue.",
+      "lastMessageAt": "2026-08-26T21:48:07.251Z",
+      "unreadCount": 0,
+      "messageCount": 2,
+      "isStarred": false,
+      "isArchived": false,
+      "isSpam": false,
+      "isTrash": false,
+      "labels": [
+        "Inbound"
+      ],
+      "participants": [
+        {
+          "name": "Monocle Editorial",
+          "address": "editor@monocle.com"
+        },
+        {
+          "name": "Freja Lindqvist",
+          "address": "freja@klim-foundry.com"
+        }
+      ],
+      "isSnoozed": true,
+      "snoozedUntil": "2026-08-27T21:48:07.252Z",
+      "folder": "snoozed"
+    },
+    {
+      "id": "th_1787780896259_6852cfcc",
+      "organizationId": "org_1787780896198_7a0244",
+      "mailboxId": "mbx_1787780896258_0508af",
+      "subject": "Klim Foundry 2026 Specimen Book Release",
+      "snippet": "We are thrilled to present our newest sans-serif typeface specimen.",
+      "lastMessageAt": "2026-08-26T21:48:16.259Z",
+      "unreadCount": 0,
+      "messageCount": 1,
+      "isStarred": false,
+      "isArchived": false,
+      "isSpam": false,
+      "isTrash": false,
+      "labels": [
+        "Sent"
+      ],
+      "participants": [
+        {
+          "name": "Freja Lindqvist",
+          "address": "freja@klim-foundry.com"
+        },
+        {
+          "address": "press@archdigest.com"
+        }
+      ]
+    },
+    {
+      "id": "th_1787780896261_1fb55bf5",
+      "organizationId": "org_1787780896198_7a0244",
+      "mailboxId": "mbx_1787780896258_0508af",
+      "subject": "Feature Article: Scandinavian Foundry Design Excellence",
+      "snippet": "Thank you! We are delighted to collaborate on the November issue.",
+      "lastMessageAt": "2026-08-26T21:48:16.266Z",
+      "unreadCount": 0,
+      "messageCount": 2,
+      "isStarred": false,
+      "isArchived": false,
+      "isSpam": false,
+      "isTrash": false,
+      "labels": [
+        "Inbound"
+      ],
+      "participants": [
+        {
+          "name": "Monocle Editorial",
+          "address": "editor@monocle.com"
+        },
+        {
+          "name": "Freja Lindqvist",
+          "address": "freja@klim-foundry.com"
+        }
+      ],
+      "isSnoozed": true,
+      "snoozedUntil": "2026-08-27T21:48:16.267Z",
+      "folder": "snoozed"
+    },
+    {
+      "id": "th_1787781260841_036355bb",
+      "organizationId": "org_1787781260583_9422dd",
+      "mailboxId": "mbx_1787781260835_08a09e",
+      "subject": "Confidential Tenant A Contract",
+      "snippet": "This is private to Tenant A.",
+      "lastMessageAt": "2026-08-26T21:54:20.841Z",
+      "unreadCount": 0,
+      "messageCount": 1,
+      "isStarred": false,
+      "isArchived": false,
+      "isSpam": false,
+      "isTrash": false,
+      "labels": [
+        "Sent"
+      ],
+      "participants": [
+        {
+          "name": "astrid",
+          "address": "astrid@nordic-design-mtamsx52.com"
+        },
+        {
+          "address": "client@external.org"
+        }
+      ]
+    },
+    {
+      "id": "th_1787781288425_df92b642",
+      "organizationId": "org_1787781288167_fc4d68",
+      "mailboxId": "mbx_1787781288419_ed459a",
+      "subject": "Confidential Tenant A Contract",
+      "snippet": "This is private to Tenant A.",
+      "lastMessageAt": "2026-08-26T21:54:48.425Z",
+      "unreadCount": 0,
+      "messageCount": 1,
+      "isStarred": false,
+      "isArchived": false,
+      "isSpam": false,
+      "isTrash": false,
+      "labels": [
+        "Sent"
+      ],
+      "participants": [
+        {
+          "name": "astrid",
+          "address": "astrid@nordic-design-mtamtifq.com"
+        },
+        {
+          "address": "client@external.org"
+        }
+      ]
+    }
+  ],
+  "customFolders": [
+    {
+      "id": "cf_client_projects",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Client Projects",
+      "color": "#3b82f6",
+      "icon": "folder",
+      "createdAt": "2026-08-01T21:33:12.098Z"
+    },
+    {
+      "id": "cf_press_media",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Press & Media",
+      "color": "#a855f7",
+      "icon": "folder",
+      "createdAt": "2026-08-06T21:33:12.098Z"
+    },
+    {
+      "id": "cf_contracts",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Contracts & Retainers",
+      "color": "#10b981",
+      "icon": "folder",
+      "createdAt": "2026-08-11T21:33:12.098Z"
+    }
+  ],
+  "signatures": [
+    {
+      "id": "sig_default_exec",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Executive Studio (Default)",
+      "content": "—\nAlex Vance | Principal Architect\nAtelier Nordic Architecture & Design AS\nOslo • Copenhagen • Stockholm\nhttps://atelier-nordic.com",
+      "isDefault": true,
+      "createdAt": "2026-07-27T21:33:12.098Z"
+    },
+    {
+      "id": "sig_minimal",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Minimal / Mobile",
+      "content": "Sent from Monogram Sovereign Mailbox\nAlex Vance — atelier-nordic.com",
+      "isDefault": false,
+      "createdAt": "2026-08-06T21:33:12.098Z"
+    },
+    {
+      "id": "sig_confidential",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Confidentiality & Legal Notice",
+      "content": "—\nAlex Vance | Atelier Nordic\nCONFIDENTIALITY NOTICE: This transmission is intended solely for the designated recipient. It contains proprietary architectural specifications and privileged data. Any unauthorized dissemination or reproduction is strictly prohibited.",
+      "isDefault": false,
+      "createdAt": "2026-08-11T21:33:12.098Z"
+    }
+  ],
+  "spamRules": [
+    {
+      "id": "sr_seed_01",
+      "organizationId": "org_atelier_nordic",
+      "senderPattern": "promotions@bulk-lead-generation.xyz",
+      "reason": "Unsolicited cold marketing spam list",
+      "createdAt": "2026-08-14T21:33:12.098Z"
+    }
+  ],
+  "templates": [
+    {
+      "id": "tmpl_project_proposal",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Architectural Retainer Proposal",
+      "category": "Sales",
+      "subject": "Architecture Retainer & Scope of Work — {{project_name}}",
+      "bodyText": "Dear {{recipient_name}},\n\nThank you for considering Atelier Nordic for the {{project_name}} project. Attached is our comprehensive studio brief detailing the preliminary schematic timelines, zoning compliance documentation, and fee structure.\n\nPlease let us know if you would like to arrange an exploratory design workshop next week.\n\nWarm regards,\nAlex Vance\nPrincipal Architect, Atelier Nordic",
+      "variables": [
+        "recipient_name",
+        "project_name"
+      ],
+      "createdAt": "2026-08-06T21:33:12.098Z"
+    },
+    {
+      "id": "tmpl_nda_legal",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Confidential Mutual NDA",
+      "category": "Legal",
+      "subject": "Mutual Non-Disclosure Agreement — {{company_name}} & Atelier Nordic",
+      "bodyText": "Hi {{recipient_name}},\n\nBefore we share our CAD schematics and high-resolution BIM models, please review and execute the attached mutual non-disclosure agreement.\n\nOnce signed, our client repository access keys will be transmitted via encrypted channel.\n\nBest,\nAlex Vance",
+      "variables": [
+        "recipient_name",
+        "company_name"
+      ],
+      "createdAt": "2026-08-08T21:33:12.098Z"
+    },
+    {
+      "id": "tmpl_meeting_recap",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Executive Design Review Recap",
+      "category": "Meeting",
+      "subject": "Recap: Design Review & Action Items ({{meeting_date}})",
+      "bodyText": "Team,\n\nHere is a quick summary of our design alignment session today:\n- Key Decision: Approved timber-concrete composite framing.\n- Next Milestone: Structural engineering calculation sign-off by {{milestone_date}}.\n\nAction items are attached.\n\nThanks,\nAlex",
+      "variables": [
+        "meeting_date",
+        "milestone_date"
+      ],
+      "createdAt": "2026-08-16T21:33:12.098Z"
+    }
+  ],
+  "filterRules": [
+    {
+      "id": "fr_auto_invoices",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Auto-label Invoices & Receipts",
+      "conditionField": "subject",
+      "matchType": "contains",
+      "matchValue": "Invoice",
+      "actions": {
+        "applyLabel": "Finance",
+        "markStar": true
+      },
+      "isEnabled": true,
+      "createdAt": "2026-08-01T21:33:12.098Z"
+    },
+    {
+      "id": "fr_contracts_folder",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Route Retainer Agreements to Contracts Folder",
+      "conditionField": "subject",
+      "matchType": "contains",
+      "matchValue": "Contract",
+      "actions": {
+        "moveToFolder": "cf_contracts",
+        "applyLabel": "Contracts"
+      },
+      "isEnabled": true,
+      "createdAt": "2026-08-11T21:33:12.098Z"
+    }
+  ],
+  "contacts": [
+    {
+      "id": "ct_elena_rostova",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Elena Rostova",
+      "email": "elena.rostova@arkitektur-oslo.no",
+      "company": "Arkitektur Oslo AS",
+      "role": "Senior Project Director",
+      "phone": "+47 22 83 91 00",
+      "notes": "Lead collaborator on the Fjord Waterfront Masterplan",
+      "isVip": true,
+      "avatarColor": "#3b82f6",
+      "lastContactedAt": "2026-08-26T17:33:12.098Z",
+      "createdAt": "2026-07-27T21:33:12.098Z"
+    },
+    {
+      "id": "ct_marcus_vance",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Marcus Vance",
+      "email": "marcus.vance@nordic-timber.se",
+      "company": "Nordic Timber Technologies",
+      "role": "VP Materials Engineering",
+      "phone": "+46 8 555 123 45",
+      "notes": "Key supplier for sustainable glulam and CLT structural beams",
+      "isVip": true,
+      "avatarColor": "#10b981",
+      "lastContactedAt": "2026-08-26T07:33:12.098Z",
+      "createdAt": "2026-07-29T21:33:12.098Z"
+    },
+    {
+      "id": "ct_henrik_mortensen",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Henrik Mortensen",
+      "email": "henrik@nordic-ventures.co",
+      "company": "Nordic Ventures Capital",
+      "role": "Managing Partner",
+      "phone": "+45 33 12 88 90",
+      "notes": "Client principal for luxury residential developments",
+      "isVip": false,
+      "avatarColor": "#a855f7",
+      "lastContactedAt": "2026-08-26T19:33:12.098Z",
+      "createdAt": "2026-08-01T21:33:12.098Z"
+    },
+    {
+      "id": "ct_sarah_lindqvist",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Sarah Lindqvist",
+      "email": "sarah.lindqvist@cph-design.dk",
+      "company": "CPH Design Quarterly",
+      "role": "Chief Editor",
+      "phone": "+45 40 19 28 37",
+      "notes": "Press contact covering sustainable Nordic architecture",
+      "isVip": false,
+      "avatarColor": "#f59e0b",
+      "lastContactedAt": "2026-08-25T19:33:12.098Z",
+      "createdAt": "2026-08-06T21:33:12.098Z"
+    }
+  ],
+  "internalNotes": [
+    {
+      "id": "in_note_01",
+      "organizationId": "org_atelier_nordic",
+      "threadId": "th_001_nordic_monograph",
+      "userId": "usr_alex_vance",
+      "userName": "Alex Vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "content": "Verified the load calculations with the structural team. We are clear to proceed with timber beam approvals.",
+      "createdAt": "2026-08-26T19:33:12.098Z"
+    }
+  ],
+  "pgpKeys": [
+    {
+      "id": "pgp_key_01",
+      "organizationId": "org_atelier_nordic",
+      "mailboxId": "mbx_alex",
+      "name": "Alex Vance (Master Signing Key)",
+      "email": "alex@atelier-nordic.com",
+      "fingerprint": "94A2 881B 4C09 F17E D412 8301 556B 99A2 CC14 380F",
+      "publicKey": "-----BEGIN PGP PUBLIC KEY BLOCK-----\nVersion: Monogram Sovereign PGP v2.4\n\nmQGNBF8z+...[2048-bit RSA Public Key for alex@atelier-nordic.com]...\n-----END PGP PUBLIC KEY BLOCK-----",
+      "isDefault": true,
+      "algorithm": "RSA 4096-bit",
+      "createdAt": "2026-07-29T21:33:12.098Z"
+    }
+  ],
+  "retentionPolicies": [
+    {
+      "organizationId": "org_atelier_nordic",
+      "autoPurgeTrashDays": 30,
+      "autoPurgeSpamDays": 14,
+      "autoArchiveDays": 180,
+      "isEnabled": true,
+      "lastPurgedAt": "2026-08-24T21:33:12.098Z",
+      "lastPurgedCount": 14
+    }
+  ],
+  "blockedSenders": [
+    {
+      "id": "bs_01",
+      "organizationId": "org_atelier_nordic",
+      "pattern": "promotions@bulk-lead-generation.xyz",
+      "type": "block",
+      "reason": "Aggressive marketing cold scraper bot",
+      "createdAt": "2026-08-16T21:33:12.098Z"
+    },
+    {
+      "id": "bs_02",
+      "organizationId": "org_atelier_nordic",
+      "pattern": "@arkitektur-oslo.no",
+      "type": "allow",
+      "reason": "Trusted municipal architectural partner domain",
+      "createdAt": "2026-08-01T21:33:12.098Z"
+    }
+  ],
+  "bimiConfigs": [
+    {
+      "id": "bimi_01",
+      "organizationId": "org_atelier_nordic",
+      "domainId": "dom_atelier_nordic",
+      "domainName": "atelier-nordic.com",
+      "svgLogoUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=120&auto=format&fit=crop&q=80",
+      "vmcCertUrl": "https://pki.entrust.com/bimi/certificates/atelier-nordic.pem",
+      "selector": "default",
+      "isConfigured": true,
+      "verifiedMarkStatus": "verified",
+      "dnsRecordValue": "v=BIMI1; l=https://atelier-nordic.com/bimi-logo.svg; a=https://atelier-nordic.com/bimi-vmc.pem",
+      "updatedAt": "2026-08-21T21:33:12.098Z"
+    }
+  ],
+  "appPasswords": [
+    {
+      "id": "app_pwd_01",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "mailboxId": "mbx_alex",
+      "mailboxEmail": "alex@atelier-nordic.com",
+      "name": "Apple Mail (MacBook Pro 16\")",
+      "passwordPrefix": "mn_app_9a4f...",
+      "scopes": [
+        "imap",
+        "smtp"
+      ],
+      "createdAt": "2026-08-12T21:33:12.098Z",
+      "lastUsedAt": "2026-08-26T21:13:12.098Z"
+    },
+    {
+      "id": "app_pwd_02",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "mailboxId": "mbx_alex",
+      "mailboxEmail": "alex@atelier-nordic.com",
+      "name": "Thunderbird Studio Workstation",
+      "passwordPrefix": "mn_app_2c8b...",
+      "scopes": [
+        "imap",
+        "smtp",
+        "caldav",
+        "carddav"
+      ],
+      "createdAt": "2026-08-18T21:33:12.098Z",
+      "lastUsedAt": "2026-08-26T19:33:12.098Z"
+    }
+  ],
+  "loginAttempts": [
+    {
+      "organizationId": "org_1787781288167_fc4d68",
+      "userId": "usr_1787781288167_e00403",
+      "userEmail": "founder_mtamtifq@nordic-design.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node",
+      "device": "MacBook Pro (Webmail Client)",
+      "browser": "Chrome 129.0",
+      "os": "macOS Sequoia",
+      "location": "Oslo, Norway",
+      "status": "success",
+      "authMethod": "password_mfa",
+      "details": "User signed in with session token. TLS 1.3 encrypted.",
+      "id": "la_1787781288592_738543",
+      "timestamp": "2026-08-26T21:54:48.592Z"
+    },
+    {
+      "organizationId": "org_1787781288167_fc4d68",
+      "userId": "usr_1787781288167_e00403",
+      "userEmail": "founder_mtamtifq@nordic-design.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node",
+      "device": "Desktop",
+      "browser": "Webmail Client",
+      "os": "Modern OS",
+      "location": "Stockholm, Sweden",
+      "status": "blocked",
+      "authMethod": "password_mfa",
+      "details": "Failed password verification attempt",
+      "id": "la_1787781288548_9a6a45",
+      "timestamp": "2026-08-26T21:54:48.548Z"
+    },
+    {
+      "organizationId": "org_1787781288284_f893ba",
+      "userId": "usr_1787781288284_f2d19b",
+      "userEmail": "director_mtamtifq@helsinki-crafts.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node",
+      "device": "MacBook Pro (Webmail Client)",
+      "browser": "Chrome 129.0",
+      "os": "macOS Sequoia",
+      "location": "Oslo, Norway",
+      "status": "success",
+      "authMethod": "password_mfa",
+      "details": "User signed in with session token. TLS 1.3 encrypted.",
+      "id": "la_1787781288408_575474",
+      "timestamp": "2026-08-26T21:54:48.408Z"
+    },
+    {
+      "organizationId": "org_1787781288167_fc4d68",
+      "userId": "usr_1787781288167_e00403",
+      "userEmail": "founder_mtamtifq@nordic-design.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node",
+      "device": "MacBook Pro (Webmail Client)",
+      "browser": "Chrome 129.0",
+      "os": "macOS Sequoia",
+      "location": "Oslo, Norway",
+      "status": "success",
+      "authMethod": "password_mfa",
+      "details": "User signed in with session token. TLS 1.3 encrypted.",
+      "id": "la_1787781288277_9ec58f",
+      "timestamp": "2026-08-26T21:54:48.277Z"
+    },
+    {
+      "organizationId": "org_1787781260729_d99fb2",
+      "userId": "usr_1787781260729_9d3f46",
+      "userEmail": "director_mtamsx52@helsinki-crafts.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node",
+      "device": "MacBook Pro (Webmail Client)",
+      "browser": "Chrome 129.0",
+      "os": "macOS Sequoia",
+      "location": "Oslo, Norway",
+      "status": "success",
+      "authMethod": "password_mfa",
+      "details": "User signed in with session token. TLS 1.3 encrypted.",
+      "id": "la_1787781260823_305d96",
+      "timestamp": "2026-08-26T21:54:20.823Z"
+    },
+    {
+      "organizationId": "org_1787781260583_9422dd",
+      "userId": "usr_1787781260583_6e78a5",
+      "userEmail": "founder_mtamsx52@nordic-design.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node",
+      "device": "MacBook Pro (Webmail Client)",
+      "browser": "Chrome 129.0",
+      "os": "macOS Sequoia",
+      "location": "Oslo, Norway",
+      "status": "success",
+      "authMethod": "password_mfa",
+      "details": "User signed in with session token. TLS 1.3 encrypted.",
+      "id": "la_1787781260715_979556",
+      "timestamp": "2026-08-26T21:54:20.715Z"
+    },
+    {
+      "organizationId": "org_1787781246993_632526",
+      "userId": "usr_1787781246993_c7c5de",
+      "userEmail": "director_mtamsmk2@helsinki-crafts.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node",
+      "device": "MacBook Pro (Webmail Client)",
+      "browser": "Chrome 129.0",
+      "os": "macOS Sequoia",
+      "location": "Oslo, Norway",
+      "status": "success",
+      "authMethod": "password_mfa",
+      "details": "User signed in with session token. TLS 1.3 encrypted.",
+      "id": "la_1787781247118_cd99c2",
+      "timestamp": "2026-08-26T21:54:07.118Z"
+    },
+    {
+      "organizationId": "org_1787781246857_987bfe",
+      "userId": "usr_1787781246857_ac464e",
+      "userEmail": "founder_mtamsmk2@nordic-design.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node",
+      "device": "MacBook Pro (Webmail Client)",
+      "browser": "Chrome 129.0",
+      "os": "macOS Sequoia",
+      "location": "Oslo, Norway",
+      "status": "success",
+      "authMethod": "password_mfa",
+      "details": "User signed in with session token. TLS 1.3 encrypted.",
+      "id": "la_1787781246987_cea5c4",
+      "timestamp": "2026-08-26T21:54:06.987Z"
+    },
+    {
+      "organizationId": "org_1787781232590_70b69b",
+      "userId": "usr_1787781232589_25c1c4",
+      "userEmail": "director_mtamsbfy@helsinki-crafts.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node",
+      "device": "MacBook Pro (Webmail Client)",
+      "browser": "Chrome 129.0",
+      "os": "macOS Sequoia",
+      "location": "Oslo, Norway",
+      "status": "success",
+      "authMethod": "password_mfa",
+      "details": "User signed in with session token. TLS 1.3 encrypted.",
+      "id": "la_1787781232702_534171",
+      "timestamp": "2026-08-26T21:53:52.702Z"
+    },
+    {
+      "organizationId": "org_1787781232456_8c136c",
+      "userId": "usr_1787781232456_4ff63a",
+      "userEmail": "founder_mtamsbfy@nordic-design.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node",
+      "device": "MacBook Pro (Webmail Client)",
+      "browser": "Chrome 129.0",
+      "os": "macOS Sequoia",
+      "location": "Oslo, Norway",
+      "status": "success",
+      "authMethod": "password_mfa",
+      "details": "User signed in with session token. TLS 1.3 encrypted.",
+      "id": "la_1787781232583_593c70",
+      "timestamp": "2026-08-26T21:53:52.583Z"
+    },
+    {
+      "organizationId": "org_1787780896198_7a0244",
+      "userId": "usr_1787780896198_21a0d2",
+      "userEmail": "founder_1787780896197@klim-foundry.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node-fetch",
+      "device": "MacBook Pro (Webmail Client)",
+      "browser": "Chrome 129.0",
+      "os": "macOS Sequoia",
+      "location": "Oslo, Norway",
+      "status": "success",
+      "authMethod": "password_mfa",
+      "details": "User signed in with session token. TLS 1.3 encrypted.",
+      "id": "la_1787780896249_1ee49f",
+      "timestamp": "2026-08-26T21:48:16.249Z"
+    },
+    {
+      "organizationId": "org_1787780896198_7a0244",
+      "userId": "usr_1787780896198_21a0d2",
+      "userEmail": "founder_1787780896197@klim-foundry.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node-fetch",
+      "device": "Desktop",
+      "browser": "Webmail Client",
+      "os": "Modern OS",
+      "location": "Stockholm, Sweden",
+      "status": "blocked",
+      "authMethod": "password_mfa",
+      "details": "Failed password verification attempt",
+      "id": "la_1787780896248_d18d06",
+      "timestamp": "2026-08-26T21:48:16.248Z"
+    },
+    {
+      "organizationId": "org_1787780896198_7a0244",
+      "userId": "usr_1787780896198_21a0d2",
+      "userEmail": "founder_1787780896197@klim-foundry.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node-fetch",
+      "device": "MacBook Pro (Webmail Client)",
+      "browser": "Chrome 129.0",
+      "os": "macOS Sequoia",
+      "location": "Oslo, Norway",
+      "status": "success",
+      "authMethod": "password_mfa",
+      "details": "User signed in with session token. TLS 1.3 encrypted.",
+      "id": "la_1787780896239_c62813",
+      "timestamp": "2026-08-26T21:48:16.239Z"
+    },
+    {
+      "organizationId": "org_1787780896198_7a0244",
+      "userId": "usr_1787780896198_21a0d2",
+      "userEmail": "founder_1787780896197@klim-foundry.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node-fetch",
+      "device": "Desktop",
+      "browser": "Webmail Client",
+      "os": "Modern OS",
+      "location": "Stockholm, Sweden",
+      "status": "blocked",
+      "authMethod": "password_mfa",
+      "details": "Failed password verification attempt",
+      "id": "la_1787780896235_465a40",
+      "timestamp": "2026-08-26T21:48:16.235Z"
+    },
+    {
+      "organizationId": "org_1787780887180_02be78",
+      "userId": "usr_1787780887180_38482a",
+      "userEmail": "founder_1787780887179@klim-foundry.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node-fetch",
+      "device": "MacBook Pro (Webmail Client)",
+      "browser": "Chrome 129.0",
+      "os": "macOS Sequoia",
+      "location": "Oslo, Norway",
+      "status": "success",
+      "authMethod": "password_mfa",
+      "details": "User signed in with session token. TLS 1.3 encrypted.",
+      "id": "la_1787780887226_0f6c12",
+      "timestamp": "2026-08-26T21:48:07.226Z"
+    },
+    {
+      "organizationId": "org_1787780887180_02be78",
+      "userId": "usr_1787780887180_38482a",
+      "userEmail": "founder_1787780887179@klim-foundry.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node-fetch",
+      "device": "Desktop",
+      "browser": "Webmail Client",
+      "os": "Modern OS",
+      "location": "Stockholm, Sweden",
+      "status": "blocked",
+      "authMethod": "password_mfa",
+      "details": "Failed password verification attempt",
+      "id": "la_1787780887224_d48748",
+      "timestamp": "2026-08-26T21:48:07.224Z"
+    },
+    {
+      "organizationId": "org_1787780887180_02be78",
+      "userId": "usr_1787780887180_38482a",
+      "userEmail": "founder_1787780887179@klim-foundry.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node-fetch",
+      "device": "MacBook Pro (Webmail Client)",
+      "browser": "Chrome 129.0",
+      "os": "macOS Sequoia",
+      "location": "Oslo, Norway",
+      "status": "success",
+      "authMethod": "password_mfa",
+      "details": "User signed in with session token. TLS 1.3 encrypted.",
+      "id": "la_1787780887205_735155",
+      "timestamp": "2026-08-26T21:48:07.205Z"
+    },
+    {
+      "organizationId": "org_1787780887180_02be78",
+      "userId": "usr_1787780887180_38482a",
+      "userEmail": "founder_1787780887179@klim-foundry.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node-fetch",
+      "device": "Desktop",
+      "browser": "Webmail Client",
+      "os": "Modern OS",
+      "location": "Stockholm, Sweden",
+      "status": "blocked",
+      "authMethod": "password_mfa",
+      "details": "Failed password verification attempt",
+      "id": "la_1787780887200_274033",
+      "timestamp": "2026-08-26T21:48:07.200Z"
+    },
+    {
+      "organizationId": "org_1787780864258_46e595",
+      "userId": "usr_1787780864258_0aa0f3",
+      "userEmail": "founder_1787780864256@klim-foundry.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node-fetch",
+      "device": "MacBook Pro (Webmail Client)",
+      "browser": "Chrome 129.0",
+      "os": "macOS Sequoia",
+      "location": "Oslo, Norway",
+      "status": "success",
+      "authMethod": "password_mfa",
+      "details": "User signed in with session token. TLS 1.3 encrypted.",
+      "id": "la_1787780864305_fc19a2",
+      "timestamp": "2026-08-26T21:47:44.305Z"
+    },
+    {
+      "organizationId": "org_1787780864258_46e595",
+      "userId": "usr_1787780864258_0aa0f3",
+      "userEmail": "founder_1787780864256@klim-foundry.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node-fetch",
+      "device": "Desktop",
+      "browser": "Webmail Client",
+      "os": "Modern OS",
+      "location": "Stockholm, Sweden",
+      "status": "blocked",
+      "authMethod": "password_mfa",
+      "details": "Failed password verification attempt",
+      "id": "la_1787780864303_cfbab0",
+      "timestamp": "2026-08-26T21:47:44.303Z"
+    },
+    {
+      "organizationId": "org_1787780864258_46e595",
+      "userId": "usr_1787780864258_0aa0f3",
+      "userEmail": "founder_1787780864256@klim-foundry.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node-fetch",
+      "device": "MacBook Pro (Webmail Client)",
+      "browser": "Chrome 129.0",
+      "os": "macOS Sequoia",
+      "location": "Oslo, Norway",
+      "status": "success",
+      "authMethod": "password_mfa",
+      "details": "User signed in with session token. TLS 1.3 encrypted.",
+      "id": "la_1787780864293_2408cf",
+      "timestamp": "2026-08-26T21:47:44.293Z"
+    },
+    {
+      "organizationId": "org_1787780864258_46e595",
+      "userId": "usr_1787780864258_0aa0f3",
+      "userEmail": "founder_1787780864256@klim-foundry.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node-fetch",
+      "device": "Desktop",
+      "browser": "Webmail Client",
+      "os": "Modern OS",
+      "location": "Stockholm, Sweden",
+      "status": "blocked",
+      "authMethod": "password_mfa",
+      "details": "Failed password verification attempt",
+      "id": "la_1787780864290_521d3d",
+      "timestamp": "2026-08-26T21:47:44.290Z"
+    },
+    {
+      "organizationId": "org_1787780815354_1644ea",
+      "userId": "usr_1787780815354_2eabb6",
+      "userEmail": "founder_1787780815352@klim-foundry.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node-fetch",
+      "device": "MacBook Pro (Webmail Client)",
+      "browser": "Chrome 129.0",
+      "os": "macOS Sequoia",
+      "location": "Oslo, Norway",
+      "status": "success",
+      "authMethod": "password_mfa",
+      "details": "User signed in with session token. TLS 1.3 encrypted.",
+      "id": "la_1787780815388_6f6299",
+      "timestamp": "2026-08-26T21:46:55.388Z"
+    },
+    {
+      "organizationId": "org_1787780815354_1644ea",
+      "userId": "usr_1787780815354_2eabb6",
+      "userEmail": "founder_1787780815352@klim-foundry.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node-fetch",
+      "device": "Desktop",
+      "browser": "Webmail Client",
+      "os": "Modern OS",
+      "location": "Stockholm, Sweden",
+      "status": "blocked",
+      "authMethod": "password_mfa",
+      "details": "Failed password verification attempt",
+      "id": "la_1787780815387_3aa836",
+      "timestamp": "2026-08-26T21:46:55.387Z"
+    },
+    {
+      "organizationId": "org_1787780815354_1644ea",
+      "userId": "usr_1787780815354_2eabb6",
+      "userEmail": "founder_1787780815352@klim-foundry.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node-fetch",
+      "device": "MacBook Pro (Webmail Client)",
+      "browser": "Chrome 129.0",
+      "os": "macOS Sequoia",
+      "location": "Oslo, Norway",
+      "status": "success",
+      "authMethod": "password_mfa",
+      "details": "User signed in with session token. TLS 1.3 encrypted.",
+      "id": "la_1787780815375_6b5314",
+      "timestamp": "2026-08-26T21:46:55.375Z"
+    },
+    {
+      "organizationId": "org_1787780815354_1644ea",
+      "userId": "usr_1787780815354_2eabb6",
+      "userEmail": "founder_1787780815352@klim-foundry.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node-fetch",
+      "device": "Desktop",
+      "browser": "Webmail Client",
+      "os": "Modern OS",
+      "location": "Stockholm, Sweden",
+      "status": "blocked",
+      "authMethod": "password_mfa",
+      "details": "Failed password verification attempt",
+      "id": "la_1787780815371_cce1e3",
+      "timestamp": "2026-08-26T21:46:55.372Z"
+    },
+    {
+      "organizationId": "org_1787780797760_04812a",
+      "userId": "usr_1787780797760_0ec5f1",
+      "userEmail": "founder_1787780797759@klim-foundry.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node-fetch",
+      "device": "MacBook Pro (Webmail Client)",
+      "browser": "Chrome 129.0",
+      "os": "macOS Sequoia",
+      "location": "Oslo, Norway",
+      "status": "success",
+      "authMethod": "password_mfa",
+      "details": "User signed in with session token. TLS 1.3 encrypted.",
+      "id": "la_1787780797796_8e3499",
+      "timestamp": "2026-08-26T21:46:37.796Z"
+    },
+    {
+      "organizationId": "org_1787780797760_04812a",
+      "userId": "usr_1787780797760_0ec5f1",
+      "userEmail": "founder_1787780797759@klim-foundry.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node-fetch",
+      "device": "Desktop",
+      "browser": "Webmail Client",
+      "os": "Modern OS",
+      "location": "Stockholm, Sweden",
+      "status": "blocked",
+      "authMethod": "password_mfa",
+      "details": "Failed password verification attempt",
+      "id": "la_1787780797795_11fe79",
+      "timestamp": "2026-08-26T21:46:37.795Z"
+    },
+    {
+      "organizationId": "org_1787780797760_04812a",
+      "userId": "usr_1787780797760_0ec5f1",
+      "userEmail": "founder_1787780797759@klim-foundry.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node-fetch",
+      "device": "MacBook Pro (Webmail Client)",
+      "browser": "Chrome 129.0",
+      "os": "macOS Sequoia",
+      "location": "Oslo, Norway",
+      "status": "success",
+      "authMethod": "password_mfa",
+      "details": "User signed in with session token. TLS 1.3 encrypted.",
+      "id": "la_1787780797783_40527b",
+      "timestamp": "2026-08-26T21:46:37.783Z"
+    },
+    {
+      "organizationId": "org_1787780797760_04812a",
+      "userId": "usr_1787780797760_0ec5f1",
+      "userEmail": "founder_1787780797759@klim-foundry.com",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "node-fetch",
+      "device": "Desktop",
+      "browser": "Webmail Client",
+      "os": "Modern OS",
+      "location": "Stockholm, Sweden",
+      "status": "blocked",
+      "authMethod": "password_mfa",
+      "details": "Failed password verification attempt",
+      "id": "la_1787780797779_961c8e",
+      "timestamp": "2026-08-26T21:46:37.779Z"
+    },
+    {
+      "id": "la_01",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "timestamp": "2026-08-26T21:15:12.098Z",
+      "ipAddress": "84.212.19.42",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36",
+      "device": "MacBook Pro 16\" (macOS 15.1)",
+      "browser": "Chrome 129.0",
+      "os": "macOS Sequoia",
+      "location": "Oslo, Norway",
+      "status": "success",
+      "authMethod": "hardware_key",
+      "details": "Hardware FIDO2 WebAuthn authentication verified. Session encrypted with TLS 1.3."
+    },
+    {
+      "id": "la_02",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "timestamp": "2026-08-26T18:33:12.098Z",
+      "ipAddress": "84.212.19.42",
+      "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
+      "device": "iPhone 16 Pro (iOS 18.1)",
+      "browser": "Mobile Safari 18.0",
+      "os": "iOS 18.1",
+      "location": "Oslo, Norway",
+      "status": "success",
+      "authMethod": "password_mfa",
+      "details": "Mobile Webmail sign-in with 6-digit TOTP code verification."
+    },
+    {
+      "id": "la_03",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "timestamp": "2026-08-26T07:33:12.098Z",
+      "ipAddress": "193.162.143.12",
+      "userAgent": "AppleMail/3774.200.24 CFNetwork/1498.700.2 Darwin/24.1.0",
+      "device": "MacBook Pro (Apple Mail Client)",
+      "browser": "Apple Mail Gateway",
+      "os": "macOS Sequoia",
+      "location": "Copenhagen, Denmark",
+      "status": "success",
+      "authMethod": "imap_token",
+      "details": "Authenticated IMAP/SMTP client sync session via application token."
+    },
+    {
+      "id": "la_04",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "timestamp": "2026-08-25T09:33:12.098Z",
+      "ipAddress": "84.212.19.42",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:130.0) Gecko/20100101 Firefox/130.0",
+      "device": "MacBook Pro (Firefox)",
+      "browser": "Firefox Developer 130.0",
+      "os": "macOS Sequoia",
+      "location": "Oslo, Norway",
+      "status": "mfa_challenge",
+      "authMethod": "password_mfa",
+      "details": "MFA challenge prompted for unrecognized browser fingerprint. Challenge solved."
+    },
+    {
+      "id": "la_05",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "timestamp": "2026-08-24T17:33:12.098Z",
+      "ipAddress": "185.220.101.5",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0",
+      "device": "Linux Host (Tor Exit Node)",
+      "browser": "Firefox ESR (Tor)",
+      "os": "Linux x86_64",
+      "location": "Frankfurt, Germany",
+      "status": "blocked",
+      "authMethod": "password_mfa",
+      "details": "Blocked by Sovereign Armor: Geo-velocity anomaly detected (1,240 km/h travel mismatch from Oslo active session)."
+    },
+    {
+      "id": "la_06",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "timestamp": "2026-08-23T09:33:12.098Z",
+      "ipAddress": "103.251.167.22",
+      "userAgent": "python-requests/2.31.0",
+      "device": "Automated Script / Bot",
+      "browser": "Python Requests API",
+      "os": "Unknown",
+      "location": "Singapore",
+      "status": "failed",
+      "authMethod": "password_mfa",
+      "details": "Failed password verification (Invalid credentials supplied)."
+    }
+  ],
+  "auditLogs": [
+    {
+      "organizationId": "org_atelier_nordic",
+      "userId": "system_tracking",
+      "userEmail": "alex@atelier-nordic.com",
+      "action": "mail.read_receipt_opened",
+      "category": "mail",
+      "ipAddress": "127.0.0.1",
+      "details": "Read receipt triggered for message \"Re: Architectural Monograph Vol. IV — Chapter 3 Proof Approved\" (Recipient opened, count: 8)",
+      "id": "log_1787781341320_9972b9d2",
+      "timestamp": "2026-08-26T21:55:41.322Z"
+    },
+    {
+      "organizationId": "org_1787781288167_fc4d68",
+      "userId": "usr_1787781288167_e00403",
+      "userEmail": "founder_mtamtifq@nordic-design.com",
+      "action": "auth.login_success",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "User founder_mtamtifq@nordic-design.com signed in via Webmail",
+      "id": "log_1787781288592_274f0bdb",
+      "timestamp": "2026-08-26T21:54:48.592Z"
+    },
+    {
+      "organizationId": "org_1787781288167_fc4d68",
+      "userId": "usr_1787781288167_e00403",
+      "userEmail": "founder_mtamtifq@nordic-design.com",
+      "action": "auth.password_reset",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Password changed successfully for founder_mtamtifq@nordic-design.com. All previous sessions invalidated.",
+      "id": "log_1787781288503_1799da77",
+      "timestamp": "2026-08-26T21:54:48.503Z"
+    },
+    {
+      "organizationId": "org_1787781288167_fc4d68",
+      "userId": "usr_1787781288167_e00403",
+      "userEmail": "founder_mtamtifq@nordic-design.com",
+      "action": "billing.plan_changed",
+      "category": "billing",
+      "ipAddress": "127.0.0.1",
+      "details": "Upgraded subscription to ENTERPRISE tier (25 domains, 100 mailboxes)",
+      "id": "log_1787781288454_fc6844f5",
+      "timestamp": "2026-08-26T21:54:48.454Z"
+    },
+    {
+      "organizationId": "org_1787781288167_fc4d68",
+      "userId": "user",
+      "userEmail": "astrid@nordic-design-mtamtifq.com",
+      "action": "mail.sent",
+      "category": "mail",
+      "ipAddress": "127.0.0.1",
+      "details": "Dispatched outbound message \"Confidential Tenant A Contract\" to client@external.org with DKIM 2048-bit signature",
+      "id": "log_1787781288425_0c495c6f",
+      "timestamp": "2026-08-26T21:54:48.425Z"
+    },
+    {
+      "organizationId": "org_1787781288167_fc4d68",
+      "userId": "usr_1787781288167_e00403",
+      "userEmail": "founder_mtamtifq@nordic-design.com",
+      "action": "mailbox.created",
+      "category": "mailbox",
+      "ipAddress": "127.0.0.1",
+      "details": "Created new individual mailbox \"astrid@nordic-design-mtamtifq.com\" with 10000MB storage quota.",
+      "id": "log_1787781288419_0fda354f",
+      "timestamp": "2026-08-26T21:54:48.419Z"
+    },
+    {
+      "organizationId": "org_1787781288167_fc4d68",
+      "userId": "usr_1787781288167_e00403",
+      "userEmail": "founder_mtamtifq@nordic-design.com",
+      "action": "domain.created",
+      "category": "domain",
+      "ipAddress": "127.0.0.1",
+      "details": "Added new custom domain \"nordic-design-mtamtifq.com\". Pending DNS record configuration.",
+      "id": "log_1787781288414_9dc92373",
+      "timestamp": "2026-08-26T21:54:48.414Z"
+    },
+    {
+      "organizationId": "org_1787781288284_f893ba",
+      "userId": "usr_1787781288284_f2d19b",
+      "userEmail": "director_mtamtifq@helsinki-crafts.com",
+      "action": "auth.login_success",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "User director_mtamtifq@helsinki-crafts.com signed in via Webmail",
+      "id": "log_1787781288408_1f10dfe8",
+      "timestamp": "2026-08-26T21:54:48.408Z"
+    },
+    {
+      "organizationId": "org_1787781288284_f893ba",
+      "userId": "usr_1787781288284_f2d19b",
+      "userEmail": "director_mtamtifq@helsinki-crafts.com",
+      "action": "auth.email_verified",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Email address director_mtamtifq@helsinki-crafts.com verified successfully via token",
+      "id": "log_1787781288359_87e5364c",
+      "timestamp": "2026-08-26T21:54:48.359Z"
+    },
+    {
+      "organizationId": "org_1787781288284_f893ba",
+      "userId": "usr_1787781288284_f2d19b",
+      "userEmail": "director_mtamtifq@helsinki-crafts.com",
+      "action": "auth.signup",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Created new organization \"Eero Saarinen's Studio\" on pro tier. Verification token issued.",
+      "id": "log_1787781288355_a8d04c04",
+      "timestamp": "2026-08-26T21:54:48.355Z"
+    },
+    {
+      "organizationId": "org_1787781288167_fc4d68",
+      "userId": "usr_1787781288167_e00403",
+      "userEmail": "founder_mtamtifq@nordic-design.com",
+      "action": "auth.login_success",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "User founder_mtamtifq@nordic-design.com signed in via Webmail",
+      "id": "log_1787781288277_940286cb",
+      "timestamp": "2026-08-26T21:54:48.277Z"
+    },
+    {
+      "organizationId": "org_1787781288167_fc4d68",
+      "userId": "usr_1787781288167_e00403",
+      "userEmail": "founder_mtamtifq@nordic-design.com",
+      "action": "auth.email_verified",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Email address founder_mtamtifq@nordic-design.com verified successfully via token",
+      "id": "log_1787781288230_e543fab0",
+      "timestamp": "2026-08-26T21:54:48.230Z"
+    },
+    {
+      "organizationId": "org_1787781288167_fc4d68",
+      "userId": "usr_1787781288167_e00403",
+      "userEmail": "founder_mtamtifq@nordic-design.com",
+      "action": "auth.signup",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Created new organization \"Astrid Lind's Studio\" on pro tier. Verification token issued.",
+      "id": "log_1787781288218_fba851d6",
+      "timestamp": "2026-08-26T21:54:48.218Z"
+    },
+    {
+      "organizationId": "org_1787781260583_9422dd",
+      "userId": "user",
+      "userEmail": "astrid@nordic-design-mtamsx52.com",
+      "action": "mail.sent",
+      "category": "mail",
+      "ipAddress": "127.0.0.1",
+      "details": "Dispatched outbound message \"Confidential Tenant A Contract\" to client@external.org with DKIM 2048-bit signature",
+      "id": "log_1787781260841_28472370",
+      "timestamp": "2026-08-26T21:54:20.841Z"
+    },
+    {
+      "organizationId": "org_1787781260583_9422dd",
+      "userId": "usr_1787781260583_6e78a5",
+      "userEmail": "founder_mtamsx52@nordic-design.com",
+      "action": "mailbox.created",
+      "category": "mailbox",
+      "ipAddress": "127.0.0.1",
+      "details": "Created new individual mailbox \"astrid@nordic-design-mtamsx52.com\" with 10000MB storage quota.",
+      "id": "log_1787781260835_d8bd0040",
+      "timestamp": "2026-08-26T21:54:20.835Z"
+    },
+    {
+      "organizationId": "org_1787781260583_9422dd",
+      "userId": "usr_1787781260583_6e78a5",
+      "userEmail": "founder_mtamsx52@nordic-design.com",
+      "action": "domain.created",
+      "category": "domain",
+      "ipAddress": "127.0.0.1",
+      "details": "Added new custom domain \"nordic-design-mtamsx52.com\". Pending DNS record configuration.",
+      "id": "log_1787781260828_691ff201",
+      "timestamp": "2026-08-26T21:54:20.828Z"
+    },
+    {
+      "organizationId": "org_1787781260729_d99fb2",
+      "userId": "usr_1787781260729_9d3f46",
+      "userEmail": "director_mtamsx52@helsinki-crafts.com",
+      "action": "auth.login_success",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "User director_mtamsx52@helsinki-crafts.com signed in via Webmail",
+      "id": "log_1787781260823_fedb95d7",
+      "timestamp": "2026-08-26T21:54:20.823Z"
+    },
+    {
+      "organizationId": "org_1787781260729_d99fb2",
+      "userId": "usr_1787781260729_9d3f46",
+      "userEmail": "director_mtamsx52@helsinki-crafts.com",
+      "action": "auth.email_verified",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Email address director_mtamsx52@helsinki-crafts.com verified successfully via token",
+      "id": "log_1787781260781_da65075b",
+      "timestamp": "2026-08-26T21:54:20.781Z"
+    },
+    {
+      "organizationId": "org_1787781260729_d99fb2",
+      "userId": "usr_1787781260729_9d3f46",
+      "userEmail": "director_mtamsx52@helsinki-crafts.com",
+      "action": "auth.signup",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Created new organization \"Eero Saarinen's Studio\" on pro tier. Verification token issued.",
+      "id": "log_1787781260775_c4d36446",
+      "timestamp": "2026-08-26T21:54:20.775Z"
+    },
+    {
+      "organizationId": "org_1787781260583_9422dd",
+      "userId": "usr_1787781260583_6e78a5",
+      "userEmail": "founder_mtamsx52@nordic-design.com",
+      "action": "auth.login_success",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "User founder_mtamsx52@nordic-design.com signed in via Webmail",
+      "id": "log_1787781260715_13d5457c",
+      "timestamp": "2026-08-26T21:54:20.715Z"
+    },
+    {
+      "organizationId": "org_1787781260583_9422dd",
+      "userId": "usr_1787781260583_6e78a5",
+      "userEmail": "founder_mtamsx52@nordic-design.com",
+      "action": "auth.email_verified",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Email address founder_mtamsx52@nordic-design.com verified successfully via token",
+      "id": "log_1787781260654_9fb3baf8",
+      "timestamp": "2026-08-26T21:54:20.654Z"
+    },
+    {
+      "organizationId": "org_1787781260583_9422dd",
+      "userId": "usr_1787781260583_6e78a5",
+      "userEmail": "founder_mtamsx52@nordic-design.com",
+      "action": "auth.signup",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Created new organization \"Astrid Lind's Studio\" on pro tier. Verification token issued.",
+      "id": "log_1787781260639_efd1ca34",
+      "timestamp": "2026-08-26T21:54:20.639Z"
+    },
+    {
+      "organizationId": "org_1787781246857_987bfe",
+      "userId": "usr_1787781246857_ac464e",
+      "userEmail": "founder_mtamsmk2@nordic-design.com",
+      "action": "mailbox.created",
+      "category": "mailbox",
+      "ipAddress": "127.0.0.1",
+      "details": "Created new individual mailbox \"astrid@nordic-design-mtamsmk2.com\" with 10000MB storage quota.",
+      "id": "log_1787781247130_dbb9be73",
+      "timestamp": "2026-08-26T21:54:07.130Z"
+    },
+    {
+      "organizationId": "org_1787781246857_987bfe",
+      "userId": "usr_1787781246857_ac464e",
+      "userEmail": "founder_mtamsmk2@nordic-design.com",
+      "action": "domain.created",
+      "category": "domain",
+      "ipAddress": "127.0.0.1",
+      "details": "Added new custom domain \"nordic-design-mtamsmk2.com\". Pending DNS record configuration.",
+      "id": "log_1787781247124_03b4539a",
+      "timestamp": "2026-08-26T21:54:07.124Z"
+    },
+    {
+      "organizationId": "org_1787781246993_632526",
+      "userId": "usr_1787781246993_c7c5de",
+      "userEmail": "director_mtamsmk2@helsinki-crafts.com",
+      "action": "auth.login_success",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "User director_mtamsmk2@helsinki-crafts.com signed in via Webmail",
+      "id": "log_1787781247118_209309d9",
+      "timestamp": "2026-08-26T21:54:07.118Z"
+    },
+    {
+      "organizationId": "org_1787781246993_632526",
+      "userId": "usr_1787781246993_c7c5de",
+      "userEmail": "director_mtamsmk2@helsinki-crafts.com",
+      "action": "auth.email_verified",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Email address director_mtamsmk2@helsinki-crafts.com verified successfully via token",
+      "id": "log_1787781247073_ccda7318",
+      "timestamp": "2026-08-26T21:54:07.073Z"
+    },
+    {
+      "organizationId": "org_1787781246993_632526",
+      "userId": "usr_1787781246993_c7c5de",
+      "userEmail": "director_mtamsmk2@helsinki-crafts.com",
+      "action": "auth.signup",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Created new organization \"Eero Saarinen's Studio\" on pro tier. Verification token issued.",
+      "id": "log_1787781247059_2cd9b9f3",
+      "timestamp": "2026-08-26T21:54:07.059Z"
+    },
+    {
+      "organizationId": "org_1787781246857_987bfe",
+      "userId": "usr_1787781246857_ac464e",
+      "userEmail": "founder_mtamsmk2@nordic-design.com",
+      "action": "auth.login_success",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "User founder_mtamsmk2@nordic-design.com signed in via Webmail",
+      "id": "log_1787781246987_11c8b053",
+      "timestamp": "2026-08-26T21:54:06.987Z"
+    },
+    {
+      "organizationId": "org_1787781246857_987bfe",
+      "userId": "usr_1787781246857_ac464e",
+      "userEmail": "founder_mtamsmk2@nordic-design.com",
+      "action": "auth.email_verified",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Email address founder_mtamsmk2@nordic-design.com verified successfully via token",
+      "id": "log_1787781246936_5ea7be1f",
+      "timestamp": "2026-08-26T21:54:06.936Z"
+    },
+    {
+      "organizationId": "org_1787781246857_987bfe",
+      "userId": "usr_1787781246857_ac464e",
+      "userEmail": "founder_mtamsmk2@nordic-design.com",
+      "action": "auth.signup",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Created new organization \"Astrid Lind's Studio\" on pro tier. Verification token issued.",
+      "id": "log_1787781246918_700eda01",
+      "timestamp": "2026-08-26T21:54:06.918Z"
+    },
+    {
+      "organizationId": "org_1787781232456_8c136c",
+      "userId": "usr_1787781232456_4ff63a",
+      "userEmail": "founder_mtamsbfy@nordic-design.com",
+      "action": "domain.created",
+      "category": "domain",
+      "ipAddress": "127.0.0.1",
+      "details": "Added new custom domain \"nordic-design-mtamsbfy.com\". Pending DNS record configuration.",
+      "id": "log_1787781232709_c339549e",
+      "timestamp": "2026-08-26T21:53:52.709Z"
+    },
+    {
+      "organizationId": "org_1787781232590_70b69b",
+      "userId": "usr_1787781232589_25c1c4",
+      "userEmail": "director_mtamsbfy@helsinki-crafts.com",
+      "action": "auth.login_success",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "User director_mtamsbfy@helsinki-crafts.com signed in via Webmail",
+      "id": "log_1787781232702_866a265f",
+      "timestamp": "2026-08-26T21:53:52.702Z"
+    },
+    {
+      "organizationId": "org_1787781232590_70b69b",
+      "userId": "usr_1787781232589_25c1c4",
+      "userEmail": "director_mtamsbfy@helsinki-crafts.com",
+      "action": "auth.email_verified",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Email address director_mtamsbfy@helsinki-crafts.com verified successfully via token",
+      "id": "log_1787781232657_141934f7",
+      "timestamp": "2026-08-26T21:53:52.657Z"
+    },
+    {
+      "organizationId": "org_1787781232590_70b69b",
+      "userId": "usr_1787781232589_25c1c4",
+      "userEmail": "director_mtamsbfy@helsinki-crafts.com",
+      "action": "auth.signup",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Created new organization \"Eero Saarinen's Studio\" on pro tier. Verification token issued.",
+      "id": "log_1787781232650_781d6459",
+      "timestamp": "2026-08-26T21:53:52.650Z"
+    },
+    {
+      "organizationId": "org_1787781232456_8c136c",
+      "userId": "usr_1787781232456_4ff63a",
+      "userEmail": "founder_mtamsbfy@nordic-design.com",
+      "action": "auth.login_success",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "User founder_mtamsbfy@nordic-design.com signed in via Webmail",
+      "id": "log_1787781232583_a75e28a6",
+      "timestamp": "2026-08-26T21:53:52.583Z"
+    },
+    {
+      "organizationId": "org_1787781232456_8c136c",
+      "userId": "usr_1787781232456_4ff63a",
+      "userEmail": "founder_mtamsbfy@nordic-design.com",
+      "action": "auth.email_verified",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Email address founder_mtamsbfy@nordic-design.com verified successfully via token",
+      "id": "log_1787781232523_f3bc5a57",
+      "timestamp": "2026-08-26T21:53:52.523Z"
+    },
+    {
+      "organizationId": "org_1787781232456_8c136c",
+      "userId": "usr_1787781232456_4ff63a",
+      "userEmail": "founder_mtamsbfy@nordic-design.com",
+      "action": "auth.signup",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Created new organization \"Astrid Lind's Studio\" on pro tier. Verification token issued.",
+      "id": "log_1787781232509_fe7dd15b",
+      "timestamp": "2026-08-26T21:53:52.509Z"
+    },
+    {
+      "organizationId": "org_atelier_nordic",
+      "userId": "system_tracking",
+      "userEmail": "alex@atelier-nordic.com",
+      "action": "mail.read_receipt_opened",
+      "category": "mail",
+      "ipAddress": "127.0.0.1",
+      "details": "Read receipt triggered for message \"Re: Architectural Monograph Vol. IV — Chapter 3 Proof Approved\" (Recipient opened, count: 7)",
+      "id": "log_1787780967902_43667b22",
+      "timestamp": "2026-08-26T21:49:27.902Z"
+    },
+    {
+      "organizationId": "org_1787780896198_7a0244",
+      "userId": "user",
+      "userEmail": "freja@klim-foundry.com",
+      "action": "mail.sent",
+      "category": "mail",
+      "ipAddress": "127.0.0.1",
+      "details": "Dispatched outbound message \"Re: Message\" to editor@monocle.com with DKIM 2048-bit signature",
+      "id": "log_1787780896266_242c21df",
+      "timestamp": "2026-08-26T21:48:16.266Z"
+    },
+    {
+      "organizationId": "org_1787780896198_7a0244",
+      "userId": "system",
+      "userEmail": "mx.ingress@monogram.email",
+      "action": "mail.received",
+      "category": "mail",
+      "ipAddress": "198.51.100.44",
+      "details": "Inbound message \"Feature Article: Scandinavian Foundry Design Excellence\" from editor@monocle.com routed to mailbox freja@klim-foundry.com (SPF=PASS, DKIM=PASS)",
+      "id": "log_1787780896261_5d901b9a",
+      "timestamp": "2026-08-26T21:48:16.261Z"
+    },
+    {
+      "organizationId": "org_1787780896198_7a0244",
+      "userId": "user",
+      "userEmail": "freja@klim-foundry.com",
+      "action": "mail.sent",
+      "category": "mail",
+      "ipAddress": "127.0.0.1",
+      "details": "Dispatched outbound message \"Klim Foundry 2026 Specimen Book Release\" to press@archdigest.com with DKIM 2048-bit signature",
+      "id": "log_1787780896259_7b522151",
+      "timestamp": "2026-08-26T21:48:16.259Z"
+    },
+    {
+      "organizationId": "org_1787780896198_7a0244",
+      "userId": "usr_1787780896198_21a0d2",
+      "userEmail": "founder_1787780896197@klim-foundry.com",
+      "action": "mailbox.created",
+      "category": "mailbox",
+      "ipAddress": "127.0.0.1",
+      "details": "Created new individual mailbox \"freja@klim-foundry.com\" with 25000MB storage quota.",
+      "id": "log_1787780896258_f571a9d1",
+      "timestamp": "2026-08-26T21:48:16.258Z"
+    },
+    {
+      "organizationId": "org_1787780896198_7a0244",
+      "userId": "system",
+      "userEmail": "system@monogram.email",
+      "action": "domain.dns_verified",
+      "category": "domain",
+      "ipAddress": "127.0.0.1",
+      "details": "DNS Verification check completed for klim-foundry.com: MX [PASS], SPF [PASS], DKIM [PASS], DMARC [PASS]",
+      "id": "log_1787780896256_38fb3fef",
+      "timestamp": "2026-08-26T21:48:16.256Z"
+    },
+    {
+      "organizationId": "org_1787780896198_7a0244",
+      "userId": "usr_1787780896198_21a0d2",
+      "userEmail": "founder_1787780896197@klim-foundry.com",
+      "action": "domain.created",
+      "category": "domain",
+      "ipAddress": "127.0.0.1",
+      "details": "Added new custom domain \"klim-foundry.com\". Pending DNS record configuration.",
+      "id": "log_1787780896253_757b63a3",
+      "timestamp": "2026-08-26T21:48:16.253Z"
+    },
+    {
+      "organizationId": "org_1787780896198_7a0244",
+      "userId": "usr_1787780896198_21a0d2",
+      "userEmail": "founder_1787780896197@klim-foundry.com",
+      "action": "billing.plan_changed",
+      "category": "billing",
+      "ipAddress": "127.0.0.1",
+      "details": "Upgraded subscription to PRO tier (5 domains, 20 mailboxes)",
+      "id": "log_1787780896251_15711025",
+      "timestamp": "2026-08-26T21:48:16.251Z"
+    },
+    {
+      "organizationId": "org_1787780896198_7a0244",
+      "userId": "usr_1787780896198_21a0d2",
+      "userEmail": "founder_1787780896197@klim-foundry.com",
+      "action": "auth.login_success",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "User founder_1787780896197@klim-foundry.com signed in via Webmail",
+      "id": "log_1787780896249_d2ebd3d5",
+      "timestamp": "2026-08-26T21:48:16.249Z"
+    },
+    {
+      "organizationId": "org_1787780896198_7a0244",
+      "userId": "usr_1787780896198_21a0d2",
+      "userEmail": "founder_1787780896197@klim-foundry.com",
+      "action": "auth.password_reset",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Password changed successfully for founder_1787780896197@klim-foundry.com. All previous sessions invalidated.",
+      "id": "log_1787780896246_797148e0",
+      "timestamp": "2026-08-26T21:48:16.246Z"
+    },
+    {
+      "organizationId": "org_1787780896198_7a0244",
+      "userId": "usr_1787780896198_21a0d2",
+      "userEmail": "founder_1787780896197@klim-foundry.com",
+      "action": "auth.login_success",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "User founder_1787780896197@klim-foundry.com signed in via Webmail",
+      "id": "log_1787780896239_226eb4bb",
+      "timestamp": "2026-08-26T21:48:16.239Z"
+    },
+    {
+      "organizationId": "org_1787780896198_7a0244",
+      "userId": "usr_1787780896198_21a0d2",
+      "userEmail": "founder_1787780896197@klim-foundry.com",
+      "action": "auth.email_verified",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Email address founder_1787780896197@klim-foundry.com verified successfully via token",
+      "id": "log_1787780896206_dbd44298",
+      "timestamp": "2026-08-26T21:48:16.206Z"
+    },
+    {
+      "organizationId": "org_1787780896198_7a0244",
+      "userId": "usr_1787780896198_21a0d2",
+      "userEmail": "founder_1787780896197@klim-foundry.com",
+      "action": "auth.signup",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Created new organization \"Klim Type Foundry\" on pro tier. Verification token issued.",
+      "id": "log_1787780896199_d3cd9219",
+      "timestamp": "2026-08-26T21:48:16.199Z"
+    },
+    {
+      "organizationId": "org_1787780887180_02be78",
+      "userId": "user",
+      "userEmail": "freja@klim-foundry.com",
+      "action": "mail.sent",
+      "category": "mail",
+      "ipAddress": "127.0.0.1",
+      "details": "Dispatched outbound message \"Re: Message\" to editor@monocle.com with DKIM 2048-bit signature",
+      "id": "log_1787780887251_d3a11e73",
+      "timestamp": "2026-08-26T21:48:07.251Z"
+    },
+    {
+      "organizationId": "org_1787780887180_02be78",
+      "userId": "system",
+      "userEmail": "mx.ingress@monogram.email",
+      "action": "mail.received",
+      "category": "mail",
+      "ipAddress": "198.51.100.44",
+      "details": "Inbound message \"Feature Article: Scandinavian Foundry Design Excellence\" from editor@monocle.com routed to mailbox freja@klim-foundry.com (SPF=PASS, DKIM=PASS)",
+      "id": "log_1787780887243_da537192",
+      "timestamp": "2026-08-26T21:48:07.243Z"
+    },
+    {
+      "organizationId": "org_1787780887180_02be78",
+      "userId": "user",
+      "userEmail": "freja@klim-foundry.com",
+      "action": "mail.sent",
+      "category": "mail",
+      "ipAddress": "127.0.0.1",
+      "details": "Dispatched outbound message \"Klim Foundry 2026 Specimen Book Release\" to press@archdigest.com with DKIM 2048-bit signature",
+      "id": "log_1787780887240_e066275f",
+      "timestamp": "2026-08-26T21:48:07.240Z"
+    },
+    {
+      "organizationId": "org_1787780887180_02be78",
+      "userId": "usr_1787780887180_38482a",
+      "userEmail": "founder_1787780887179@klim-foundry.com",
+      "action": "mailbox.created",
+      "category": "mailbox",
+      "ipAddress": "127.0.0.1",
+      "details": "Created new individual mailbox \"freja@klim-foundry.com\" with 25000MB storage quota.",
+      "id": "log_1787780887238_3f32a16e",
+      "timestamp": "2026-08-26T21:48:07.238Z"
+    },
+    {
+      "organizationId": "org_1787780887180_02be78",
+      "userId": "system",
+      "userEmail": "system@monogram.email",
+      "action": "domain.dns_verified",
+      "category": "domain",
+      "ipAddress": "127.0.0.1",
+      "details": "DNS Verification check completed for klim-foundry.com: MX [PASS], SPF [PASS], DKIM [PASS], DMARC [PASS]",
+      "id": "log_1787780887236_0fd1fe1d",
+      "timestamp": "2026-08-26T21:48:07.236Z"
+    },
+    {
+      "organizationId": "org_1787780887180_02be78",
+      "userId": "usr_1787780887180_38482a",
+      "userEmail": "founder_1787780887179@klim-foundry.com",
+      "action": "domain.created",
+      "category": "domain",
+      "ipAddress": "127.0.0.1",
+      "details": "Added new custom domain \"klim-foundry.com\". Pending DNS record configuration.",
+      "id": "log_1787780887232_731d8b02",
+      "timestamp": "2026-08-26T21:48:07.232Z"
+    },
+    {
+      "organizationId": "org_1787780887180_02be78",
+      "userId": "usr_1787780887180_38482a",
+      "userEmail": "founder_1787780887179@klim-foundry.com",
+      "action": "billing.plan_changed",
+      "category": "billing",
+      "ipAddress": "127.0.0.1",
+      "details": "Upgraded subscription to PRO tier (5 domains, 20 mailboxes)",
+      "id": "log_1787780887230_a4c41c96",
+      "timestamp": "2026-08-26T21:48:07.230Z"
+    },
+    {
+      "organizationId": "org_1787780887180_02be78",
+      "userId": "usr_1787780887180_38482a",
+      "userEmail": "founder_1787780887179@klim-foundry.com",
+      "action": "auth.login_success",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "User founder_1787780887179@klim-foundry.com signed in via Webmail",
+      "id": "log_1787780887226_61b127bb",
+      "timestamp": "2026-08-26T21:48:07.226Z"
+    },
+    {
+      "organizationId": "org_1787780887180_02be78",
+      "userId": "usr_1787780887180_38482a",
+      "userEmail": "founder_1787780887179@klim-foundry.com",
+      "action": "auth.password_reset",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Password changed successfully for founder_1787780887179@klim-foundry.com. All previous sessions invalidated.",
+      "id": "log_1787780887222_3e8021a7",
+      "timestamp": "2026-08-26T21:48:07.222Z"
+    },
+    {
+      "organizationId": "org_1787780887180_02be78",
+      "userId": "usr_1787780887180_38482a",
+      "userEmail": "founder_1787780887179@klim-foundry.com",
+      "action": "auth.login_success",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "User founder_1787780887179@klim-foundry.com signed in via Webmail",
+      "id": "log_1787780887205_4d285889",
+      "timestamp": "2026-08-26T21:48:07.205Z"
+    },
+    {
+      "organizationId": "org_1787780887180_02be78",
+      "userId": "usr_1787780887180_38482a",
+      "userEmail": "founder_1787780887179@klim-foundry.com",
+      "action": "auth.email_verified",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Email address founder_1787780887179@klim-foundry.com verified successfully via token",
+      "id": "log_1787780887190_3588c2b9",
+      "timestamp": "2026-08-26T21:48:07.190Z"
+    },
+    {
+      "organizationId": "org_1787780887180_02be78",
+      "userId": "usr_1787780887180_38482a",
+      "userEmail": "founder_1787780887179@klim-foundry.com",
+      "action": "auth.signup",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Created new organization \"Klim Type Foundry\" on pro tier. Verification token issued.",
+      "id": "log_1787780887181_835bc09e",
+      "timestamp": "2026-08-26T21:48:07.181Z"
+    },
+    {
+      "organizationId": "org_1787780864258_46e595",
+      "userId": "user",
+      "userEmail": "freja@klim-foundry.com",
+      "action": "mail.sent",
+      "category": "mail",
+      "ipAddress": "127.0.0.1",
+      "details": "Dispatched outbound message \"Klim Foundry 2026 Specimen Book Release\" to press@archdigest.com with DKIM 2048-bit signature",
+      "id": "log_1787780864318_ae1fc741",
+      "timestamp": "2026-08-26T21:47:44.318Z"
+    },
+    {
+      "organizationId": "org_1787780864258_46e595",
+      "userId": "usr_1787780864258_0aa0f3",
+      "userEmail": "founder_1787780864256@klim-foundry.com",
+      "action": "mailbox.created",
+      "category": "mailbox",
+      "ipAddress": "127.0.0.1",
+      "details": "Created new individual mailbox \"freja@klim-foundry.com\" with 25000MB storage quota.",
+      "id": "log_1787780864315_e94c69bd",
+      "timestamp": "2026-08-26T21:47:44.315Z"
+    },
+    {
+      "organizationId": "org_1787780864258_46e595",
+      "userId": "system",
+      "userEmail": "system@monogram.email",
+      "action": "domain.dns_verified",
+      "category": "domain",
+      "ipAddress": "127.0.0.1",
+      "details": "DNS Verification check completed for klim-foundry.com: MX [PASS], SPF [PASS], DKIM [PASS], DMARC [PASS]",
+      "id": "log_1787780864313_1b0c1a37",
+      "timestamp": "2026-08-26T21:47:44.314Z"
+    },
+    {
+      "organizationId": "org_1787780864258_46e595",
+      "userId": "usr_1787780864258_0aa0f3",
+      "userEmail": "founder_1787780864256@klim-foundry.com",
+      "action": "domain.created",
+      "category": "domain",
+      "ipAddress": "127.0.0.1",
+      "details": "Added new custom domain \"klim-foundry.com\". Pending DNS record configuration.",
+      "id": "log_1787780864310_52166ec3",
+      "timestamp": "2026-08-26T21:47:44.310Z"
+    },
+    {
+      "organizationId": "org_1787780864258_46e595",
+      "userId": "usr_1787780864258_0aa0f3",
+      "userEmail": "founder_1787780864256@klim-foundry.com",
+      "action": "billing.plan_changed",
+      "category": "billing",
+      "ipAddress": "127.0.0.1",
+      "details": "Upgraded subscription to PRO tier (5 domains, 20 mailboxes)",
+      "id": "log_1787780864308_91b904fd",
+      "timestamp": "2026-08-26T21:47:44.308Z"
+    },
+    {
+      "organizationId": "org_1787780864258_46e595",
+      "userId": "usr_1787780864258_0aa0f3",
+      "userEmail": "founder_1787780864256@klim-foundry.com",
+      "action": "auth.login_success",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "User founder_1787780864256@klim-foundry.com signed in via Webmail",
+      "id": "log_1787780864305_dc9780a1",
+      "timestamp": "2026-08-26T21:47:44.305Z"
+    },
+    {
+      "organizationId": "org_1787780864258_46e595",
+      "userId": "usr_1787780864258_0aa0f3",
+      "userEmail": "founder_1787780864256@klim-foundry.com",
+      "action": "auth.password_reset",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Password changed successfully for founder_1787780864256@klim-foundry.com. All previous sessions invalidated.",
+      "id": "log_1787780864302_3894e9ef",
+      "timestamp": "2026-08-26T21:47:44.302Z"
+    },
+    {
+      "organizationId": "org_1787780864258_46e595",
+      "userId": "usr_1787780864258_0aa0f3",
+      "userEmail": "founder_1787780864256@klim-foundry.com",
+      "action": "auth.login_success",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "User founder_1787780864256@klim-foundry.com signed in via Webmail",
+      "id": "log_1787780864293_613baa7c",
+      "timestamp": "2026-08-26T21:47:44.293Z"
+    },
+    {
+      "organizationId": "org_1787780864258_46e595",
+      "userId": "usr_1787780864258_0aa0f3",
+      "userEmail": "founder_1787780864256@klim-foundry.com",
+      "action": "auth.email_verified",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Email address founder_1787780864256@klim-foundry.com verified successfully via token",
+      "id": "log_1787780864271_d61c0ef7",
+      "timestamp": "2026-08-26T21:47:44.271Z"
+    },
+    {
+      "organizationId": "org_1787780864258_46e595",
+      "userId": "usr_1787780864258_0aa0f3",
+      "userEmail": "founder_1787780864256@klim-foundry.com",
+      "action": "auth.signup",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Created new organization \"Klim Type Foundry\" on pro tier. Verification token issued.",
+      "id": "log_1787780864259_ea57baa5",
+      "timestamp": "2026-08-26T21:47:44.259Z"
+    },
+    {
+      "organizationId": "org_1787780815354_1644ea",
+      "userId": "usr_1787780815354_2eabb6",
+      "userEmail": "founder_1787780815352@klim-foundry.com",
+      "action": "mailbox.created",
+      "category": "mailbox",
+      "ipAddress": "127.0.0.1",
+      "details": "Created new individual mailbox \"freja@klim-foundry.com\" with 25000MB storage quota.",
+      "id": "log_1787780815399_cb1a191d",
+      "timestamp": "2026-08-26T21:46:55.399Z"
+    },
+    {
+      "organizationId": "org_1787780815354_1644ea",
+      "userId": "system",
+      "userEmail": "system@monogram.email",
+      "action": "domain.dns_verified",
+      "category": "domain",
+      "ipAddress": "127.0.0.1",
+      "details": "DNS Verification check completed for klim-foundry.com: MX [PASS], SPF [PASS], DKIM [PASS], DMARC [PASS]",
+      "id": "log_1787780815397_7009b2fa",
+      "timestamp": "2026-08-26T21:46:55.397Z"
+    },
+    {
+      "organizationId": "org_1787780815354_1644ea",
+      "userId": "usr_1787780815354_2eabb6",
+      "userEmail": "founder_1787780815352@klim-foundry.com",
+      "action": "domain.created",
+      "category": "domain",
+      "ipAddress": "127.0.0.1",
+      "details": "Added new custom domain \"klim-foundry.com\". Pending DNS record configuration.",
+      "id": "log_1787780815394_2a2c0551",
+      "timestamp": "2026-08-26T21:46:55.394Z"
+    },
+    {
+      "organizationId": "org_1787780815354_1644ea",
+      "userId": "usr_1787780815354_2eabb6",
+      "userEmail": "founder_1787780815352@klim-foundry.com",
+      "action": "billing.plan_changed",
+      "category": "billing",
+      "ipAddress": "127.0.0.1",
+      "details": "Upgraded subscription to PRO tier (5 domains, 20 mailboxes)",
+      "id": "log_1787780815392_8be38418",
+      "timestamp": "2026-08-26T21:46:55.392Z"
+    },
+    {
+      "organizationId": "org_1787780815354_1644ea",
+      "userId": "usr_1787780815354_2eabb6",
+      "userEmail": "founder_1787780815352@klim-foundry.com",
+      "action": "auth.login_success",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "User founder_1787780815352@klim-foundry.com signed in via Webmail",
+      "id": "log_1787780815388_e73d6815",
+      "timestamp": "2026-08-26T21:46:55.388Z"
+    },
+    {
+      "organizationId": "org_1787780815354_1644ea",
+      "userId": "usr_1787780815354_2eabb6",
+      "userEmail": "founder_1787780815352@klim-foundry.com",
+      "action": "auth.password_reset",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Password changed successfully for founder_1787780815352@klim-foundry.com. All previous sessions invalidated.",
+      "id": "log_1787780815385_30edd10e",
+      "timestamp": "2026-08-26T21:46:55.385Z"
+    },
+    {
+      "organizationId": "org_1787780815354_1644ea",
+      "userId": "usr_1787780815354_2eabb6",
+      "userEmail": "founder_1787780815352@klim-foundry.com",
+      "action": "auth.login_success",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "User founder_1787780815352@klim-foundry.com signed in via Webmail",
+      "id": "log_1787780815375_3cecda3f",
+      "timestamp": "2026-08-26T21:46:55.375Z"
+    },
+    {
+      "organizationId": "org_1787780815354_1644ea",
+      "userId": "usr_1787780815354_2eabb6",
+      "userEmail": "founder_1787780815352@klim-foundry.com",
+      "action": "auth.email_verified",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Email address founder_1787780815352@klim-foundry.com verified successfully via token",
+      "id": "log_1787780815363_e79390bb",
+      "timestamp": "2026-08-26T21:46:55.363Z"
+    },
+    {
+      "organizationId": "org_1787780815354_1644ea",
+      "userId": "usr_1787780815354_2eabb6",
+      "userEmail": "founder_1787780815352@klim-foundry.com",
+      "action": "auth.signup",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Created new organization \"Klim Type Foundry\" on pro tier. Verification token issued.",
+      "id": "log_1787780815355_75daf357",
+      "timestamp": "2026-08-26T21:46:55.355Z"
+    },
+    {
+      "organizationId": "org_1787780797760_04812a",
+      "userId": "usr_1787780797760_0ec5f1",
+      "userEmail": "founder_1787780797759@klim-foundry.com",
+      "action": "auth.login_success",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "User founder_1787780797759@klim-foundry.com signed in via Webmail",
+      "id": "log_1787780797796_d2105de2",
+      "timestamp": "2026-08-26T21:46:37.796Z"
+    },
+    {
+      "organizationId": "org_1787780797760_04812a",
+      "userId": "usr_1787780797760_0ec5f1",
+      "userEmail": "founder_1787780797759@klim-foundry.com",
+      "action": "auth.password_reset",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Password changed successfully for founder_1787780797759@klim-foundry.com. All previous sessions invalidated.",
+      "id": "log_1787780797793_bc897961",
+      "timestamp": "2026-08-26T21:46:37.793Z"
+    },
+    {
+      "organizationId": "org_1787780797760_04812a",
+      "userId": "usr_1787780797760_0ec5f1",
+      "userEmail": "founder_1787780797759@klim-foundry.com",
+      "action": "auth.login_success",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "User founder_1787780797759@klim-foundry.com signed in via Webmail",
+      "id": "log_1787780797783_1a66de06",
+      "timestamp": "2026-08-26T21:46:37.783Z"
+    },
+    {
+      "organizationId": "org_1787780797760_04812a",
+      "userId": "usr_1787780797760_0ec5f1",
+      "userEmail": "founder_1787780797759@klim-foundry.com",
+      "action": "auth.email_verified",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Email address founder_1787780797759@klim-foundry.com verified successfully via token",
+      "id": "log_1787780797770_4e29ce8a",
+      "timestamp": "2026-08-26T21:46:37.770Z"
+    },
+    {
+      "organizationId": "org_1787780797760_04812a",
+      "userId": "usr_1787780797760_0ec5f1",
+      "userEmail": "founder_1787780797759@klim-foundry.com",
+      "action": "auth.signup",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Created new organization \"Klim Type Foundry\" on pro tier. Verification token issued.",
+      "id": "log_1787780797761_9c8ceb8d",
+      "timestamp": "2026-08-26T21:46:37.761Z"
+    },
+    {
+      "organizationId": "org_1787780781190_7220a8",
+      "userId": "usr_1787780781190_324111",
+      "userEmail": "founder_1787780781189@klim-foundry.com",
+      "action": "auth.signup",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Created new organization \"Klim Type Foundry\" on pro tier",
+      "id": "log_1787780781190_28c6fcc7",
+      "timestamp": "2026-08-26T21:46:21.190Z"
+    },
+    {
+      "organizationId": "org_1787780781188_6d4afd",
+      "userId": "usr_1787780781188_0db077",
+      "userEmail": "sarah@skynet-defense.com",
+      "action": "auth.signup",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Created new organization \"Sarah Connor's Studio\" on pro tier",
+      "id": "log_1787780781188_9732d7c9",
+      "timestamp": "2026-08-26T21:46:21.188Z"
+    },
+    {
+      "organizationId": "org_1787780781184_c049fe",
+      "userId": "usr_1787780781184_0298f6",
+      "userEmail": "not-an-email",
+      "action": "auth.signup",
+      "category": "auth",
+      "ipAddress": "127.0.0.1",
+      "details": "Created new organization \"Sarah Connor's Studio\" on pro tier",
+      "id": "log_1787780781185_0e73655f",
+      "timestamp": "2026-08-26T21:46:21.185Z"
+    },
+    {
+      "organizationId": "org_atelier_nordic",
+      "userId": "system_tracking",
+      "userEmail": "alex@atelier-nordic.com",
+      "action": "mail.read_receipt_opened",
+      "category": "mail",
+      "ipAddress": "127.0.0.1",
+      "details": "Read receipt triggered for message \"Re: Architectural Monograph Vol. IV — Chapter 3 Proof Approved\" (Recipient opened, count: 6)",
+      "id": "log_1787780559437_bb513232",
+      "timestamp": "2026-08-26T21:42:39.437Z"
+    },
+    {
+      "organizationId": "org_atelier_nordic",
+      "userId": "system_tracking",
+      "userEmail": "alex@atelier-nordic.com",
+      "action": "mail.read_receipt_opened",
+      "category": "mail",
+      "ipAddress": "127.0.0.1",
+      "details": "Read receipt triggered for message \"Re: Architectural Monograph Vol. IV — Chapter 3 Proof Approved\" (Recipient opened, count: 5)",
+      "id": "log_1787780439004_9b45689c",
+      "timestamp": "2026-08-26T21:40:39.004Z"
+    },
+    {
+      "organizationId": "org_atelier_nordic",
+      "userId": "system_tracking",
+      "userEmail": "alex@atelier-nordic.com",
+      "action": "mail.read_receipt_opened",
+      "category": "mail",
+      "ipAddress": "127.0.0.1",
+      "details": "Read receipt triggered for message \"Re: Architectural Monograph Vol. IV — Chapter 3 Proof Approved\" (Recipient opened, count: 4)",
+      "id": "log_1787780206751_f32a8c54",
+      "timestamp": "2026-08-26T21:36:46.751Z"
+    },
+    {
+      "organizationId": "org_atelier_nordic",
+      "userId": "system_tracking",
+      "userEmail": "alex@atelier-nordic.com",
+      "action": "mail.read_receipt_opened",
+      "category": "mail",
+      "ipAddress": "127.0.0.1",
+      "details": "Read receipt triggered for message \"Re: Architectural Monograph Vol. IV — Chapter 3 Proof Approved\" (Recipient opened, count: 3)",
+      "id": "log_1787780003788_09394457",
+      "timestamp": "2026-08-26T21:33:23.788Z"
+    },
+    {
+      "id": "log_01",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "action": "domain.dns_verified",
+      "category": "domain",
+      "ipAddress": "84.212.19.42",
+      "details": "All DNS records (MX, SPF, DKIM, DMARC) verified successfully for atelier-nordic.com",
+      "timestamp": "2026-07-29T21:33:12.098Z"
+    },
+    {
+      "id": "log_02",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "action": "mailbox.created",
+      "category": "mailbox",
+      "ipAddress": "84.212.19.42",
+      "details": "Created primary mailbox alex@atelier-nordic.com with 25GB quota",
+      "timestamp": "2026-07-29T21:33:12.098Z"
+    },
+    {
+      "id": "log_03",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "action": "alias.created",
+      "category": "mailbox",
+      "ipAddress": "84.212.19.42",
+      "details": "Created routing alias press@atelier-nordic.com -> alex@atelier-nordic.com",
+      "timestamp": "2026-08-11T21:33:12.098Z"
+    },
+    {
+      "id": "log_04",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "userEmail": "alex.vance@atelier-nordic.com",
+      "action": "auth.login_success",
+      "category": "auth",
+      "ipAddress": "84.212.19.42",
+      "details": "Signed in successfully via Webmail session (MFA 2FA Authenticated)",
+      "timestamp": "2026-08-26T21:13:12.098Z"
+    }
+  ],
+  "apiKeys": [
+    {
+      "id": "key_prod_imap",
+      "organizationId": "org_atelier_nordic",
+      "userId": "usr_alex_vance",
+      "name": "Apple Mail / IMAP Sync Token",
+      "keyPrefix": "mn_live_8f3a...",
+      "scopes": [
+        "mail:read",
+        "mail:send",
+        "mail:sync"
+      ],
+      "lastUsedAt": "2026-08-26T21:18:12.098Z",
+      "createdAt": "2026-08-01T21:33:12.098Z"
+    }
+  ],
+  "invoices": [
+    {
+      "id": "inv_1787781288454",
+      "organizationId": "org_1787781288167_fc4d68",
+      "invoiceNumber": "MN-2026-B32349",
+      "amount": 99,
+      "currency": "USD",
+      "status": "paid",
+      "planName": "Monogram ENTERPRISE (Billed Monthly)",
+      "date": "2026-08-26T21:54:48.454Z",
+      "pdfUrl": "#"
+    },
+    {
+      "id": "inv_1787780896251",
+      "organizationId": "org_1787780896198_7a0244",
+      "invoiceNumber": "MN-2026-CD3341",
+      "amount": 29,
+      "currency": "USD",
+      "status": "paid",
+      "planName": "Monogram PRO (Billed Monthly)",
+      "date": "2026-08-26T21:48:16.251Z",
+      "pdfUrl": "#"
+    },
+    {
+      "id": "inv_1787780887230",
+      "organizationId": "org_1787780887180_02be78",
+      "invoiceNumber": "MN-2026-92C35D",
+      "amount": 29,
+      "currency": "USD",
+      "status": "paid",
+      "planName": "Monogram PRO (Billed Monthly)",
+      "date": "2026-08-26T21:48:07.230Z",
+      "pdfUrl": "#"
+    },
+    {
+      "id": "inv_1787780864308",
+      "organizationId": "org_1787780864258_46e595",
+      "invoiceNumber": "MN-2026-ED07DA",
+      "amount": 29,
+      "currency": "USD",
+      "status": "paid",
+      "planName": "Monogram PRO (Billed Monthly)",
+      "date": "2026-08-26T21:47:44.308Z",
+      "pdfUrl": "#"
+    },
+    {
+      "id": "inv_1787780815392",
+      "organizationId": "org_1787780815354_1644ea",
+      "invoiceNumber": "MN-2026-559597",
+      "amount": 29,
+      "currency": "USD",
+      "status": "paid",
+      "planName": "Monogram PRO (Billed Monthly)",
+      "date": "2026-08-26T21:46:55.392Z",
+      "pdfUrl": "#"
+    },
+    {
+      "id": "inv_2026_08",
+      "organizationId": "org_atelier_nordic",
+      "invoiceNumber": "MN-2026-0814",
+      "amount": 29,
+      "currency": "USD",
+      "status": "paid",
+      "planName": "Monogram Pro (5 Domains, 20 Mailboxes)",
+      "date": "2026-08-16T21:33:12.098Z",
+      "pdfUrl": "#"
+    },
+    {
+      "id": "inv_2026_07",
+      "organizationId": "org_atelier_nordic",
+      "invoiceNumber": "MN-2026-0714",
+      "amount": 29,
+      "currency": "USD",
+      "status": "paid",
+      "planName": "Monogram Pro (5 Domains, 20 Mailboxes)",
+      "date": "2026-07-17T21:33:12.098Z",
+      "pdfUrl": "#"
+    }
+  ],
+  "sessions": [
+    {
+      "token": "mn_sess_f7921baea3b9e0fa3667cd5a5ae2bb69d451e410e590e1fe",
+      "userId": "usr_1787780781184_0298f6",
+      "organizationId": "org_1787780781184_c049fe",
+      "expiresAt": "2026-09-02T21:46:21.184Z"
+    },
+    {
+      "token": "mn_sess_35cebd41fb9aee29b0e91f83e47150da58d3d4c27937a23e",
+      "userId": "usr_1787780781188_0db077",
+      "organizationId": "org_1787780781188_6d4afd",
+      "expiresAt": "2026-09-02T21:46:21.188Z"
+    },
+    {
+      "token": "mn_sess_87668a2cc44264d822c1739f1c9950951e33767d9e68cbc4",
+      "userId": "usr_1787780781190_324111",
+      "organizationId": "org_1787780781190_7220a8",
+      "expiresAt": "2026-09-02T21:46:21.190Z"
+    },
+    {
+      "token": "mn_sess_dbfa7a900351bf1959f364ed4a30f0ddcbfb023d3cb38e9a",
+      "userId": "usr_1787780797760_0ec5f1",
+      "organizationId": "org_1787780797760_04812a",
+      "expiresAt": "2026-09-02T21:46:37.793Z"
+    },
+    {
+      "token": "mn_sess_1e383c58e3170602925453a5b0134bea26d88466bc16c82e",
+      "userId": "usr_1787780797760_0ec5f1",
+      "organizationId": "org_1787780797760_04812a",
+      "expiresAt": "2026-09-02T21:46:37.796Z"
+    },
+    {
+      "token": "mn_sess_d4addb5977454034e59473b11826d161779f0f78aa0e61ab",
+      "userId": "usr_1787780815354_2eabb6",
+      "organizationId": "org_1787780815354_1644ea",
+      "expiresAt": "2026-09-02T21:46:55.385Z"
+    },
+    {
+      "token": "mn_sess_83285e2873e77f188283545e69e729972d7c6bd1717eca2f",
+      "userId": "usr_1787780815354_2eabb6",
+      "organizationId": "org_1787780815354_1644ea",
+      "expiresAt": "2026-09-02T21:46:55.388Z"
+    },
+    {
+      "token": "mn_sess_73a90e64eacb5b7263a2462500b6c5b8c358188a13e876fb",
+      "userId": "usr_1787780864258_0aa0f3",
+      "organizationId": "org_1787780864258_46e595",
+      "expiresAt": "2026-09-02T21:47:44.301Z"
+    },
+    {
+      "token": "mn_sess_5f8273c442de7fcab03c0546519bdc49c254d9e81e73e71d",
+      "userId": "usr_1787780864258_0aa0f3",
+      "organizationId": "org_1787780864258_46e595",
+      "expiresAt": "2026-09-02T21:47:44.305Z"
+    },
+    {
+      "token": "mn_sess_653e5f8eb8117f712786f274a1fe9489e124f933a70d9ce2",
+      "userId": "usr_1787780887180_38482a",
+      "organizationId": "org_1787780887180_02be78",
+      "expiresAt": "2026-09-02T21:48:07.222Z"
+    },
+    {
+      "token": "mn_sess_ad0b5bebc9bcbf2039ed61e14662d20b638536492a77135d",
+      "userId": "usr_1787780887180_38482a",
+      "organizationId": "org_1787780887180_02be78",
+      "expiresAt": "2026-09-02T21:48:07.226Z"
+    },
+    {
+      "token": "mn_sess_c2ed4b9a0cc915a88d936b5aa547b9c897cdae5d2e884295",
+      "userId": "usr_1787780896198_21a0d2",
+      "organizationId": "org_1787780896198_7a0244",
+      "expiresAt": "2026-09-02T21:48:16.246Z"
+    },
+    {
+      "token": "mn_sess_3028c5248fc472a13b8864b5714b4de98138ad6eb8f30ecd",
+      "userId": "usr_1787780896198_21a0d2",
+      "organizationId": "org_1787780896198_7a0244",
+      "expiresAt": "2026-09-02T21:48:16.249Z"
+    },
+    {
+      "token": "mn_sess_0d69c745c0883b04b7d4474a4e36028899eb338f0ad5a5ff",
+      "userId": "usr_1787781232456_4ff63a",
+      "organizationId": "org_1787781232456_8c136c",
+      "expiresAt": "2026-09-02T21:53:52.509Z"
+    },
+    {
+      "token": "mn_sess_87fa54844f9e07e19ee6f9f67f01cef8ae14eb968e339ffc",
+      "userId": "usr_1787781232456_4ff63a",
+      "organizationId": "org_1787781232456_8c136c",
+      "expiresAt": "2026-09-02T21:53:52.523Z"
+    },
+    {
+      "token": "mn_sess_bc4b8a3d2f363de709efac602f015b3db982f9f609435e0d",
+      "userId": "usr_1787781232456_4ff63a",
+      "organizationId": "org_1787781232456_8c136c",
+      "expiresAt": "2026-09-02T21:53:52.583Z"
+    },
+    {
+      "token": "mn_sess_19efd4719990a7cee09c957fa90aabb21ff9f565daef058f",
+      "userId": "usr_1787781232589_25c1c4",
+      "organizationId": "org_1787781232590_70b69b",
+      "expiresAt": "2026-09-02T21:53:52.650Z"
+    },
+    {
+      "token": "mn_sess_08a87468459d1d6340e361cb17037053662a622fc9799bc9",
+      "userId": "usr_1787781232589_25c1c4",
+      "organizationId": "org_1787781232590_70b69b",
+      "expiresAt": "2026-09-02T21:53:52.657Z"
+    },
+    {
+      "token": "mn_sess_882c18aa308372807ffbd3d6a9987a026fae5ddfdba6b9de",
+      "userId": "usr_1787781232589_25c1c4",
+      "organizationId": "org_1787781232590_70b69b",
+      "expiresAt": "2026-09-02T21:53:52.701Z"
+    },
+    {
+      "token": "mn_sess_1beac1b307ad7380c1d5dacc11ce26e43bb4e0d5c4840bb6",
+      "userId": "usr_1787781246857_ac464e",
+      "organizationId": "org_1787781246857_987bfe",
+      "expiresAt": "2026-09-02T21:54:06.918Z"
+    },
+    {
+      "token": "mn_sess_58babe4724fc7e610a5a13b1d96718a09ca4deba49913d7b",
+      "userId": "usr_1787781246857_ac464e",
+      "organizationId": "org_1787781246857_987bfe",
+      "expiresAt": "2026-09-02T21:54:06.936Z"
+    },
+    {
+      "token": "mn_sess_d42a7b99a3c70f387e6ab2e178394ac36b6b7b12419b3556",
+      "userId": "usr_1787781246857_ac464e",
+      "organizationId": "org_1787781246857_987bfe",
+      "expiresAt": "2026-09-02T21:54:06.987Z"
+    },
+    {
+      "token": "mn_sess_43c73b0709744ce30c85d2180c406d48982e95b425f88202",
+      "userId": "usr_1787781246993_c7c5de",
+      "organizationId": "org_1787781246993_632526",
+      "expiresAt": "2026-09-02T21:54:07.059Z"
+    },
+    {
+      "token": "mn_sess_c059e41f83184f68d1a8d7fbec92b5fef1d9cfc48db5e58e",
+      "userId": "usr_1787781246993_c7c5de",
+      "organizationId": "org_1787781246993_632526",
+      "expiresAt": "2026-09-02T21:54:07.073Z"
+    },
+    {
+      "token": "mn_sess_9d30e03128a1ff3439d213d49ec994a78795166fe43f2cb6",
+      "userId": "usr_1787781246993_c7c5de",
+      "organizationId": "org_1787781246993_632526",
+      "expiresAt": "2026-09-02T21:54:07.118Z"
+    },
+    {
+      "token": "mn_sess_78d69d3e63822dd58d5ab99aeb88a7cda46ef95d86165c95",
+      "userId": "usr_1787781260583_6e78a5",
+      "organizationId": "org_1787781260583_9422dd",
+      "expiresAt": "2026-09-02T21:54:20.639Z"
+    },
+    {
+      "token": "mn_sess_486b4b6400e674f4ef55efa441717fe8edb068288122d4d4",
+      "userId": "usr_1787781260583_6e78a5",
+      "organizationId": "org_1787781260583_9422dd",
+      "expiresAt": "2026-09-02T21:54:20.654Z"
+    },
+    {
+      "token": "mn_sess_21e6f51248401a14d2b18ed41efc48db1dc38ebd26f3900a",
+      "userId": "usr_1787781260583_6e78a5",
+      "organizationId": "org_1787781260583_9422dd",
+      "expiresAt": "2026-09-02T21:54:20.715Z"
+    },
+    {
+      "token": "mn_sess_7e7c3fb42097982846b275bac7a657ac017874ab9ef4959c",
+      "userId": "usr_1787781260729_9d3f46",
+      "organizationId": "org_1787781260729_d99fb2",
+      "expiresAt": "2026-09-02T21:54:20.775Z"
+    },
+    {
+      "token": "mn_sess_8c6aa1ffe1b968d7516d6033e1f2b6c5daa07ba1e44f733f",
+      "userId": "usr_1787781260729_9d3f46",
+      "organizationId": "org_1787781260729_d99fb2",
+      "expiresAt": "2026-09-02T21:54:20.781Z"
+    },
+    {
+      "token": "mn_sess_6ae795abd817e03a4ddd151649bb504c3a101c94088c370f",
+      "userId": "usr_1787781260729_9d3f46",
+      "organizationId": "org_1787781260729_d99fb2",
+      "expiresAt": "2026-09-02T21:54:20.822Z"
+    },
+    {
+      "token": "mn_sess_95633e58c68e9455ab625fbc96537bb707ba70fbb61f5ab8",
+      "userId": "usr_1787781288284_f2d19b",
+      "organizationId": "org_1787781288284_f893ba",
+      "expiresAt": "2026-09-02T21:54:48.355Z"
+    },
+    {
+      "token": "mn_sess_ccdc8e83ec9b66771bc31c0668a26a4e6d69f0489210bdc6",
+      "userId": "usr_1787781288284_f2d19b",
+      "organizationId": "org_1787781288284_f893ba",
+      "expiresAt": "2026-09-02T21:54:48.359Z"
+    },
+    {
+      "token": "mn_sess_73614ed794e63c4385488668015d9e87a6cf930486f3db31",
+      "userId": "usr_1787781288284_f2d19b",
+      "organizationId": "org_1787781288284_f893ba",
+      "expiresAt": "2026-09-02T21:54:48.407Z"
+    },
+    {
+      "token": "mn_sess_10b3ed99a595ceb3e3d971e86e64a8fc571ce944c43575e7",
+      "userId": "usr_1787781288167_e00403",
+      "organizationId": "org_1787781288167_fc4d68",
+      "expiresAt": "2026-09-02T21:54:48.503Z"
+    },
+    {
+      "token": "mn_sess_7e71f7fe3d46a8fab0a29cd16675c95b168f7c4c17472f46",
+      "userId": "usr_1787781288167_e00403",
+      "organizationId": "org_1787781288167_fc4d68",
+      "expiresAt": "2026-09-02T21:54:48.592Z"
+    }
+  ]
+}

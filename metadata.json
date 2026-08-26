@@ -1,0 +1,10 @@
+{
+  "name": "Mailoo",
+  "description": "A sovereign, multi-tenant premium custom domain email hosting SaaS with lightning-fast webmail, DNS analyzer, PGP encryption, and team management.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
