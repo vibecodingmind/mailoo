@@ -1,8 +1,11 @@
+import 'dotenv/config';
 import express from 'express';
 import path from 'path';
 import crypto from 'crypto';
+import fs from 'fs';
 import { createServer as createViteServer } from 'vite';
-import { db } from './src/server/db.js';
+import { db, generateDkimKeyPair } from './src/server/db.js';
+import { publicUser, publicApiKey, publicAppPassword } from './src/server/sanitize.js';
 import {
   getRecommendedDnsRecords,
   verifyDomainDns,
@@ -12,6 +15,7 @@ import {
   classifySmartSort,
 } from './src/server/mailEngine.js';
 import { hashPassword, verifyPassword, needsRehash } from './src/server/passwordSecurity.js';
+import { getPlanLimits, normalizePlanId, DEMO_ACCOUNT } from './src/lib/plans.js';
 
 declare global {
   namespace Express {
@@ -25,12 +29,21 @@ declare global {
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = Number(process.env.PORT) || 3000;
+  const startedAt = Date.now();
 
+  app.disable('x-powered-by');
   app.use(express.json({ limit: '25mb' }));
   app.use(express.urlencoded({ extended: true, limit: '25mb' }));
+  app.use((req, res, next) => {
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+    res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+    res.setHeader('Permissions-Policy', 'camera=(), geolocation=(), microphone=(self)');
+    next();
+  });
 
-  // Helper middleware for session / auth context
+  // Session context — no implicit demo user. Unauthenticated APIs stay public only.
   app.use((req, res, next) => {
     const authHeader = req.headers.authorization;
     let token = authHeader?.startsWith('Bearer ') ? authHeader.substring(7) : null;
@@ -38,20 +51,7 @@ async function startServer() {
       token = req.headers['x-session-token'] as string;
     }
 
-    let session = token ? db.getSession(token) : null;
-
-    // If no valid session, default to demo owner user for seamless frictionless evaluation
-    if (!session) {
-      const defaultUser = db.getUserByEmail('alex.vance@atelier-nordic.com') || db.getSchema().users[0];
-      const defaultOrg = db.getSchema().organizations[0];
-      if (defaultUser && defaultOrg) {
-        req.user = defaultUser;
-        req.organization = defaultOrg;
-        req.sessionToken = 'demo-session-token';
-        return next();
-      }
-    }
-
+    const session = token ? db.getSession(token) : null;
     if (session) {
       const user = db.getUserById(session.userId);
       const org = db.getOrgById(session.organizationId);
@@ -65,6 +65,28 @@ async function startServer() {
     next();
   });
 
+  const PUBLIC_API = new Set([
+    'GET /api/health',
+    'GET /api/status',
+    'POST /api/auth/login',
+    'POST /api/auth/signup',
+    'POST /api/auth/demo',
+    'POST /api/auth/forgot-password',
+    'POST /api/auth/reset-password',
+    'POST /api/auth/verify-email',
+    'POST /api/auth/resend-verification',
+    'POST /api/auth/logout',
+  ]);
+
+  app.use((req, res, next) => {
+    if (!req.path.startsWith('/api/')) return next();
+    if (PUBLIC_API.has(`${req.method} ${req.path}`)) return next();
+    if (!req.user || !req.organization) {
+      return res.status(401).json({ error: 'Sign in required' });
+    }
+    next();
+  });
+
   // Declare custom express request types
   // ===================================
   // API Routes
@@ -72,14 +94,96 @@ async function startServer() {
 
   // In-memory rate limiter for failed login attempts
   const loginAttemptsMap = new Map<string, { count: number; lockedUntil: number }>();
+  const authBurstMap = new Map<string, { count: number; windowStart: number; lockedUntil: number }>();
+
+  function consumeBurst(key: string, max: number, windowMs: number, lockMs: number) {
+    const now = Date.now();
+    const entry = authBurstMap.get(key) || { count: 0, windowStart: now, lockedUntil: 0 };
+    if (entry.lockedUntil > now) {
+      return { blocked: true as const, retryAfterSec: Math.ceil((entry.lockedUntil - now) / 1000) };
+    }
+    if (now - entry.windowStart > windowMs) {
+      entry.count = 0;
+      entry.windowStart = now;
+    }
+    entry.count += 1;
+    if (entry.count > max) {
+      entry.lockedUntil = now + lockMs;
+      authBurstMap.set(key, entry);
+      return { blocked: true as const, retryAfterSec: Math.ceil(lockMs / 1000) };
+    }
+    authBurstMap.set(key, entry);
+    return { blocked: false as const, retryAfterSec: 0 };
+  }
+
+  const returnDevTokens = process.env.MAILOO_DEV_TOKENS === 'true';
 
   // Health
   app.get('/api/health', (req, res) => {
     res.json({
       status: 'ok',
       service: 'Mailoo Email Hosting Engine',
-      version: '1.4.0',
+      version: '1.6.0',
       timestamp: new Date().toISOString(),
+    });
+  });
+
+  app.get('/robots.txt', (_req, res) => {
+    res.type('text/plain').send('User-agent: *\nAllow: /\nDisallow: /api/\n');
+  });
+
+  app.get('/.well-known/security.txt', (_req, res) => {
+    res.type('text/plain').send(
+      [
+        'Contact: mailto:security@mailoo.email',
+        'Expires: 2027-08-26T00:00:00.000Z',
+        'Preferred-Languages: en',
+        'Canonical: https://mailoo.email/.well-known/security.txt',
+        '',
+      ].join('\n')
+    );
+  });
+
+  app.get('/api/status', (req, res) => {
+    const dataFile = path.join(process.cwd(), 'data', 'mailoo_db.json');
+    const datastoreOk = fs.existsSync(dataFile);
+    const aiConfigured = Boolean(process.env.GEMINI_API_KEY);
+    const demoEnabled = process.env.MAILOO_DEMO_LOGIN !== 'false';
+    const checks = [
+      { id: 'api', name: 'API', status: 'operational' as const, detail: 'Express application responding' },
+      {
+        id: 'datastore',
+        name: 'Datastore',
+        status: datastoreOk ? ('operational' as const) : ('degraded' as const),
+        detail: datastoreOk ? 'JSON workspace store mounted' : 'Workspace file missing',
+      },
+      {
+        id: 'ai',
+        name: 'Gemini copilot',
+        status: aiConfigured ? ('operational' as const) : ('not_configured' as const),
+        detail: aiConfigured ? 'GEMINI_API_KEY present' : 'Optional — drafts still work without Copilot',
+      },
+      {
+        id: 'demo',
+        name: 'Preview studio login',
+        status: demoEnabled ? ('operational' as const) : ('not_configured' as const),
+        detail: demoEnabled ? 'POST /api/auth/demo enabled' : 'Disabled via MAILOO_DEMO_LOGIN',
+      },
+      {
+        id: 'mx',
+        name: 'Public MX / SMTP',
+        status: 'not_configured' as const,
+        detail: 'This build is a product preview, not a live mail host',
+      },
+    ];
+    const degraded = checks.some((c) => c.status === 'degraded');
+    res.json({
+      status: degraded ? 'degraded' : 'operational',
+      service: 'Mailoo',
+      version: '1.6.0',
+      startedAt: new Date(startedAt).toISOString(),
+      uptimeSeconds: Math.floor((Date.now() - startedAt) / 1000),
+      checks,
     });
   });
 
@@ -99,18 +203,23 @@ async function startServer() {
       .filter(Boolean);
 
     res.json({
-      user: req.user,
+      user: publicUser(req.user),
       organization: req.organization,
       availableOrganizations: availableOrgs.length > 0 ? availableOrgs : [req.organization],
       mailboxes: mailboxes,
       domains: domains,
       memberships: memberships,
-      sessionToken: req.sessionToken || 'demo-session-token',
+      sessionToken: req.sessionToken,
     });
   });
 
   // Auth: Signup with validation & verification token generation
   app.post('/api/auth/signup', (req, res) => {
+    const burst = consumeBurst(`signup:${req.ip || '127.0.0.1'}`, 8, 15 * 60 * 1000, 15 * 60 * 1000);
+    if (burst.blocked) {
+      return res.status(429).json({ error: `Too many signup attempts. Retry in ${burst.retryAfterSec} seconds.` });
+    }
+
     const { fullName, email, password, orgName, plan = 'pro' } = req.body;
 
     if (!email || typeof email !== 'string' || !email.trim()) {
@@ -126,17 +235,18 @@ async function startServer() {
       return res.status(400).json({ error: 'Please enter a valid email address' });
     }
 
-    // Password validation (if provided)
-    if (password) {
-      if (password.length < 8) {
-        return res.status(400).json({ error: 'Password must be at least 8 characters long' });
-      }
-      if (!/[A-Z]/.test(password)) {
-        return res.status(400).json({ error: 'Password must contain at least one uppercase letter' });
-      }
-      if (!/[0-9]/.test(password)) {
-        return res.status(400).json({ error: 'Password must contain at least one number' });
-      }
+    // Password is required for new accounts
+    if (!password || typeof password !== 'string') {
+      return res.status(400).json({ error: 'Password is required' });
+    }
+    if (password.length < 8) {
+      return res.status(400).json({ error: 'Password must be at least 8 characters long' });
+    }
+    if (!/[A-Z]/.test(password)) {
+      return res.status(400).json({ error: 'Password must contain at least one uppercase letter' });
+    }
+    if (!/[0-9]/.test(password)) {
+      return res.status(400).json({ error: 'Password must contain at least one number' });
     }
 
     const cleanEmail = email.trim().toLowerCase();
@@ -152,7 +262,9 @@ async function startServer() {
     const newOrgId = `org_${Date.now()}_${crypto.randomBytes(3).toString('hex')}`;
     const verificationToken = crypto.randomBytes(32).toString('hex');
     const verificationTokenExpiresAt = new Date(Date.now() + 24 * 3600000).toISOString();
-    const pwdHash = password ? hashPassword(password) : hashPassword('Monogram2026!');
+    const pwdHash = hashPassword(password);
+    const planId = normalizePlanId(plan);
+    const limits = getPlanLimits(planId);
 
     let user: any;
     if (existingUser) {
@@ -184,12 +296,12 @@ async function startServer() {
       id: newOrgId,
       name: orgName || `${fullName.trim()}'s Studio`,
       slug: (orgName || fullName).toLowerCase().replace(/[^a-z0-9]/g, '-').slice(0, 30),
-      plan: plan,
+      plan: planId,
       billingStatus: 'active',
       billingPeriod: 'monthly',
-      maxDomains: plan === 'enterprise' ? 25 : plan === 'pro' ? 5 : 1,
-      maxMailboxes: plan === 'enterprise' ? 100 : plan === 'pro' ? 20 : 3,
-      maxStorageGb: plan === 'enterprise' ? 250 : plan === 'pro' ? 50 : 10,
+      maxDomains: limits.maxDomains,
+      maxMailboxes: limits.maxMailboxes,
+      maxStorageGb: limits.maxStorageGb,
       currentStorageMb: 120,
       createdAt: new Date().toISOString(),
     });
@@ -218,12 +330,13 @@ async function startServer() {
     });
 
     res.json({
-      user,
+      user: publicUser(user),
       organization: org,
       sessionToken: token,
-      verificationToken,
-      verificationUrl: `/verify-email?token=${verificationToken}`,
-      message: 'Account created. Verification email sent.',
+      message: 'Account created. Check your inbox to verify this address.',
+      ...(returnDevTokens
+        ? { verificationToken, verificationUrl: `/verify-email?token=${verificationToken}` }
+        : {}),
     });
   });
 
@@ -267,7 +380,7 @@ async function startServer() {
     res.json({
       success: true,
       message: 'Email verified successfully. Account is now active.',
-      user: updatedUser,
+      user: publicUser(updatedUser),
       organization: org,
       sessionToken,
     });
@@ -275,6 +388,11 @@ async function startServer() {
 
   // Auth: Resend verification email
   app.post('/api/auth/resend-verification', (req, res) => {
+    const burst = consumeBurst(`resend:${req.ip || '127.0.0.1'}`, 8, 15 * 60 * 1000, 15 * 60 * 1000);
+    if (burst.blocked) {
+      return res.status(429).json({ error: `Too many verification requests. Retry in ${burst.retryAfterSec} seconds.` });
+    }
+
     const { email } = req.body;
     if (!email || !email.trim()) {
       return res.status(400).json({ error: 'Email address is required' });
@@ -304,8 +422,9 @@ async function startServer() {
     res.json({
       success: true,
       message: 'New verification email dispatched.',
-      verificationToken,
-      verificationUrl: `/verify-email?token=${verificationToken}`,
+      ...(returnDevTokens
+        ? { verificationToken, verificationUrl: `/verify-email?token=${verificationToken}` }
+        : {}),
     });
   });
 
@@ -314,6 +433,10 @@ async function startServer() {
     const { email, password } = req.body;
     if (!email || typeof email !== 'string' || !email.trim()) {
       return res.status(400).json({ error: 'Email address is required' });
+    }
+
+    if (!password || typeof password !== 'string') {
+      return res.status(400).json({ error: 'Password is required' });
     }
 
     const clientKey = `${req.ip || '127.0.0.1'}_${email.trim().toLowerCase()}`;
@@ -341,42 +464,40 @@ async function startServer() {
       return res.status(401).json({ error: 'Invalid email or password' });
     }
 
-    // Verify password if user has passwordHash and password is provided
-    if (user.passwordHash && password) {
-      const isValidPassword = verifyPassword(password, user.passwordHash);
-      if (!isValidPassword) {
-        const current = loginAttemptsMap.get(clientKey) || { count: 0, lockedUntil: 0 };
-        current.count += 1;
-        if (current.count >= 5) {
-          current.lockedUntil = Date.now() + 10 * 60000;
-        }
-        loginAttemptsMap.set(clientKey, current);
-
-        const memberships = db.getMembershipsByUser(user.id);
-        const orgId = memberships[0]?.organizationId || 'org_atelier_nordic';
-
-        db.recordLoginAttempt({
-          organizationId: orgId,
-          userId: user.id,
-          userEmail: user.email,
-          ipAddress: req.ip || '127.0.0.1',
-          userAgent: (req.headers['user-agent'] as string) || 'Browser Client',
-          device: 'Desktop',
-          browser: 'Webmail Client',
-          os: 'Modern OS',
-          location: 'Stockholm, Sweden',
-          status: 'blocked',
-          authMethod: 'password_mfa',
-          details: 'Failed password verification attempt',
-        });
-
-        return res.status(401).json({ error: 'Invalid email or password' });
+    // Verify password against stored hash — never skip if hash is missing
+    const isValidPassword = Boolean(user.passwordHash) && verifyPassword(password, user.passwordHash as string);
+    if (!isValidPassword) {
+      const current = loginAttemptsMap.get(clientKey) || { count: 0, lockedUntil: 0 };
+      current.count += 1;
+      if (current.count >= 5) {
+        current.lockedUntil = Date.now() + 10 * 60000;
       }
+      loginAttemptsMap.set(clientKey, current);
 
-      // Transparent upgrade to memory-hard scrypt if legacy hash format was detected
-      if (needsRehash(user.passwordHash)) {
-        db.updateUser(user.id, { passwordHash: hashPassword(password) });
-      }
+      const memberships = db.getMembershipsByUser(user.id);
+      const orgId = memberships[0]?.organizationId || 'org_atelier_nordic';
+
+      db.recordLoginAttempt({
+        organizationId: orgId,
+        userId: user.id,
+        userEmail: user.email,
+        ipAddress: req.ip || '127.0.0.1',
+        userAgent: (req.headers['user-agent'] as string) || 'Browser Client',
+        device: 'Desktop',
+        browser: 'Webmail Client',
+        os: 'Modern OS',
+        location: 'Stockholm, Sweden',
+        status: 'blocked',
+        authMethod: 'password_mfa',
+        details: 'Failed password verification attempt',
+      });
+
+      return res.status(401).json({ error: 'Invalid email or password' });
+    }
+
+    // Transparent upgrade to memory-hard scrypt if legacy hash format was detected
+    if (needsRehash(user.passwordHash as string)) {
+      db.updateUser(user.id, { passwordHash: hashPassword(password) });
     }
 
     // Clear rate limit on successful credentials
@@ -415,7 +536,65 @@ async function startServer() {
     });
 
     res.json({
-      user,
+      user: publicUser(user),
+      organization: org,
+      sessionToken: token,
+    });
+  });
+
+  // One-click preview studio — no password in the client bundle
+  app.post('/api/auth/demo', (req, res) => {
+    if (process.env.MAILOO_DEMO_LOGIN === 'false') {
+      return res.status(403).json({ error: 'Demo login is disabled on this instance' });
+    }
+
+    const burst = consumeBurst(`demo:${req.ip || '127.0.0.1'}`, 20, 15 * 60 * 1000, 15 * 60 * 1000);
+    if (burst.blocked) {
+      return res.status(429).json({ error: `Demo login temporarily limited. Retry in ${burst.retryAfterSec} seconds.` });
+    }
+
+    const user = db.getUserByEmail(DEMO_ACCOUNT.email);
+    if (!user) {
+      return res.status(404).json({ error: 'Demo studio is not seeded on this instance' });
+    }
+
+    const memberships = db.getMembershipsByUser(user.id);
+    const orgId = memberships[0]?.organizationId || db.getSchema().organizations[0]?.id;
+    const org = orgId ? db.getOrgById(orgId) : null;
+    if (!org) {
+      return res.status(404).json({ error: 'Demo organization is not seeded' });
+    }
+
+    const token = db.createSession(user.id, org.id);
+    db.updateUser(user.id, { lastLoginAt: new Date().toISOString() });
+
+    db.recordLoginAttempt({
+      organizationId: org.id,
+      userId: user.id,
+      userEmail: user.email,
+      ipAddress: req.ip || '127.0.0.1',
+      userAgent: (req.headers['user-agent'] as string) || 'Webmail Client',
+      device: 'Desktop',
+      browser: 'Webmail Client',
+      os: 'Modern OS',
+      location: 'Preview',
+      status: 'success',
+      authMethod: 'session_refresh',
+      details: 'Opened seeded preview studio via demo login',
+    });
+
+    db.addAuditLog({
+      organizationId: org.id,
+      userId: user.id,
+      userEmail: user.email,
+      action: 'auth.demo_login',
+      category: 'auth',
+      ipAddress: req.ip || '127.0.0.1',
+      details: 'Preview studio session issued',
+    });
+
+    res.json({
+      user: publicUser(user),
       organization: org,
       sessionToken: token,
     });
@@ -423,6 +602,11 @@ async function startServer() {
 
   // Auth: Forgot Password (request reset link)
   app.post('/api/auth/forgot-password', (req, res) => {
+    const burst = consumeBurst(`forgot:${req.ip || '127.0.0.1'}`, 8, 15 * 60 * 1000, 15 * 60 * 1000);
+    if (burst.blocked) {
+      return res.status(429).json({ error: `Too many reset requests. Retry in ${burst.retryAfterSec} seconds.` });
+    }
+
     const { email } = req.body;
     if (!email || !email.trim()) {
       return res.status(400).json({ error: 'Email address is required' });
@@ -430,7 +614,10 @@ async function startServer() {
 
     const user = db.getUserByEmail(email.trim().toLowerCase());
     if (!user) {
-      return res.status(404).json({ error: 'No registered account found with that email address.' });
+      return res.json({
+        success: true,
+        message: 'If an account exists, a reset link was issued.',
+      });
     }
 
     const resetPasswordToken = crypto.randomBytes(32).toString('hex');
@@ -443,14 +630,20 @@ async function startServer() {
 
     res.json({
       success: true,
-      message: 'Password reset link generated and delivered.',
-      resetToken: resetPasswordToken,
-      resetUrl: `/reset-password?token=${resetPasswordToken}`,
+      message: 'If an account exists, a reset link was issued.',
+      ...(returnDevTokens
+        ? { resetToken: resetPasswordToken, resetUrl: `/reset-password?token=${resetPasswordToken}` }
+        : {}),
     });
   });
 
   // Auth: Reset Password (set new password with token)
   app.post('/api/auth/reset-password', (req, res) => {
+    const burst = consumeBurst(`reset:${req.ip || '127.0.0.1'}`, 8, 15 * 60 * 1000, 15 * 60 * 1000);
+    if (burst.blocked) {
+      return res.status(429).json({ error: `Too many reset attempts. Retry in ${burst.retryAfterSec} seconds.` });
+    }
+
     const { token, newPassword } = req.body;
     if (!token || typeof token !== 'string') {
       return res.status(400).json({ error: 'Reset token is required' });
@@ -512,10 +705,50 @@ async function startServer() {
 
   // Auth: Logout
   app.post('/api/auth/logout', (req, res) => {
-    if (req.sessionToken && req.sessionToken !== 'demo-session-token') {
+    if (req.sessionToken) {
       db.deleteSession(req.sessionToken);
     }
     res.json({ success: true, message: 'Session successfully revoked' });
+  });
+
+  app.get('/api/account/export', (req, res) => {
+    const payload = db.exportOrganization(req.organization.id);
+    if (!payload) {
+      return res.status(404).json({ error: 'Organization not found' });
+    }
+
+    db.addAuditLog({
+      organizationId: req.organization.id,
+      userId: req.user.id,
+      userEmail: req.user.email,
+      action: 'account.exported',
+      category: 'security',
+      ipAddress: req.ip || '127.0.0.1',
+      details: 'Downloaded workspace data export (secrets omitted)',
+    });
+
+    res.setHeader('Content-Disposition', `attachment; filename="mailoo-${req.organization.slug || 'workspace'}-export.json"`);
+    res.json(payload);
+  });
+
+  app.delete('/api/account', (req, res) => {
+    const membership = db
+      .getMembershipsByOrg(req.organization.id)
+      .find((m) => m.userId === req.user.id);
+    if (!membership || (membership.role !== 'owner' && req.user.role !== 'owner')) {
+      return res.status(403).json({ error: 'Only the workspace owner can delete this organization' });
+    }
+
+    if (req.organization.id === 'org_atelier_nordic') {
+      return res.status(403).json({ error: 'The seeded preview studio cannot be deleted. Create your own workspace instead.' });
+    }
+
+    const orgId = req.organization.id;
+    const orgName = req.organization.name;
+    if (req.sessionToken) db.deleteSession(req.sessionToken);
+    db.deleteOrganization(orgId);
+
+    res.json({ success: true, message: `Deleted workspace ${orgName}` });
   });
 
   // Auth: Switch active organization
@@ -574,10 +807,7 @@ async function startServer() {
       return res.status(400).json({ error: 'This domain is already registered in your organization' });
     }
 
-    const dkimKeys = {
-      publicKey: `v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA${crypto.randomBytes(160).toString('base64')}IDAQAB`,
-      privateKey: 'mailoo-signing-key',
-    };
+    const dkimKeys = generateDkimKeyPair();
 
     const newDomain = db.createDomain({
       id: `dom_${Date.now()}_${crypto.randomBytes(3).toString('hex')}`,
@@ -838,13 +1068,17 @@ async function startServer() {
       return res.status(404).json({ error: 'Thread not found' });
     }
 
-    // Auto mark messages in thread as read
+    // Auto mark unread messages as read — only persist when something changed
+    let markedRead = false;
     thread.messages?.forEach((m) => {
       if (!m.isRead) {
         db.updateMessage(m.id, req.organization.id, { isRead: true });
+        markedRead = true;
       }
     });
-    db.updateThread(thread.id, req.organization.id, { unreadCount: 0 });
+    if (markedRead || thread.unreadCount !== 0) {
+      db.updateThread(thread.id, req.organization.id, { unreadCount: 0 });
+    }
 
     res.json({ thread });
   });
@@ -1910,6 +2144,11 @@ async function startServer() {
         storageMaxGb: req.organization.maxStorageGb,
       },
       invoices,
+      payments: {
+        provider: 'preview',
+        stripeConnected: false,
+        note: 'Plan changes write preview invoices. Connect Stripe before charging customers.',
+      },
     });
   });
 
@@ -1920,16 +2159,8 @@ async function startServer() {
 
   const handlePlanChange = (req: express.Request, res: express.Response) => {
     const { plan, period = 'monthly' } = req.body;
-    const cleanPlan = (plan || 'pro').toLowerCase();
-    if (!['starter', 'pro', 'enterprise'].includes(cleanPlan)) {
-      return res.status(400).json({ error: 'Invalid plan selected' });
-    }
-
-    const limits = {
-      starter: { maxDomains: 1, maxMailboxes: 3, maxStorageGb: 10, price: 9 },
-      pro: { maxDomains: 5, maxMailboxes: 20, maxStorageGb: 50, price: 29 },
-      enterprise: { maxDomains: 25, maxMailboxes: 100, maxStorageGb: 250, price: 99 },
-    }[cleanPlan as 'starter' | 'pro' | 'enterprise'];
+    const cleanPlan = normalizePlanId(plan);
+    const limits = getPlanLimits(cleanPlan);
 
     const updated = db.updateOrg(req.organization.id, {
       plan: cleanPlan as any,
@@ -1950,6 +2181,7 @@ async function startServer() {
       planName: `Mailoo ${cleanPlan.toUpperCase()} (${period === 'annual' ? 'Billed Annually' : 'Billed Monthly'})`,
       date: new Date().toISOString(),
       pdfUrl: '#',
+      preview: true,
     });
 
     db.addAuditLog({
@@ -1962,7 +2194,7 @@ async function startServer() {
       details: `Upgraded subscription to ${cleanPlan.toUpperCase()} tier (${limits.maxDomains} domains, ${limits.maxMailboxes} mailboxes)`,
     });
 
-    res.json({ organization: updated, success: true });
+    res.json({ organization: updated, success: true, preview: true });
   };
 
   app.post('/api/billing/change-plan', handlePlanChange);
@@ -1972,7 +2204,7 @@ async function startServer() {
   // API Keys & IMAP/SMTP Gateway Credentials
   app.get('/api/api-keys', (req, res) => {
     const keys = db.getApiKeysByOrg(req.organization.id);
-    res.json({ keys });
+    res.json({ keys: keys.map(publicApiKey) });
   });
 
   app.post('/api/api-keys', (req, res) => {
@@ -2052,7 +2284,7 @@ async function startServer() {
   // ===================================
   app.get('/api/app-passwords', (req, res) => {
     const appPasswords = db.getAppPasswords(req.organization.id, req.user.id);
-    res.json({ appPasswords });
+    res.json({ appPasswords: appPasswords.map(publicAppPassword) });
   });
 
   app.post('/api/app-passwords', (req, res) => {

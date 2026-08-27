@@ -1,27 +1,27 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   CreditCard,
   Check,
-  ShieldCheck,
-  Zap,
-  ArrowRight,
   Download,
-  Receipt,
-  Sparkles,
   HardDrive,
-  Globe,
-  Mail,
-  Server,
-  Database,
-  Layers,
 } from 'lucide-react';
 import { api } from '../../services/api.js';
 import { useAuth } from '../../context/AuthContext.js';
-import type { PlanTier } from '../../types.js';
+import { PLAN_LIST, formatPlanPrice, normalizePlanId } from '../../lib/plans.js';
+import type { Invoice, PlanId } from '../../types.js';
 
 export const BillingView: React.FC = () => {
   const { organization, mailboxes = [], refreshAll, showToast } = useAuth();
   const [isUpdating, setIsUpdating] = useState(false);
+  const [annual, setAnnual] = useState(organization?.billingPeriod === 'annual');
+  const [invoices, setInvoices] = useState<Invoice[]>([]);
+
+  useEffect(() => {
+    api
+      .getInvoices()
+      .then((res) => setInvoices(res.invoices || []))
+      .catch(() => setInvoices([]));
+  }, [organization?.plan, organization?.billingPeriod]);
 
   // Storage calculations
   const maxStorageGb = organization?.maxStorageGb || (organization?.plan === 'enterprise' ? 250 : organization?.plan === 'starter' ? 10 : 50);
@@ -33,63 +33,17 @@ export const BillingView: React.FC = () => {
   const freeStorageGb = (freeStorageMb / 1024).toFixed(2);
   const usagePercent = Math.min(100, Math.max(1, Math.round((usedStorageMb / maxStorageMb) * 100)));
 
-  const plans = [
-    {
-      id: 'STARTER' as PlanTier,
-      name: 'Starter',
-      price: '$9',
-      cadence: '/month',
-      desc: 'For solo creators and independent craft studios.',
-      features: [
-        '1 Custom Apex/Sub Domain',
-        '2 Mailboxes Included',
-        '10 GB Encrypted Storage',
-        'DKIM 2048-bit RSA + SPF',
-        'IMAP / SMTP Client Gateway',
-      ],
-      popular: false,
-    },
-    {
-      id: 'PRO' as PlanTier,
-      name: 'Pro Studio',
-      price: '$29',
-      cadence: '/month',
-      desc: 'For growing design agencies and boutique firms.',
-      features: [
-        '5 Custom Domains',
-        '10 Mailboxes + Shared Inboxes',
-        '50 GB Encrypted Storage',
-        'Gemini 2.5 AI Email Copilot',
-        'Unlimited Forwarding Aliases',
-        'Real-time Audit Logs & RBAC',
-      ],
-      popular: true,
-    },
-    {
-      id: 'ENTERPRISE' as PlanTier,
-      name: 'Enterprise Sovereign',
-      price: '$99',
-      cadence: '/month',
-      desc: 'For organizations with multi-brand sovereign requirements.',
-      features: [
-        'Unlimited Custom Domains',
-        '50+ Mailboxes & Teams',
-        '250 GB Encrypted Storage',
-        'Custom DKIM Key Rotation',
-        'Dedicated IP Ingress & Egress',
-        'Priority 24/7 SLA Engineering',
-      ],
-      popular: false,
-    },
-  ];
+  const currentPlanId = normalizePlanId(organization?.plan);
 
-  const handleSelectPlan = async (plan: PlanTier) => {
-    if (plan === organization?.plan) return;
+  const handleSelectPlan = async (plan: PlanId) => {
+    if (plan === currentPlanId && (annual ? 'annual' : 'monthly') === (organization?.billingPeriod || 'monthly')) {
+      return;
+    }
 
     setIsUpdating(true);
     try {
-      await api.updateSubscription(plan);
-      showToast(`Subscription updated to ${plan}!`, 'success');
+      await api.updateSubscription(plan, annual ? 'annual' : 'monthly');
+      showToast(`Subscription updated to ${plan} (${annual ? 'annual' : 'monthly'})`, 'success');
       await refreshAll();
     } catch (err: any) {
       showToast(err.message || 'Failed to update plan', 'error');
@@ -97,30 +51,6 @@ export const BillingView: React.FC = () => {
       setIsUpdating(false);
     }
   };
-
-  const invoices = [
-    {
-      id: 'INV-2026-08',
-      date: 'Aug 01, 2026',
-      amount: '$29.00',
-      status: 'PAID',
-      plan: 'Pro Studio (Monthly)',
-    },
-    {
-      id: 'INV-2026-07',
-      date: 'Jul 01, 2026',
-      amount: '$29.00',
-      status: 'PAID',
-      plan: 'Pro Studio (Monthly)',
-    },
-    {
-      id: 'INV-2026-06',
-      date: 'Jun 01, 2026',
-      amount: '$29.00',
-      status: 'PAID',
-      plan: 'Pro Studio (Monthly)',
-    },
-  ];
 
   return (
     <div id="billing-view-container" className="flex-1 bg-[#0A0A0B] overflow-y-auto p-6 sm:p-8 text-[#E4E4E7]">
@@ -137,6 +67,9 @@ export const BillingView: React.FC = () => {
           <p className="text-xs text-[#A1A1AA] mt-1 max-w-2xl">
             Sovereign email hosting with transparent monthly pricing, zero hidden fees, and seamless resource scaling.
           </p>
+          <div className="mt-4 px-3 py-2 rounded-md border border-amber-500/30 bg-amber-500/10 text-[11px] text-amber-200/90">
+            Preview ledger — plan changes write local invoices. Stripe (or equivalent) is not connected on this instance.
+          </div>
         </div>
 
         {/* Storage Usage Progress Bar & Resource Allocation Card */}
@@ -233,10 +166,29 @@ export const BillingView: React.FC = () => {
           </div>
         </div>
 
-        {/* Current Plan Cards */}
+        <div className="flex items-center justify-between">
+          <h2 className="text-xs uppercase font-mono-code font-bold text-[#A1A1AA] tracking-wider">Plans</h2>
+          <div className="inline-flex items-center gap-1 p-1 rounded-full border border-[#27272A] bg-[#0F0F12]">
+            <button
+              type="button"
+              onClick={() => setAnnual(false)}
+              className={`px-3 py-1 rounded-full text-[11px] font-semibold ${!annual ? 'bg-white text-black' : 'text-[#A1A1AA]'}`}
+            >
+              Monthly
+            </button>
+            <button
+              type="button"
+              onClick={() => setAnnual(true)}
+              className={`px-3 py-1 rounded-full text-[11px] font-semibold ${annual ? 'bg-white text-black' : 'text-[#A1A1AA]'}`}
+            >
+              Annual
+            </button>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {plans.map((p) => {
-            const isCurrent = organization?.plan === p.id;
+          {PLAN_LIST.map((p) => {
+            const isCurrent = currentPlanId === p.id;
             return (
               <div
                 key={p.id}
@@ -262,17 +214,17 @@ export const BillingView: React.FC = () => {
                 <div className="space-y-4">
                   <div>
                     <h3 className="text-lg font-bold text-white tracking-tight">{p.name}</h3>
-                    <p className="text-xs text-[#A1A1AA] mt-1 min-h-[32px]">{p.desc}</p>
+                    <p className="text-xs text-[#A1A1AA] mt-1 min-h-[32px]">{p.tagline}</p>
                   </div>
 
                   <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-bold text-white font-mono-code">{p.price}</span>
-                    <span className="text-xs text-[#71717A] font-mono-code">{p.cadence}</span>
+                    <span className="text-3xl font-bold text-white font-mono-code">{formatPlanPrice(p, annual)}</span>
+                    <span className="text-xs text-[#71717A] font-mono-code">/month</span>
                   </div>
 
                   <div className="pt-4 border-t border-[#27272A] space-y-2.5">
-                    {p.features.map((feat, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-xs text-[#D4D4D8]">
+                    {p.features.map((feat) => (
+                      <div key={feat} className="flex items-center gap-2 text-xs text-[#D4D4D8]">
                         <Check className="w-3.5 h-3.5 text-white shrink-0" />
                         <span>{feat}</span>
                       </div>
@@ -283,7 +235,7 @@ export const BillingView: React.FC = () => {
                 <div className="pt-6 mt-6 border-t border-[#27272A]">
                   <button
                     onClick={() => handleSelectPlan(p.id)}
-                    disabled={isCurrent || isUpdating}
+                    disabled={(isCurrent && (annual ? 'annual' : 'monthly') === (organization?.billingPeriod || 'monthly')) || isUpdating}
                     className={`w-full py-2.5 rounded-md text-xs font-semibold transition-all ${
                       isCurrent
                         ? 'bg-[#18181B] text-[#71717A] border border-[#27272A] cursor-default'
@@ -322,20 +274,31 @@ export const BillingView: React.FC = () => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#18181B] font-mono-code text-[11px]">
+                {invoices.length === 0 && (
+                  <tr>
+                    <td colSpan={6} className="py-8 text-center text-[#71717A]">
+                      No invoices yet. Changing plans generates a receipt.
+                    </td>
+                  </tr>
+                )}
                 {invoices.map((inv) => (
                   <tr key={inv.id} className="hover:bg-[#18181B]/50 transition-colors">
-                    <td className="py-3 px-4 font-bold text-white">{inv.id}</td>
-                    <td className="py-3 px-4 text-[#A1A1AA]">{inv.date}</td>
-                    <td className="py-3 px-4 text-[#E4E4E7] font-sans">{inv.plan}</td>
-                    <td className="py-3 px-4 font-semibold text-white">{inv.amount}</td>
+                    <td className="py-3 px-4 font-bold text-white">{inv.invoiceNumber || inv.id}</td>
+                    <td className="py-3 px-4 text-[#A1A1AA]">
+                      {inv.date ? new Date(inv.date).toLocaleDateString() : '—'}
+                    </td>
+                    <td className="py-3 px-4 text-[#E4E4E7] font-sans">{inv.planName}</td>
+                    <td className="py-3 px-4 font-semibold text-white">
+                      {typeof inv.amount === 'number' ? `$${inv.amount.toFixed(2)}` : inv.amount}
+                    </td>
                     <td className="py-3 px-4">
-                      <span className="px-2 py-0.5 rounded-full text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
-                        {inv.status}
+                      <span className="px-2 py-0.5 rounded-full text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 uppercase">
+                        {inv.preview ? 'preview' : inv.status}
                       </span>
                     </td>
                     <td className="py-3 px-4 text-right">
                       <button
-                        onClick={() => showToast(`Downloaded receipt for ${inv.id}`, 'info')}
+                        onClick={() => showToast(`Downloaded receipt for ${inv.invoiceNumber || inv.id}`, 'info')}
                         className="inline-flex items-center gap-1 text-xs text-white hover:text-[#A1A1AA]"
                       >
                         <Download className="w-3.5 h-3.5" />

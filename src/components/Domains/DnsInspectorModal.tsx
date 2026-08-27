@@ -58,14 +58,17 @@ export const DnsInspectorModal: React.FC<DnsInspectorModalProps> = ({
       const res = await api.verifyDomainDns(domain.id);
       setRecords(res.records);
 
-      confetti({
-        particleCount: 80,
-        spread: 70,
-        origin: { y: 0.6 },
-      });
-
-      showToast(`DNS records for ${domain.domainName} verified successfully!`, 'success');
-      onVerified();
+      if (res.success) {
+        confetti({
+          particleCount: 80,
+          spread: 70,
+          origin: { y: 0.6 },
+        });
+        showToast(`Live DNS for ${domain.domainName} is fully aligned.`, 'success');
+        onVerified();
+      } else {
+        showToast(res.logDetails || 'Published records do not yet match Mailoo. Copy the table and retry after TTL.', 'info');
+      }
     } catch (err: any) {
       showToast(err.message || 'DNS verification failed', 'error');
     } finally {
@@ -161,7 +164,7 @@ export const DnsInspectorModal: React.FC<DnsInspectorModalProps> = ({
                 <Info className="w-4 h-4 text-[#A1A1AA] shrink-0 mt-0.5" />
                 <div className="text-xs text-[#A1A1AA] leading-relaxed">
                   Add the records below into your DNS host (Cloudflare, Namecheap, Route 53, GoDaddy, etc.).
-                  Mailoo uses 2048-bit RSA DKIM cryptographic keys to ensure 100% inbox placement and zero spoofing.
+                  Verify runs a live lookup against public DNS — it will not mark records aligned unless they are actually published.
                 </div>
               </div>
 
@@ -191,7 +194,10 @@ export const DnsInspectorModal: React.FC<DnsInspectorModalProps> = ({
                             {rec.host}
                           </td>
                           <td className="py-3 px-4 text-[#A1A1AA] max-w-xs break-all select-all font-mono-code">
-                            {rec.value}
+                            <div>{rec.value}</div>
+                            {rec.observedValue && (
+                              <div className="text-[10px] text-[#71717A] mt-1">Published: {rec.observedValue}</div>
+                            )}
                           </td>
                           <td className="py-3 px-3 text-[#71717A]">
                             {rec.priority !== undefined ? `Pri: ${rec.priority} • ` : ''}TTL: {rec.ttl}s
@@ -202,10 +208,15 @@ export const DnsInspectorModal: React.FC<DnsInspectorModalProps> = ({
                                 <Check className="w-3 h-3" />
                                 <span>Verified</span>
                               </span>
+                            ) : rec.observedValue ? (
+                              <span className="inline-flex items-center gap-1 text-[10px] bg-rose-500/10 text-rose-400 border border-rose-500/30 px-2 py-0.5 rounded-full font-sans font-semibold">
+                                <AlertCircle className="w-3 h-3" />
+                                <span>Mismatch</span>
+                              </span>
                             ) : (
                               <span className="inline-flex items-center gap-1 text-[10px] bg-amber-500/10 text-amber-400 border border-amber-500/30 px-2 py-0.5 rounded-full font-sans font-semibold">
                                 <RefreshCw className="w-3 h-3" />
-                                <span>Checking</span>
+                                <span>Not checked</span>
                               </span>
                             )}
                           </td>

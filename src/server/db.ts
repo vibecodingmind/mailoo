@@ -64,12 +64,15 @@ interface DatabaseSchema {
 const DATA_DIR = path.join(process.cwd(), 'data');
 const DB_FILE = path.join(DATA_DIR, 'mailoo_db.json');
 
-function generateDkimKeyPair(): { publicKey: string; privateKey: string } {
-  // Generate a realistic 2048-bit base64 simulated public key for display and verification
-  const randomBytes = crypto.randomBytes(160).toString('base64');
+export function generateDkimKeyPair(): { publicKey: string; privateKey: string } {
+  const { publicKey, privateKey } = crypto.generateKeyPairSync('rsa', {
+    modulusLength: 2048,
+    publicKeyEncoding: { type: 'spki', format: 'der' },
+    privateKeyEncoding: { type: 'pkcs8', format: 'pem' },
+  });
   return {
-    publicKey: `v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA${randomBytes}IDAQAB`,
-    privateKey: 'mailoo-internal-signing-key',
+    publicKey: `v=DKIM1; k=rsa; p=${Buffer.from(publicKey).toString('base64')}`,
+    privateKey,
   };
 }
 
@@ -86,7 +89,7 @@ function getInitialSeedData(): DatabaseSchema {
     id: userId,
     email: 'alex.vance@atelier-nordic.com',
     fullName: 'Alex Vance',
-    passwordHash: hashPassword('Monogram2026!'),
+    passwordHash: hashPassword(`${crypto.randomBytes(18).toString('hex')}Aa1`),
     avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
     role: 'owner',
     mfaEnabled: true,
@@ -2660,6 +2663,117 @@ class Database {
   public deleteSessionsByUserId(userId: string) {
     this.data.sessions = this.data.sessions.filter((s) => s.userId !== userId);
     this.scheduleSave();
+  }
+
+  public exportOrganization(orgId: string) {
+    const organization = this.getOrgById(orgId);
+    if (!organization) return null;
+    const memberships = this.getMembershipsByOrg(orgId);
+    const users = memberships
+      .map((m) => this.getUserById(m.userId))
+      .filter((u): u is User => Boolean(u))
+      .map((u) => {
+        const {
+          passwordHash: _ph,
+          totpSecret: _ts,
+          recoveryKeys: _rk,
+          verificationToken: _vt,
+          verificationTokenExpiresAt: _ve,
+          resetPasswordToken: _rt,
+          resetPasswordExpiresAt: _re,
+          ...safe
+        } = u;
+        return safe;
+      });
+
+    return {
+      exportedAt: new Date().toISOString(),
+      format: 'mailoo-workspace-export-v1',
+      organization,
+      users,
+      memberships,
+      domains: this.getDomainsByOrg(orgId),
+      mailboxes: this.getMailboxesByOrg(orgId),
+      aliases: this.getAliasesByOrg(orgId),
+      customFolders: this.data.customFolders.filter((f) => f.organizationId === orgId),
+      signatures: this.data.signatures.filter((s) => s.organizationId === orgId),
+      templates: this.getTemplates(orgId),
+      filterRules: this.data.filterRules.filter((r) => r.organizationId === orgId),
+      contacts: this.getContacts(orgId),
+      threads: this.data.threads
+        .filter((t) => t.organizationId === orgId)
+        .map((t) => ({
+          id: t.id,
+          subject: t.subject,
+          folder: t.folder,
+          unreadCount: t.unreadCount,
+          lastMessageAt: t.lastMessageAt,
+          participants: t.participants,
+        })),
+      messages: this.data.messages
+        .filter((m) => m.organizationId === orgId)
+        .map((m) => ({
+          id: m.id,
+          threadId: m.threadId,
+          folder: m.folder,
+          from: m.from,
+          to: m.to,
+          subject: m.subject,
+          snippet: m.snippet || (m.bodyText || '').slice(0, 280),
+          createdAt: m.createdAt,
+          attachments: (m.attachments || []).map((a) => ({
+            filename: a.filename,
+            contentType: a.contentType,
+            size: a.size,
+          })),
+        })),
+      auditLogs: this.getAuditLogs(orgId),
+      invoices: this.getInvoicesByOrg(orgId),
+    };
+  }
+
+  public deleteOrganization(orgId: string): { deletedUserIds: string[] } {
+    const memberUserIds = this.getMembershipsByOrg(orgId).map((m) => m.userId);
+    const byOrg = <T extends { organizationId?: string }>(rows: T[]) =>
+      rows.filter((row) => row.organizationId !== orgId);
+
+    this.data.organizations = this.data.organizations.filter((o) => o.id !== orgId);
+    this.data.memberships = this.data.memberships.filter((m) => m.organizationId !== orgId);
+    this.data.domains = byOrg(this.data.domains);
+    this.data.mailboxes = byOrg(this.data.mailboxes);
+    this.data.aliases = byOrg(this.data.aliases);
+    this.data.messages = byOrg(this.data.messages);
+    this.data.threads = byOrg(this.data.threads);
+    this.data.customFolders = byOrg(this.data.customFolders);
+    this.data.signatures = byOrg(this.data.signatures);
+    this.data.spamRules = byOrg(this.data.spamRules);
+    this.data.templates = byOrg(this.data.templates);
+    this.data.filterRules = byOrg(this.data.filterRules);
+    this.data.contacts = byOrg(this.data.contacts);
+    this.data.internalNotes = byOrg(this.data.internalNotes);
+    this.data.pgpKeys = byOrg(this.data.pgpKeys);
+    this.data.retentionPolicies = byOrg(this.data.retentionPolicies);
+    this.data.blockedSenders = byOrg(this.data.blockedSenders);
+    this.data.bimiConfigs = byOrg(this.data.bimiConfigs);
+    this.data.appPasswords = byOrg(this.data.appPasswords);
+    this.data.loginAttempts = byOrg(this.data.loginAttempts);
+    this.data.auditLogs = byOrg(this.data.auditLogs);
+    this.data.apiKeys = byOrg(this.data.apiKeys);
+    this.data.invoices = byOrg(this.data.invoices);
+    this.data.sessions = this.data.sessions.filter((s) => s.organizationId !== orgId);
+
+    const deletedUserIds: string[] = [];
+    for (const userId of memberUserIds) {
+      const remaining = this.data.memberships.some((m) => m.userId === userId);
+      if (!remaining) {
+        this.data.users = this.data.users.filter((u) => u.id !== userId);
+        this.data.sessions = this.data.sessions.filter((s) => s.userId !== userId);
+        deletedUserIds.push(userId);
+      }
+    }
+
+    this.scheduleSave();
+    return { deletedUserIds };
   }
 }
 

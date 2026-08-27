@@ -23,12 +23,18 @@ Copy the example environment file:
 ```bash
 cp .env.example .env
 ```
-Provide your `GEMINI_API_KEY` for AI email features.
+Provide your `GEMINI_API_KEY` for AI email features (optional — core webmail works without it).
 
 ### 3. Run Development Server
 ```bash
 npm run dev
 ```
+
+Open http://localhost:3000. The marketing site loads first.
+
+Click **Explore live demo studio** to open the seeded Atelier Nordic workspace. That path uses a server-side demo login — there is no demo password in the repository.
+
+Or click **Sign in** / **Get Started** to use your own account.
 
 ### 4. Build for Production
 ```bash
@@ -36,7 +42,15 @@ npm run build
 npm start
 ```
 
+## What is product-complete vs simulated
+
+This preview includes a full studio webmail, billing, DNS, security, and team UX on a local JSON store.
+
+Still required for a production mail host: real MX/SMTP/IMAP daemons, Stripe (or equivalent) checkout, a durable database, outbound IP reputation, and registrar DNS APIs.
+
+Open http://localhost:3000/#/status for live instance checks. Owners can export or delete a workspace from Security → Privacy & export.
+
 ## 🛠 Tech Stack
-- **Frontend**: React 18, Tailwind CSS, Lucide Icons, Motion
+- **Frontend**: React 19, Tailwind CSS, Lucide Icons, Motion
 - **Backend**: Express, Node.js TypeScript
 - **Security**: scrypt (RFC 7914), OpenPGP, TOTP RFC 6238, RSA DKIM signing

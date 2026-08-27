@@ -94,9 +94,19 @@ export const DomainManager: React.FC = () => {
 
           <div className="p-5 rounded-lg bg-[#0F0F12] border border-[#27272A] space-y-1">
             <div className="text-[11px] font-mono-code text-[#71717A] uppercase">Cryptographic Health</div>
-            <div className="text-xl font-bold text-emerald-400 flex items-center gap-2">
-              <ShieldCheck className="w-5 h-5" />
-              <span>100% Aligned</span>
+            <div className="text-xl font-bold text-white flex items-center gap-2">
+              {(() => {
+                const aligned = domains.filter(
+                  (d) => d.mxVerified && d.spfVerified && d.dkimVerified && d.dmarcVerified
+                ).length;
+                const pct = domains.length === 0 ? 0 : Math.round((aligned / domains.length) * 100);
+                return (
+                  <>
+                    <ShieldCheck className={`w-5 h-5 ${pct === 100 ? 'text-emerald-400' : 'text-amber-400'}`} />
+                    <span className={pct === 100 ? 'text-emerald-400' : 'text-amber-400'}>{pct}% aligned</span>
+                  </>
+                );
+              })()}
             </div>
           </div>
 

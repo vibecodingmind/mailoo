@@ -49,7 +49,9 @@
   }
 
   .theme-midnight header#monogram-navigation-header,
-  [data-theme="midnight"] header#monogram-navigation-header {
+  [data-theme="midnight"] header#monogram-navigation-header,
+  .theme-midnight header#mailoo-navigation-header,
+  [data-theme="midnight"] header#mailoo-navigation-header {
     background-color: #0E1726 !important;
     border-color: #1E2D4A !important;
   }

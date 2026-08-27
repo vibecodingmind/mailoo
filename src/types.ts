@@ -69,6 +69,7 @@ export interface DnsRecordConfig {
   purpose: 'mx' | 'spf' | 'dkim' | 'dmarc' | 'autoconfig' | 'verification';
   isVerified: boolean;
   statusMessage?: string;
+  observedValue?: string;
 }
 
 export interface Domain {
@@ -418,6 +419,7 @@ export interface Invoice {
   planName: string;
   date: string;
   pdfUrl?: string;
+  preview?: boolean;
 }
 
 export interface OnboardingState {
