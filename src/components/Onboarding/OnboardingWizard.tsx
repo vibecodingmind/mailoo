@@ -14,7 +14,8 @@ import {
 import confetti from 'canvas-confetti';
 import { api } from '../../services/api.js';
 import { useAuth } from '../../context/AuthContext.js';
-import type { PlanTier, Domain, DnsRecordConfig } from '../../types.js';
+import { PLAN_LIST, formatPlanPrice, normalizePlanId } from '../../lib/plans.js';
+import type { PlanId, Domain, DnsRecordConfig } from '../../types.js';
 
 interface OnboardingWizardProps {
   onComplete: () => void;
@@ -24,12 +25,13 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({ onComplete }
   const { refreshAll, showToast } = useAuth();
 
   const [step, setStep] = useState<number>(1);
-  const [selectedPlan, setSelectedPlan] = useState<PlanTier>('PRO');
+  const [selectedPlan, setSelectedPlan] = useState<PlanId>('pro');
   const [domainName, setDomainName] = useState<string>('atelier-nordic.com');
   const [createdDomain, setCreatedDomain] = useState<Domain | null>(null);
   const [dnsRecords, setDnsRecords] = useState<DnsRecordConfig[]>([]);
   const [isVerifyingDns, setIsVerifyingDns] = useState(false);
   const [isDnsVerified, setIsDnsVerified] = useState(false);
+  const [dnsLookupNotes, setDnsLookupNotes] = useState('');
 
   const [mailboxUsername, setMailboxUsername] = useState('alex');
   const [mailboxFullName, setMailboxFullName] = useState('Alex Vance');
@@ -65,16 +67,21 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({ onComplete }
     try {
       const res = await api.verifyDomainDns(createdDomain.id);
       setDnsRecords(res.records);
-      setIsDnsVerified(true);
+      setDnsLookupNotes(res.logDetails || '');
 
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 },
-      });
-
-      showToast('DNS Verified with 100% Cryptographic Alignment!', 'success');
-      setTimeout(() => setStep(4), 1200);
+      if (res.success) {
+        setIsDnsVerified(true);
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 },
+        });
+        showToast('Live DNS is fully aligned with Mailoo.', 'success');
+        setTimeout(() => setStep(4), 1200);
+      } else {
+        setIsDnsVerified(false);
+        showToast('Published DNS does not match yet. You can continue in preview or fix records and retry.', 'info');
+      }
     } catch (err: any) {
       showToast(err.message || 'Verification failed', 'error');
     } finally {
@@ -162,11 +169,7 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({ onComplete }
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
-              {[
-                { id: 'STARTER' as PlanTier, name: 'Starter', price: '$9/mo', desc: '1 domain • 2 mailboxes' },
-                { id: 'PRO' as PlanTier, name: 'Pro Studio', price: '$29/mo', desc: '5 domains • 10 mailboxes • AI Copilot', popular: true },
-                { id: 'ENTERPRISE' as PlanTier, name: 'Enterprise', price: '$99/mo', desc: 'Unlimited domains • Dedicated IP' },
-              ].map((p) => (
+              {PLAN_LIST.map((p) => (
                 <div
                   key={p.id}
                   onClick={() => setSelectedPlan(p.id)}
@@ -182,8 +185,10 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({ onComplete }
                     </span>
                   )}
                   <div className="font-bold text-base text-white">{p.name}</div>
-                  <div className="text-xl font-bold text-white font-mono-code my-1">{p.price}</div>
-                  <p className="text-xs text-[#71717A]">{p.desc}</p>
+                  <div className="text-xl font-bold text-white font-mono-code my-1">{formatPlanPrice(p, false)}/mo</div>
+                  <p className="text-xs text-[#71717A]">
+                    {p.maxDomains} domain{p.maxDomains === 1 ? '' : 's'} · {p.maxMailboxes} mailboxes · {p.maxStorageGb} GB
+                  </p>
                 </div>
               ))}
             </div>
@@ -193,7 +198,7 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({ onComplete }
                 onClick={handleStep1Plan}
                 className="inline-flex items-center gap-2 px-8 py-3 rounded-md font-semibold text-xs bg-white hover:bg-[#E4E4E7] text-black shadow-sm transition-all"
               >
-                <span>Continue with {selectedPlan}</span>
+                <span>Continue with {normalizePlanId(selectedPlan)}</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
@@ -298,7 +303,11 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({ onComplete }
               </table>
             </div>
 
-            <div className="pt-4 flex items-center justify-between">
+            {dnsLookupNotes && (
+              <p className="text-[11px] font-mono-code text-[#A1A1AA]">{dnsLookupNotes}</p>
+            )}
+
+            <div className="pt-4 flex items-center justify-between gap-3">
               <button
                 type="button"
                 onClick={() => setStep(2)}
@@ -306,14 +315,25 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({ onComplete }
               >
                 ← Back
               </button>
-              <button
-                onClick={handleStep3VerifyDns}
-                disabled={isVerifyingDns}
-                className="flex items-center gap-2 px-6 py-2.5 rounded-md font-semibold text-xs bg-white hover:bg-[#E4E4E7] text-black shadow-sm transition-all"
-              >
-                <RefreshCw className={`w-3.5 h-3.5 ${isVerifyingDns ? 'animate-spin' : ''}`} />
-                <span>{isVerifyingDns ? 'Testing Cryptographic Resolution...' : 'Test & Verify DNS Records'}</span>
-              </button>
+              <div className="flex items-center gap-2">
+                {!isDnsVerified && dnsLookupNotes && (
+                  <button
+                    type="button"
+                    onClick={() => setStep(4)}
+                    className="px-4 py-2.5 rounded-md text-xs font-semibold border border-[#27272A] text-white hover:bg-[#18181B]"
+                  >
+                    Continue in preview
+                  </button>
+                )}
+                <button
+                  onClick={handleStep3VerifyDns}
+                  disabled={isVerifyingDns}
+                  className="flex items-center gap-2 px-6 py-2.5 rounded-md font-semibold text-xs bg-white hover:bg-[#E4E4E7] text-black shadow-sm transition-all"
+                >
+                  <RefreshCw className={`w-3.5 h-3.5 ${isVerifyingDns ? 'animate-spin' : ''}`} />
+                  <span>{isVerifyingDns ? 'Looking up public DNS…' : 'Test live DNS records'}</span>
+                </button>
+              </div>
             </div>
           </div>
         )}

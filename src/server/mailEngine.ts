@@ -1,4 +1,5 @@
 import crypto from 'crypto';
+import dns from 'node:dns/promises';
 import { GoogleGenAI } from '@google/genai';
 import { db } from './db.js';
 import type { Domain, DnsRecordConfig, Message, Mailbox, EmailAddress, EmailAttachment } from '../types.js';
@@ -64,6 +65,43 @@ export function getRecommendedDnsRecords(domain: Domain): DnsRecordConfig[] {
   ];
 }
 
+async function lookupTxt(name: string): Promise<string[]> {
+  try {
+    const rows = await dns.resolveTxt(name);
+    return rows.map((parts) => parts.join(''));
+  } catch (err: any) {
+    if (err?.code === 'ENOTFOUND' || err?.code === 'ENODATA' || err?.code === 'ESERVFAIL') {
+      return [];
+    }
+    if (err?.code === 'ETIMEOUT' || err?.code === 'ECONNREFUSED') {
+      return [];
+    }
+    return [];
+  }
+}
+
+async function lookupMx(name: string): Promise<string[]> {
+  try {
+    const rows = await dns.resolveMx(name);
+    return rows.map((r) => `${r.priority} ${r.exchange.replace(/\.$/, '').toLowerCase()}`);
+  } catch {
+    return [];
+  }
+}
+
+async function lookupCname(name: string): Promise<string[]> {
+  try {
+    const rows = await dns.resolveCname(name);
+    return rows.map((r) => r.replace(/\.$/, '').toLowerCase());
+  } catch {
+    return [];
+  }
+}
+
+function flattenObserved(values: string[]): string {
+  return values.length > 0 ? values.join(' | ') : '(none published)';
+}
+
 export async function verifyDomainDns(domainId: string, orgId: string): Promise<{
   success: boolean;
   domain: Domain;
@@ -75,31 +113,98 @@ export async function verifyDomainDns(domainId: string, orgId: string): Promise<
     throw new Error('Domain not found');
   }
 
-  // Simulate authoritative DNS lookup with 100% verification success once user clicks Verify
+  const apex = domain.domainName.trim().toLowerCase();
+  const selector = domain.dkimSelector || 'mailoo';
+
+  const [mxValues, spfValues, dkimValues, dmarcValues, cnameValues] = await Promise.all([
+    lookupMx(apex),
+    lookupTxt(apex),
+    lookupTxt(`${selector}._domainkey.${apex}`),
+    lookupTxt(`_dmarc.${apex}`),
+    lookupCname(`mail.${apex}`),
+  ]);
+
+  const mxOk = mxValues.some((v) => v.includes('mail.mailoo.email'));
+  const spfOk = spfValues.some((v) => /v=spf1/i.test(v) && /_spf\.mailoo\.email/i.test(v));
+  const dkimOk = dkimValues.some((v) => /v=dkim1/i.test(v));
+  const dmarcOk = dmarcValues.some((v) => /v=dmarc1/i.test(v));
+  const cnameOk = cnameValues.some((v) => v.includes('webmail.mailoo.email'));
+  const requiredOk = mxOk && spfOk && dkimOk && dmarcOk;
+
   const updatedDomain = db.updateDomain(domainId, orgId, {
-    mxVerified: true,
-    spfVerified: true,
-    dkimVerified: true,
-    dmarcVerified: true,
-    status: 'active',
+    mxVerified: mxOk,
+    spfVerified: spfOk,
+    dkimVerified: dkimOk,
+    dmarcVerified: dmarcOk,
+    status: requiredOk ? 'active' : 'pending_dns',
     lastCheckedAt: new Date().toISOString(),
   })!;
 
-  const records = getRecommendedDnsRecords(updatedDomain);
-  const logDetails = `DNS Verification check completed for ${domain.domainName}: MX [PASS], SPF [PASS], DKIM [PASS], DMARC [PASS]`;
+  const records = getRecommendedDnsRecords(updatedDomain).map((record) => {
+    if (record.purpose === 'mx') {
+      return {
+        ...record,
+        isVerified: mxOk,
+        observedValue: flattenObserved(mxValues),
+        statusMessage: mxOk
+          ? 'MX points at Mailoo ingress'
+          : 'No MX to mail.mailoo.email — publish the record below at your registrar',
+      };
+    }
+    if (record.purpose === 'spf') {
+      return {
+        ...record,
+        isVerified: spfOk,
+        observedValue: flattenObserved(spfValues),
+        statusMessage: spfOk
+          ? 'SPF includes Mailoo outbound relays'
+          : 'No SPF include:_spf.mailoo.email on the apex TXT',
+      };
+    }
+    if (record.purpose === 'dkim') {
+      return {
+        ...record,
+        isVerified: dkimOk,
+        observedValue: flattenObserved(dkimValues),
+        statusMessage: dkimOk
+          ? 'DKIM selector published (v=DKIM1)'
+          : `No DKIM TXT at ${selector}._domainkey.${apex}`,
+      };
+    }
+    if (record.purpose === 'dmarc') {
+      return {
+        ...record,
+        isVerified: dmarcOk,
+        observedValue: flattenObserved(dmarcValues),
+        statusMessage: dmarcOk
+          ? 'DMARC policy published'
+          : `No DMARC TXT at _dmarc.${apex}`,
+      };
+    }
+    return {
+      ...record,
+      isVerified: cnameOk,
+      observedValue: flattenObserved(cnameValues),
+      statusMessage: cnameOk
+        ? 'Custom webmail CNAME active'
+        : 'Optional CNAME mail → webmail.mailoo.email not published',
+    };
+  });
+
+  const logDetails = `Live DNS lookup for ${apex}: MX [${mxOk ? 'PASS' : 'FAIL'}], SPF [${spfOk ? 'PASS' : 'FAIL'}], DKIM [${dkimOk ? 'PASS' : 'FAIL'}], DMARC [${dmarcOk ? 'PASS' : 'FAIL'}], CNAME [${cnameOk ? 'PASS' : 'SKIP'}]`;
 
   db.addAuditLog({
     organizationId: orgId,
     userId: 'system',
     userEmail: 'system@mailoo.email',
-    action: 'domain.dns_verified',
+    action: requiredOk ? 'domain.dns_verified' : 'domain.dns_check',
     category: 'domain',
     ipAddress: '127.0.0.1',
     details: logDetails,
   });
 
   return {
-    success: true,
+    success: requiredOk,
     domain: updatedDomain,
     records,
     logDetails,

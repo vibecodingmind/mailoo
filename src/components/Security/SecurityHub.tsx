@@ -34,14 +34,14 @@ import { useAuth } from '../../context/AuthContext.js';
 import type { AuditLog, ApiKey, LoginAttempt, PgpKey, RetentionPolicy, AppPassword } from '../../types.js';
 
 export const SecurityHub: React.FC = () => {
-  const { user, organization, mailboxes, showToast } = useAuth();
+  const { user, organization, mailboxes, showToast, logout, isDemoSession } = useAuth();
   const [logs, setLogs] = useState<AuditLog[]>([]);
   const [loginAttempts, setLoginAttempts] = useState<LoginAttempt[]>([]);
   const [apiKeys, setApiKeys] = useState<ApiKey[]>([]);
   const [appPasswords, setAppPasswords] = useState<AppPassword[]>([]);
   const [pgpKeys, setPgpKeys] = useState<PgpKey[]>([]);
   const [retentionPolicy, setRetentionPolicy] = useState<RetentionPolicy | null>(null);
-  const [activeTab, setActiveTab] = useState<'logins' | 'pgp' | 'retention' | 'audit' | 'keys' | 'imap' | 'app_passwords' | '2fa'>('logins');
+  const [activeTab, setActiveTab] = useState<'logins' | 'pgp' | 'retention' | 'audit' | 'keys' | 'imap' | 'app_passwords' | '2fa' | 'privacy'>('logins');
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
   const [loginStatusFilter, setLoginStatusFilter] = useState<string>('all');
   const [loginSearch, setLoginSearch] = useState<string>('');
@@ -214,6 +214,41 @@ export const SecurityHub: React.FC = () => {
       } catch (err: any) {
         showToast('Failed to revoke app password', 'error');
       }
+    }
+  };
+
+  const handleExportWorkspace = async () => {
+    try {
+      const payload = await api.exportAccount();
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `mailoo-${organization?.slug || 'workspace'}-export.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('Workspace export downloaded', 'success');
+    } catch (err: any) {
+      showToast(err.message || 'Export failed', 'error');
+    }
+  };
+
+  const handleDeleteWorkspace = async () => {
+    if (isDemoSession) {
+      showToast('The seeded preview studio cannot be deleted', 'error');
+      return;
+    }
+    const confirmName = window.prompt(`Type ${organization?.name || 'DELETE'} to permanently delete this workspace`);
+    if (confirmName !== organization?.name) {
+      if (confirmName !== null) showToast('Workspace name did not match', 'error');
+      return;
+    }
+    try {
+      const res = await api.deleteAccount();
+      showToast(res.message || 'Workspace deleted', 'info');
+      await logout();
+    } catch (err: any) {
+      showToast(err.message || 'Failed to delete workspace', 'error');
     }
   };
 
@@ -497,6 +532,18 @@ export const SecurityHub: React.FC = () => {
           >
             <Key className="w-3.5 h-3.5 text-amber-400" />
             <span>App Passwords ({appPasswords.length})</span>
+          </button>
+          <button
+            id="tab-btn-privacy-export"
+            onClick={() => setActiveTab('privacy')}
+            className={`px-4 py-2.5 text-xs font-semibold border-b-2 transition-colors whitespace-nowrap flex items-center gap-2 cursor-pointer ${
+              activeTab === 'privacy'
+                ? 'border-white text-white'
+                : 'border-transparent text-[#71717A] hover:text-[#E4E4E7]'
+            }`}
+          >
+            <Download className="w-3.5 h-3.5" />
+            <span>Privacy & export</span>
           </button>
         </div>
 
@@ -1107,6 +1154,44 @@ export const SecurityHub: React.FC = () => {
                   )}
                 </tbody>
               </table>
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'privacy' && (
+          <div id="privacy-export-section" className="space-y-4">
+            <div className="p-5 rounded-lg border border-[#27272A] bg-[#0F0F12] space-y-3">
+              <h3 className="text-sm font-bold text-white">Export workspace</h3>
+              <p className="text-xs text-[#A1A1AA] leading-relaxed">
+                Download organization metadata, mail snippets, contacts, and audit logs. Password hashes, TOTP secrets,
+                session tokens, and attachment binaries are omitted.
+              </p>
+              <button
+                id="export-workspace-btn"
+                type="button"
+                onClick={() => void handleExportWorkspace()}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-xs font-semibold bg-white text-black"
+              >
+                <Download className="w-3.5 h-3.5" />
+                Download JSON export
+              </button>
+            </div>
+            <div className="p-5 rounded-lg border border-rose-500/30 bg-rose-500/5 space-y-3">
+              <h3 className="text-sm font-bold text-rose-300">Delete workspace</h3>
+              <p className="text-xs text-[#A1A1AA] leading-relaxed">
+                Permanently remove this organization, mailboxes, and messages from the preview store. The Atelier Nordic
+                demo studio cannot be deleted.
+              </p>
+              <button
+                id="delete-workspace-btn"
+                type="button"
+                disabled={isDemoSession}
+                onClick={() => void handleDeleteWorkspace()}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-xs font-semibold border border-rose-500/40 text-rose-300 disabled:opacity-40"
+              >
+                <Trash2 className="w-3.5 h-3.5" />
+                {isDemoSession ? 'Protected demo studio' : 'Delete this workspace'}
+              </button>
             </div>
           </div>
         )}

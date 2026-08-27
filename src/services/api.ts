@@ -95,6 +95,14 @@ class ApiService {
     return res;
   }
 
+  public async enterDemo(): Promise<{ user: User; organization: Organization; sessionToken: string }> {
+    const res = await this.request<{ user: User; organization: Organization; sessionToken: string }>('/api/auth/demo', {
+      method: 'POST',
+    });
+    this.setToken(res.sessionToken);
+    return res;
+  }
+
   public async signup(data: { fullName: string; email: string; password?: string; orgName?: string; plan?: string }): Promise<{
     user: User;
     organization: Organization;
@@ -196,6 +204,29 @@ class ApiService {
       this.setToken(null);
     }
     return { success: true, message: 'Logged out' };
+  }
+
+  public async getStatus(): Promise<{
+    status: string;
+    service: string;
+    version: string;
+    startedAt?: string;
+    uptimeSeconds?: number;
+    checks: { id: string; name: string; status: 'operational' | 'degraded' | 'not_configured' | 'down'; detail?: string }[];
+  }> {
+    return this.request('/api/status');
+  }
+
+  public async exportAccount(): Promise<Record<string, unknown>> {
+    return this.request('/api/account/export');
+  }
+
+  public async deleteAccount(): Promise<{ success: boolean; message: string }> {
+    const res = await this.request<{ success: boolean; message: string }>('/api/account', {
+      method: 'DELETE',
+    });
+    this.setToken(null);
+    return res;
   }
 
   public async switchOrg(organizationId: string): Promise<{ organization: Organization; sessionToken: string }> {
@@ -484,6 +515,10 @@ class ApiService {
     invoices: Invoice[];
   }> {
     return this.request('/api/billing');
+  }
+
+  public async getInvoices(): Promise<{ invoices: Invoice[] }> {
+    return this.request('/api/billing/invoices');
   }
 
   public async updateSubscription(plan: string, period: 'monthly' | 'annual' = 'monthly'): Promise<{ organization: Organization; success: boolean }> {
